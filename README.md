@@ -20,3 +20,6 @@ sudo nixos-rebuild switch
 ```
 git clone https://github.com/leonWindhorst/nixos-config ~/flake
 ```
+```
+sudo nixos-rebuild switch --flake ~/flake/
+```
