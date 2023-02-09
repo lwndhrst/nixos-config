@@ -11,6 +11,7 @@
 
   outputs = { self, nixpkgs, home-manager }:
     let
+      user = "leon";
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
@@ -20,17 +21,17 @@
 
     in {
       nixosConfigurations = {
-        leon = lib.nixosSystem {
+        ${user} = lib.nixosSystem {
           inherit system;
           modules = [ ./configuration.nix ];
         };
       };
 
       hmConfigurations = {
-        leon = home-manager.lib.homeManagerConfiguration {
+        ${user} = home-manager.lib.homeManagerConfiguration {
           inherit system pkgs;
-          username = "leon";
-          homeDirectory = "/home/leon";
+          username = "${user}";
+          homeDirectory = "/home/${user}";
           configuration = {
             imports = [ ./home.nix ];
           };
