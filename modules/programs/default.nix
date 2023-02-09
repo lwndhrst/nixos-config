@@ -1,3 +1,4 @@
 [
+  ./firefox.nix
   # ./rofi.nix
 ]

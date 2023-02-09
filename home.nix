@@ -1,9 +1,11 @@
-{ config, lib, pkgs, user, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = 
-    (import ../modules/editors) ++
-    (import ../modules/programs) ++
-    (import ../modules/services) ++
-    (import ../modules/terminals);
+    (import ./modules/editors) ++
+    (import ./modules/programs) ++
+    (import ./modules/services) ++
+    (import ./modules/terminals);
+
+  home.stateVersion = "22.11";
 }

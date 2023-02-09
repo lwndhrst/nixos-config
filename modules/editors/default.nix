@@ -1,4 +1,3 @@
 [
-  ./nvim.nix
-  # ./alacritty.nix
+  ./neovim.nix
 ]

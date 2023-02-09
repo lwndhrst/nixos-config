@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Personal NixOS configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-22.11";
@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -23,18 +23,15 @@
       nixosConfigurations = {
         ${user} = lib.nixosSystem {
           inherit system;
-          modules = [ ./configuration.nix ];
-        };
-      };
+          modules = [ 
+            ./configuration.nix 
 
-      hmConfigurations = {
-        ${user} = home-manager.lib.homeManagerConfiguration {
-          inherit system pkgs;
-          username = "${user}";
-          homeDirectory = "/home/${user}";
-          configuration = {
-            imports = [ ./home.nix ];
-          };
+            home-manager.nixosModules.home-manager {
+              home-manager.users.${user} = {config, pkgs, lib, ... }: {
+                imports = [ ./home.nix ];
+              };
+            }
+          ];
         };
       };
     };
