@@ -20,13 +20,13 @@ cp /etc/nixos/hardware-configuration.nix /home/<user>/.config/nixos/
 ### Fresh installation
 
 ```
-sudo nixos-install --flake /home/<user>/.config/nixos#<user>
+sudo nixos-install --flake /home/<user>/.config/nixos
 ```
 
 ### Rebuild
 
 ```
-sudo nixos-rebuild switch --flake /home/<user>/.config/nixos#<user>
+sudo nixos-rebuild switch --flake /home/<user>/.config/nixos
 ```
 
 ### Update flake from within the flake dir

@@ -18,11 +18,15 @@
         config.allowUnfree = true;
       };
       lib = nixpkgs.lib;
-
     in {
       nixosConfigurations = {
-        ${user} = lib.nixosSystem {
+        nixos = lib.nixosSystem {
           inherit system;
+
+          specialArgs = {
+            inherit user;
+          };
+
           modules = [ 
             ./configuration.nix 
 
