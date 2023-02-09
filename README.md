@@ -18,8 +18,8 @@ sudo nixos-rebuild switch
 
 ## Clone config
 ```
-git clone https://github.com/leonWindhorst/nixos-config ~/flake
+git clone https://github.com/leonWindhorst/nixos-config ~/.config/nixos
 ```
 ```
-sudo nixos-rebuild switch --flake ~/flake#<user>
+sudo nixos-rebuild switch --flake ~/.config/nixos#<user>
 ```

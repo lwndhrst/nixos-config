@@ -27,7 +27,7 @@
             ./configuration.nix 
 
             home-manager.nixosModules.home-manager {
-              home-manager.users.${user} = {config, pkgs, lib, ... }: {
+              home-manager.users.${user} = { config, pkgs, lib, ... }: {
                 imports = [ ./home.nix ];
               };
             }
