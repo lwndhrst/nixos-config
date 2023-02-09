@@ -31,7 +31,6 @@
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
-  #   useXkbConfig = true; # use xkbOptions in tty.
   };
 
   # Configure X11.
@@ -58,18 +57,28 @@
   users.users.leon = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      firefox
+  };
+
+  # fonts.fonts = with pkgs; {};
+
+  # Set system-wide variables and packages.
+  environment = {
+    variables = {
+      TERMINAL = "kitty";
+      EDITOR = "nvim";
+    };
+    systemPackages = with pkgs; [
+      vim
+      wget
+      git
     ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    git
-  ];
+  # Enable flakes.
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = "experimental-features = nix-command flakes";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -102,9 +111,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
-  nix = {
-    package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
-  };
 }
