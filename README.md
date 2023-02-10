@@ -16,7 +16,7 @@ git clone https://github.com/leonWindhorst/nixos-config /mnt/home/<user>/.config
 ### Fresh installation
 
 ```
-cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/<user>/.config/nixos/
+cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/<user>/.config/nixos#nixos
 ```
 
 ```
