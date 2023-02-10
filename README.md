@@ -6,21 +6,18 @@ Personal NixOS configuration
 ## Setup
 
 
-### Clone the config
+### Fresh installation
 
 ```
 git clone https://github.com/leonWindhorst/nixos-config /mnt/home/<user>/.config/nixos
 ```
 
-
-### Fresh installation
-
 ```
-cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/<user>/.config/nixos#nixos
+cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/<user>/.config/nixos
 ```
 
 ```
-sudo nixos-install --flake /mnt/home/<user>/.config/nixos
+sudo nixos-install --flake /mnt/home/<user>/.config/nixos#nixos
 ```
 
 
@@ -30,7 +27,7 @@ Note: Make sure to stage new files if using git before rebuilding as they will
 be ignored otherwise.
 
 ```
-sudo nixos-rebuild switch --flake /home/<user>/.config/nixos
+sudo nixos-rebuild switch --flake ~/.config/nixos
 ```
 
 
