@@ -7,5 +7,22 @@
     (import ./modules/services) ++
     (import ./modules/terminals);
 
-  home.stateVersion = "22.11";
+  home = {
+    packages = with pkgs; [
+      # TUI
+      btop              # System Resources
+      nitch             # Minimal Fetch
+
+      # Video/Audio
+      feh               # Image Viewer
+
+      # Apps
+      firefox
+
+      # File Management
+      unzip
+    ];
+
+    stateVersion = "22.11";
+  };
 }
