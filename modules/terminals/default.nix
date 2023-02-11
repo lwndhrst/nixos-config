@@ -1,4 +1,4 @@
 [
   ./kitty.nix
-  # ./rofi.nix
+  # ./alacritty.nix
 ]

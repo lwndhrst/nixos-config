@@ -48,6 +48,9 @@
       xkbOptions = "caps:escape";
       displayManager.lightdm.enable = true;
       windowManager.awesome.enable = true;
+
+      # Enable touchpad support (enabled default in most desktopManager).
+      # services.xserver.libinput.enable = true;
     };
 
     printing.enable = true;
@@ -75,27 +78,12 @@
     };
   };
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  # Enable sound.
-  # sound.enable = true;
-  # hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${user} = {
-    isNormalUser = true;
-    shell = pkgs.zsh;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  fonts = {
+    fonts = with pkgs; [
+      # Nerdfont overrides
+      (nerdfonts.override { fonts = [ "FiraCode" "CascadiaCode" ]; })
+    ];
   };
-
-  fonts.fonts = with pkgs; [
-    # Nerdfont icons override
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
-  ];
 
   # Set system-wide variables and packages.
   environment = {
@@ -126,13 +114,12 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.${user} = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  };
 
   # List services that you want to enable:
 
