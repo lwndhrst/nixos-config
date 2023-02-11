@@ -43,10 +43,22 @@
   services = {
     xserver = {
       enable = true;
-      autorun = true;
+
       layout = "us";
       xkbOptions = "caps:escape";
-      displayManager.lightdm.enable = true;
+
+      displayManager = {
+        lightdm.enable = true;
+        # session = [{
+        #   manage = "window";
+        #   name = "awesome";
+        #   start = ''
+        #     ${pkgs.awesome}/bin/awesome
+        #   '';
+        # }];
+        # defaultSession = "none+awesome";
+      };
+
       windowManager.awesome.enable = true;
 
       # Enable touchpad support (enabled default in most desktopManager).

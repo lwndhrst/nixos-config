@@ -11,8 +11,6 @@
     theme = "Rosé Pine";
     extraConfig = ''
       background            #0c0b11
-      cursor                #e0def4
-      cursor_text_color     #0c0b11
     '';
   };
 }
