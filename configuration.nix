@@ -40,14 +40,39 @@
     keyMap = "us";
   };
 
-  # Configure X11.
-  services.xserver = {
-    enable = true;
-    autorun = true;
-    layout = "us";
-    xkbOptions = "caps:escape";
-    displayManager.lightdm.enable = true;
-    windowManager.awesome.enable = true;
+  services = {
+    xserver = {
+      enable = true;
+      autorun = true;
+      layout = "us";
+      xkbOptions = "caps:escape";
+      displayManager.lightdm.enable = true;
+      windowManager.awesome.enable = true;
+    };
+
+    printing.enable = true;
+
+    # Needed for wireless printer/scanner
+    avahi = { 
+      enable = true;
+      nssmdns = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        userServices = true;
+      };
+    };
+
+    # Sound
+    pipewire = {
+      enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      pulse.enable = true;
+      jack.enable = true;
+    };
   };
 
   # Enable CUPS to print documents.
@@ -63,13 +88,20 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.${user} = {
     isNormalUser = true;
+    shell = pkgs.zsh;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
-  # fonts.fonts = with pkgs; {};
+  fonts.fonts = with pkgs; [
+    # Nerdfont icons override
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
 
   # Set system-wide variables and packages.
   environment = {
+    pathsToLink = [
+      "/share/zsh"
+    ];
     variables = {
       TERMINAL = "kitty";
       EDITOR = "nvim";
@@ -81,8 +113,15 @@
     ];
   };
 
-  # Enable flakes.
   nix = {
+    settings.auto-optimise-store = true;
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 2d";
+    };
+
+    # Enable flakes.
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
   };

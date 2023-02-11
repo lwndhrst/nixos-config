@@ -5,6 +5,7 @@
     (import ./modules/editors) ++
     (import ./modules/programs) ++
     (import ./modules/services) ++
+    (import ./modules/shells) ++
     (import ./modules/terminals);
 
   home = {
