@@ -12,7 +12,7 @@
 
   boot = {
     # Use the latest available Kernel packages.
-    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
 
     # Use the systemd-boot EFI boot loader.
     loader = {
@@ -43,12 +43,17 @@
   services = {
     xserver = {
       enable = true;
+      videoDrivers = [ "amdgpu" ];
 
       layout = "us";
       xkbOptions = "caps:escape";
 
       displayManager = {
         lightdm.enable = true;
+        setupCommands = ''
+          ${pkgs.xorg.xrandr}/bin/xrandr -s 1920x1080 -r 240
+        '';
+
         # session = [{
         #   manage = "window";
         #   name = "awesome";
@@ -107,6 +112,7 @@
       EDITOR = "nvim";
     };
     systemPackages = with pkgs; [
+      gcc
       vim
       wget
       git

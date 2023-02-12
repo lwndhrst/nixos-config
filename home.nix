@@ -26,11 +26,12 @@
     ];
 
     pointerCursor = {
-      package = pkgs.catppuccin-cursors.mochaLight;
-      name = "Catppuccin-Mocha-Light-Cursors";
+      # package = pkgs.catppuccin-cursors.mochaLight;
+      # name = "Catppuccin-Mocha-Light-Cursors";
 
-      # package = pkgs.capitaine-cursors;
-      # name = "capitaine-cursors";
+      package = pkgs.capitaine-cursors;
+      name = "capitaine-cursors";
+      size = 64;
     };
 
     stateVersion = "22.11";
