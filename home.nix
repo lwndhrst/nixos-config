@@ -20,6 +20,7 @@
 
       # Video/Audio
       feh               # Image Viewer
+      pavucontrol       # Sound Control GUI
 
       # Apps
       discord
@@ -32,7 +33,7 @@
 
     pointerCursor = {
       package = pkgs.quintom-cursor-theme;
-      name = "Quintom_Snow Cursors";
+      name = "Quintom_Snow";
 
       # package = pkgs.catppuccin-cursors.mochaLight;
       # name = "Catppuccin-Mocha-Light-Cursors";

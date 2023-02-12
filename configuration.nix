@@ -54,7 +54,16 @@
       xkbOptions = "caps:escape";
 
       displayManager = {
-        lightdm.enable = true;
+        lightdm = {
+          enable = true;
+        };
+
+        defaultSession = "none+awesome";
+        autoLogin = {
+          enable = true;
+          user = "${user}";
+        };
+
         setupCommands = ''
           ${pkgs.xorg.xrandr}/bin/xrandr -s 1920x1080 -r 240
         '';
