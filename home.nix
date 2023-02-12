@@ -31,8 +31,11 @@
     ];
 
     pointerCursor = {
-      package = pkgs.catppuccin-cursors.mochaLight;
-      name = "Catppuccin-Mocha-Light-Cursors";
+      package = pkgs.quintom-cursor-theme;
+      name = "Quintom_Snow Cursors";
+
+      # package = pkgs.catppuccin-cursors.mochaLight;
+      # name = "Catppuccin-Mocha-Light-Cursors";
 
       # package = pkgs.capitaine-cursors;
       # name = "capitaine-cursors";

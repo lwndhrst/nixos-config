@@ -1,4 +1,3 @@
 [
   ./rofi.nix
-  # ./steam.nix
 ]

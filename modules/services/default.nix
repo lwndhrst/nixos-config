@@ -1,4 +1,4 @@
 [
   # ./dunst.nix
-  # ./picom.nix
+  ./picom.nix
 ]
