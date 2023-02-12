@@ -16,6 +16,7 @@
       # Term Utils
       btop              # System Resources
       nitch             # Minimal Fetch
+      gh                # GitHub CLI
 
       # Video/Audio
       feh               # Image Viewer
