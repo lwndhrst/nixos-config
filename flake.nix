@@ -21,7 +21,7 @@
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
-          inherit system;
+          inherit pkgs system;
 
           specialArgs = {
             inherit user;

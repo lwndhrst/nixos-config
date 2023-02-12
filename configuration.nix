@@ -108,7 +108,6 @@
       "/share/zsh"
     ];
     variables = {
-      TERMINAL = "kitty";
       EDITOR = "nvim";
     };
     systemPackages = with pkgs; [
@@ -117,6 +116,10 @@
       wget
       git
     ];
+  };
+
+  programs = {
+    steam.enable = true;
   };
 
   nix = {

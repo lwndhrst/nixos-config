@@ -8,6 +8,8 @@
     (import ./modules/shells) ++
     (import ./modules/terminals);
 
+  nixpkgs.config.allowUnfree = true;
+
   home = {
     packages = with pkgs; [
 
@@ -19,19 +21,20 @@
       feh               # Image Viewer
 
       # Apps
-      firefox
+      discord
+      firefox           # Browser
+      zoom-us           # Video Conferencing
 
       # File Management
       unzip
     ];
 
     pointerCursor = {
-      # package = pkgs.catppuccin-cursors.mochaLight;
-      # name = "Catppuccin-Mocha-Light-Cursors";
+      package = pkgs.catppuccin-cursors.mochaLight;
+      name = "Catppuccin-Mocha-Light-Cursors";
 
-      package = pkgs.capitaine-cursors;
-      name = "capitaine-cursors";
-      size = 64;
+      # package = pkgs.capitaine-cursors;
+      # name = "capitaine-cursors";
     };
 
     stateVersion = "22.11";
