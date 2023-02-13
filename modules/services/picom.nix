@@ -7,7 +7,7 @@
     opacityRules = [ "95:class_g = 'kitty'" ];
 
     settings = {
-      corner-radius = 2;
+      corner-radius = 0;
     };
   };
 }
