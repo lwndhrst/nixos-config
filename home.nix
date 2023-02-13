@@ -12,28 +12,41 @@
 
   home = {
     packages = with pkgs; [
-
-      # Term Utils
+      # Terminal Utils
       btop              # System Resources
       nitch             # Minimal Fetch
-      gh                # GitHub CLI
 
       # Video/Audio
       feh               # Image Viewer
       pavucontrol       # Sound Control GUI
 
+      # File Management
+      unzip
+      ranger            # Terminal File Manager
+
       # Apps
       discord
       firefox           # Browser
       zoom-us           # Video Conferencing
+      portfolio         # Portfolio Performance
 
-      # File Management
-      unzip
+      # Dev stuff
+      gh                # GitHub CLI
+      rustup            # Rust Utility
+      flutter           # Flutter SDK
+      android-studio    # Android Studio
+      tectonic          # TeX Engine
+
+      # Wine for both 32 and 64 bit
+      wineWowPackages.stableFull
     ];
 
     pointerCursor = {
-      package = pkgs.phinger-cursors;
-      name = "phinger-cursors-light";
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+
+      # package = pkgs.phinger-cursors;
+      # name = "phinger-cursors-light";
       
       # package = pkgs.quintom-cursor-theme;
       # name = "Quintom_Snow";
@@ -42,7 +55,7 @@
       # name = "Catppuccin-Mocha-Light-Cursors";
 
       # package = pkgs.capitaine-cursors;
-      # name = "capitaine-cursors";
+      # name = "capitaine-cursors-white";
     };
 
     stateVersion = "22.11";

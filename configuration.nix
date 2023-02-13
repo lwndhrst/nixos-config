@@ -16,7 +16,10 @@
 
     # Use the systemd-boot EFI boot loader.
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = { 
+        enable = true;
+        configurationLimit = 5;
+      };
       efi.canTouchEfiVariables = true;
     };
   };
@@ -26,9 +29,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager = { # Easiest to use and most distros use this by default.
     enable = true;
-    wifi = {
-      powersave = false;
-    };
+    wifi.powersave = false;
   };
 
   # Set your time zone.
