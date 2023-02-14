@@ -33,7 +33,6 @@
       # Dev stuff
       gh                # GitHub CLI
       rustup            # Rust Utility
-      flutter           # Flutter SDK
       android-studio    # Android Studio
       tectonic          # TeX Engine
 
