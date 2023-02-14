@@ -8,6 +8,8 @@
       rounded-corners-exclude = [
         "class_g = 'awesome'"
       ];
+
+      shadow = true;
     };
   };
 }

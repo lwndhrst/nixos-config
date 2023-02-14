@@ -29,6 +29,7 @@
       firefox           # Browser
       zoom-us           # Video Conferencing
       portfolio         # Portfolio Performance
+      thunderbird       # Email
 
       # Dev stuff
       gh                # GitHub CLI
