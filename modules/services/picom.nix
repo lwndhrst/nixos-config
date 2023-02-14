@@ -3,11 +3,11 @@
 {
   services.picom = {
     enable = true;
-
-    opacityRules = [ "95:class_g = 'kitty'" ];
-
     settings = {
-      corner-radius = 0;
+      corner-radius = 8;
+      rounded-corners-exclude = [
+        "class_g = 'awesome'"
+      ];
     };
   };
 }
