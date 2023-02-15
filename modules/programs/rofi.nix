@@ -32,6 +32,14 @@
 
     @import "rounded-common.rasi"
 
+    window {
+        border-radius: 8px;
+    }
+
+    inputbar, message, element {
+        border-radius: 4px;
+    }
+
     element selected {
         text-color: @bg1;
     }
