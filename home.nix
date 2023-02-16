@@ -15,6 +15,8 @@
       # Terminal Utils
       btop              # System Resources
       nitch             # Minimal Fetch
+      ripgrep           # Grep but Rust
+      fd                # Alternative to find
 
       # Video/Audio
       feh               # Image Viewer
@@ -30,12 +32,14 @@
       zoom-us           # Video Conferencing
       portfolio         # Portfolio Performance
       thunderbird       # Email
+      zathura           # PDF Viewer
 
       # Dev stuff
       gh                # GitHub CLI
       rustup            # Rust Utility
       android-studio    # Android Studio
       tectonic          # TeX Engine
+      tree-sitter
 
       # Wine for both 32 and 64 bit
       wineWowPackages.stableFull
