@@ -40,6 +40,8 @@
       android-studio    # Android Studio
       tectonic          # TeX Engine
       tree-sitter
+      rust-analyzer     # Rust LSP
+      texlab            # TeX LSP
 
       # Wine for both 32 and 64 bit
       wineWowPackages.stableFull
