@@ -33,6 +33,7 @@
       portfolio         # Portfolio Performance
       thunderbird       # Email
       zathura           # PDF Viewer
+      gimp
 
       # Dev stuff
       gh                # GitHub CLI

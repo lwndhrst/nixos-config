@@ -7,9 +7,11 @@
     enableSyntaxHighlighting = true;
     enableCompletion = true;
 
+    plugins = [ ];
+
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [ ];
     };
 
     initExtra = ''

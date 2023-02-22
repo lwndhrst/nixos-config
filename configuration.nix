@@ -60,10 +60,11 @@
         };
 
         defaultSession = "none+awesome";
-        autoLogin = {
-          enable = true;
-          user = "${user}";
-        };
+
+        # autoLogin = {
+        #   enable = true;
+        #   user = "${user}";
+        # };
 
         setupCommands = ''
           ${pkgs.xorg.xrandr}/bin/xrandr -s 1920x1080 -r 240
@@ -112,6 +113,10 @@
 
   fonts = {
     fonts = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+
       # Nerdfont overrides
       (nerdfonts.override { fonts = [ "FiraCode" "CascadiaCode" ]; })
     ];
@@ -125,6 +130,7 @@
     variables = {
       EDITOR = "nvim";
     };
+    shells = with pkgs; [ zsh ];
     systemPackages = with pkgs; [
       gcc
       vim
