@@ -12,6 +12,7 @@
     extraConfig = ''
       background            #0c0b11
       background_opacity    0.95
+      disable_ligatures     always
     '';
   };
 }
