@@ -31,7 +31,7 @@
           };
 
           modules = [ 
-            # Enable NUR repos via pkgs.config.nur.repos.<...>
+            # Enable NUR repos via config.nur.repos.<...>
             nur.nixosModules.nur
 
             ./configuration.nix 

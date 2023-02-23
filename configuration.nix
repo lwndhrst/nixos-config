@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -57,7 +58,7 @@
       displayManager = {
         sddm = {
           enable = true;
-          theme = "sugar-candy";
+          theme = "sugar-dark";
         };
 
         # session = [{
@@ -128,15 +129,25 @@
       EDITOR = "nvim";
     };
 
-    systemPackages = with pkgs; [
-      gcc
-      vim
-      wget
-      git
+    systemPackages =
+      let 
+        derivations = {
+          sddm-sugar-dark = pkgs.callPackage ./derivations/sddm-rose-pine.nix {};
+        };
+      in [
+        pkgs.gcc
+        pkgs.vim
+        pkgs.wget
+        pkgs.git
 
-      # NUR packages
-      config.nur.repos.shadowrz.sddm-sugar-candy
-      libsForQt5.qt5.qtgraphicaleffects
+        # Needed for SDDM theme
+        pkgs.libsForQt5.qt5.qtgraphicaleffects
+
+        # NUR packages
+        # config.nur.repos.shadowrz.sddm-sugar-candy
+
+        # Custom packages
+        derivations.sddm-sugar-dark
     ];
   };
 
