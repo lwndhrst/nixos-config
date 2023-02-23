@@ -58,7 +58,7 @@
       displayManager = {
         sddm = {
           enable = true;
-          theme = "sugar-dark";
+          theme = "rose-pine";
         };
 
         # session = [{
@@ -132,7 +132,7 @@
     systemPackages =
       let 
         derivations = {
-          sddm-sugar-dark = pkgs.callPackage ./derivations/sddm-rose-pine.nix {};
+          sddm-rose-pine = pkgs.callPackage ./derivations/sddm-rose-pine.nix {};
         };
       in [
         pkgs.gcc
@@ -147,7 +147,7 @@
         # config.nur.repos.shadowrz.sddm-sugar-candy
 
         # Custom packages
-        derivations.sddm-sugar-dark
+        derivations.sddm-rose-pine
     ];
   };
 

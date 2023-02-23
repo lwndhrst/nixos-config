@@ -1,13 +1,15 @@
 { stdenv, fetchFromGitHub }:
 
 stdenv.mkDerivation rec {
-  pname = "sddm-sugar-dark-theme";
+  pname = "sddm-rose-pine-theme";
   version = "1.2";
   dontBuild = true;
+
   installPhase = ''
     mkdir -p $out/share/sddm/themes
-    cp -aR $src $out/share/sddm/themes/sugar-dark
+    cp -aR $src $out/share/sddm/themes/rose-pine
   '';
+
   src = fetchFromGitHub {
     owner = "MarianArlt";
     repo = "sddm-sugar-dark";
