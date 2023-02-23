@@ -118,22 +118,26 @@
       (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
     ];
 
-    # enableDefaultFonts = true;
-    # fontconfig.defaultFonts = {
-    #   serif = [ 
-    #     "Noto Serif" 
-    #     "Noto Serif CJK SC" 
-    #     "Noto Serif CJK JP" 
-    #   ];
-    #   sansSerif = [
-    #     "Noto Sans" 
-    #     "Noto Sans CJK SC" 
-    #     "Noto Sans CJK JP" 
-    #   ];
-    #   emoji = [ 
-    #     "Noto Color Emoji" 
-    #   ];
-    # };
+    enableDefaultFonts = true;
+    fontconfig.defaultFonts = {
+      serif = [ 
+        "Noto Serif" 
+        "Noto Serif CJK SC" 
+        "Noto Serif CJK JP" 
+      ];
+      sansSerif = [
+        "Noto Sans" 
+        "Noto Sans CJK SC" 
+        "Noto Sans CJK JP" 
+      ];
+      monospace = [
+        "CaskaydiaCove Nerd Font Mono"
+        "Noto Mono"
+      ];
+      emoji = [ 
+        "Noto Color Emoji" 
+      ];
+    };
   };
 
   # Set system-wide variables and packages.
