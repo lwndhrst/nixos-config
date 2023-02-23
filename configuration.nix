@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, user, ... }:
+{ config, lib, pkgs, nur, user, ... }:
 
 {
   imports =
@@ -55,20 +55,10 @@
       xkbOptions = "caps:escape";
 
       displayManager = {
-        lightdm = {
+        sddm = {
           enable = true;
+          theme = "sugar-candy";
         };
-
-        defaultSession = "none+awesome";
-
-        # autoLogin = {
-        #   enable = true;
-        #   user = "${user}";
-        # };
-
-        setupCommands = ''
-          ${pkgs.xorg.xrandr}/bin/xrandr -s 1920x1080 -r 240
-        '';
 
         # session = [{
         #   manage = "window";
@@ -77,13 +67,18 @@
         #     ${pkgs.awesome}/bin/awesome
         #   '';
         # }];
-        # defaultSession = "none+awesome";
+
+        defaultSession = "none+awesome";
+
+        setupCommands = ''
+          ${pkgs.xorg.xrandr}/bin/xrandr -s 1920x1080 -r 240
+        '';
       };
 
       windowManager.awesome.enable = true;
 
       # Enable touchpad support (enabled default in most desktopManager).
-      # services.xserver.libinput.enable = true;
+      # libinput.enable = true;
     };
 
     printing.enable = true;
@@ -124,18 +119,24 @@
 
   # Set system-wide variables and packages.
   environment = {
+    shells = with pkgs; [ zsh ];
     pathsToLink = [
       "/share/zsh"
     ];
+
     variables = {
       EDITOR = "nvim";
     };
-    shells = with pkgs; [ zsh ];
+
     systemPackages = with pkgs; [
       gcc
       vim
       wget
       git
+
+      # NUR packages
+      config.nur.repos.shadowrz.sddm-sugar-candy
+      libsForQt5.qt5.qtgraphicaleffects
     ];
   };
 

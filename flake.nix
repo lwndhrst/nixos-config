@@ -31,6 +31,9 @@
           };
 
           modules = [ 
+            # Enable NUR repos via pkgs.config.nur.repos.<...>
+            nur.nixosModules.nur
+
             ./configuration.nix 
 
             home-manager.nixosModules.home-manager {
