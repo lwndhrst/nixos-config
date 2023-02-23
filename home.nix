@@ -34,6 +34,7 @@
       thunderbird       # Email
       zathura           # PDF Viewer
       gimp
+      flameshot         # Screenshot Tool
 
       # Dev stuff
       gh                # GitHub CLI
