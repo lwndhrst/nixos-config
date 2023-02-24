@@ -112,10 +112,11 @@
 
   fonts = {
     fonts = with pkgs; [
-      # CJK symbols
+      # CJK fonts
       source-han-sans
+      source-han-serif
 
-      # Icons, Emoji, ...
+      # Icons, emoji, etc.
       font-awesome
 
       # Nerdfont overrides
