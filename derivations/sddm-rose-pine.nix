@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "leonWindhorst";
     repo = "sddm-rose-pine";
-    rev = "main";
-    sha256 = "r7NdWdK9DOyHL3/u4Syp4uhRv5JgZ5aU4zUEmBizkXs=";
+    rev = "${version}";
+    sha256 = "WBkb2GK5g0/5YfZ6jRnY0WLnH1nIMOM6/HhwUD9YXhM=";
   };
 }

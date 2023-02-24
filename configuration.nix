@@ -59,6 +59,9 @@
         sddm = {
           enable = true;
           theme = "rose-pine";
+          settings = {
+            Theme.CursorTheme = "Bibata-Modern-Ice";
+          };
         };
 
         # session = [{
@@ -162,11 +165,14 @@
         pkgs.wget
         pkgs.git
 
-        # Needed for SDDM theme
-        pkgs.libsForQt5.qt5.qtgraphicaleffects
-
         # NUR packages
         # config.nur.repos.shadowrz.sddm-sugar-candy
+
+        # Cursor Theme
+        pkgs.bibata-cursors
+
+        # Needed for SDDM theme
+        pkgs.libsForQt5.qt5.qtgraphicaleffects
 
         # Custom packages
         derivations.sddm-rose-pine
