@@ -112,7 +112,11 @@
 
   fonts = {
     fonts = with pkgs; [
+      # CJK symbols
       source-han-sans
+
+      # Icons, Emoji, ...
+      font-awesome
 
       # Nerdfont overrides
       (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
