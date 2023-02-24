@@ -13,7 +13,7 @@
   home = {
     packages = with pkgs; [
       # Terminal Utils
-      btop              # System Resources
+      htop              # System Resources
       nitch             # Minimal Fetch
       ripgrep           # Grep but Rust
       fd                # Alternative to find
