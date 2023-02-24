@@ -112,6 +112,8 @@
 
   fonts = {
     fonts = with pkgs; [
+      source-han-sans
+
       # Nerdfont overrides
       (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
     ];
