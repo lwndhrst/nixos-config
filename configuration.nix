@@ -112,37 +112,9 @@
 
   fonts = {
     fonts = with pkgs; [
-      dejavu_fonts
-
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-emoji
-
       # Nerdfont overrides
       (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
     ];
-
-    enableDefaultFonts = true;
-    fontconfig.defaultFonts = {
-      serif = [ 
-        "DejaVu Serif"
-        "Noto Serif CJK SC"
-        "Noto Serif CJK JP"
-      ];
-      sansSerif = [
-        "DejaVu Sans"
-        "Noto Sans CJK SC"
-        "Noto Sans CJK JP"
-      ];
-      monospace = [
-        "CaskaydiaCove Nerd Font Mono"
-        "Noto Mono"
-      ];
-      emoji = [ 
-        "Noto Color Emoji"
-      ];
-    };
   };
 
   # Set system-wide variables and packages.
@@ -161,20 +133,20 @@
         derivations = {
           sddm-rose-pine = pkgs.callPackage ./derivations/sddm-rose-pine.nix {};
         };
-      in [
-        pkgs.gcc
-        pkgs.vim
-        pkgs.wget
-        pkgs.git
+      in with pkgs; [
+        gcc
+        vim
+        wget
+        git
 
         # NUR packages
         # config.nur.repos.shadowrz.sddm-sugar-candy
 
         # Cursor Theme
-        pkgs.bibata-cursors
+        bibata-cursors
 
         # Needed for SDDM theme
-        pkgs.libsForQt5.qt5.qtgraphicaleffects
+        libsForQt5.qt5.qtgraphicaleffects
 
         # Custom packages
         derivations.sddm-rose-pine
@@ -190,7 +162,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 2d";
+      options = "--delete-older-than 7d";
     };
 
     # Enable flakes.
