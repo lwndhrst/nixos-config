@@ -17,6 +17,7 @@
       nitch             # Minimal Fetch
       ripgrep           # Grep but Rust
       fd                # Alternative to find
+      xclip             # Access X clipboard from terminal
 
       # Video/Audio
       feh               # Image Viewer
