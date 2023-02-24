@@ -112,6 +112,8 @@
 
   fonts = {
     fonts = with pkgs; [
+      dejavu_fonts
+
       noto-fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
@@ -124,21 +126,21 @@
     enableDefaultFonts = true;
     fontconfig.defaultFonts = {
       serif = [ 
-        "Noto Serif" 
-        "Noto Serif CJK SC" 
-        "Noto Serif CJK JP" 
+        "DejaVu Serif"
+        "Noto Serif CJK SC"
+        "Noto Serif CJK JP"
       ];
       sansSerif = [
-        "Noto Sans" 
-        "Noto Sans CJK SC" 
-        "Noto Sans CJK JP" 
+        "DejaVu Sans"
+        "Noto Sans CJK SC"
+        "Noto Sans CJK JP"
       ];
       monospace = [
         "CaskaydiaCove Nerd Font Mono"
         "Noto Mono"
       ];
       emoji = [ 
-        "Noto Color Emoji" 
+        "Noto Color Emoji"
       ];
     };
   };

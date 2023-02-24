@@ -2,7 +2,7 @@
 
 stdenv.mkDerivation rec {
   pname = "sddm-rose-pine-theme";
-  version = "1.0";
+  version = "1.1";
   dontBuild = true;
 
   installPhase = ''
@@ -14,6 +14,6 @@ stdenv.mkDerivation rec {
     owner = "leonWindhorst";
     repo = "sddm-rose-pine";
     rev = "${version}";
-    sha256 = "WBkb2GK5g0/5YfZ6jRnY0WLnH1nIMOM6/HhwUD9YXhM=";
+    sha256 = "HMKBU8/elF4ahpO/xWRIozD3dAnpz52+eFDS3YNDJyw=";
   };
 }
