@@ -85,11 +85,11 @@
     };
 
     iconTheme = {
-      # package = pkgs.papirus-icon-theme;
-      # name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
 
-      package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
-      name = "rose-pine";
+      # package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
+      # name = "rose-pine";
     };
 
     font = {
