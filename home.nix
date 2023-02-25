@@ -12,7 +12,7 @@
 
   home = {
     packages = with pkgs; [
-      # Terminal Utils
+      # Term Utils
       htop              # System Resources
       nitch             # Minimal Fetch
       ripgrep           # Grep but Rust
@@ -39,12 +39,14 @@
 
       # Dev stuff
       gh                # GitHub CLI
-      rustup            # Rust Utility
-      android-studio    # Android Studio
-      tectonic          # TeX Engine
-      tree-sitter
+      rustup            # Rust Toolchain Utility
       rust-analyzer     # Rust LSP
+      tectonic          # TeX Engine
       texlab            # TeX LSP
+      tree-sitter
+
+      # For GTK configuration
+      dconf
 
       # Wine for both 32 and 64 bit
       wineWowPackages.stableFull
@@ -68,5 +70,23 @@
     };
 
     stateVersion = "22.11";
+  };
+
+  gtk = {
+    enable = true;
+
+    theme = {
+      name = "Dracula";
+      package = pkgs.dracula-theme;
+    };
+
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Light";
+    };
+
+    font = {
+      name = "DejaVu Sans";
+    };
   };
 }

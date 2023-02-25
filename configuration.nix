@@ -135,12 +135,7 @@
       EDITOR = "nvim";
     };
 
-    systemPackages =
-      let 
-        derivations = {
-          sddm-rose-pine = pkgs.callPackage ./derivations/sddm-rose-pine.nix {};
-        };
-      in with pkgs; [
+    systemPackages = with pkgs; [
         gcc
         vim
         wget
@@ -156,7 +151,7 @@
         libsForQt5.qt5.qtgraphicaleffects
 
         # Custom packages
-        derivations.sddm-rose-pine
+        (callPackage ./derivations/sddm-rose-pine.nix {})
     ];
   };
 
@@ -169,7 +164,7 @@
     gc = {
       automatic = true;
       dates = "weekly";
-      options = "--delete-older-than 7d";
+      options = "--delete-older-than 2d";
     };
 
     # Enable flakes.
