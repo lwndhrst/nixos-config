@@ -21,12 +21,12 @@
 
       # Video/Audio
       feh               # Image Viewer
-      pavucontrol       # Sound Control GUI
+      pavucontrol       # Pulse Audio Settings
 
       # File Management
       unzip
       ranger            # Terminal File Manager
-      gnome.nautilus    # Gnome File Manager
+      # gnome.nautilus    # Gnome File Manager
 
       # Apps
       discord
