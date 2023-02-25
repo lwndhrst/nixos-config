@@ -85,6 +85,7 @@
       # libinput.enable = true;
     };
 
+    # Printer stuff
     printing.enable = true;
 
     # Needed for wireless printer/scanner
@@ -108,6 +109,9 @@
       pulse.enable = true;
       jack.enable = true;
     };
+
+    # Needed for Gnome Files/Nautilus
+    gvfs.enable = true;
   };
 
   fonts = {
@@ -151,7 +155,7 @@
         libsForQt5.qt5.qtgraphicaleffects
 
         # Custom packages
-        (callPackage ./derivations/sddm-rose-pine.nix {})
+        (callPackage ./derivations/sddm-rose-pine-theme.nix {})
     ];
   };
 

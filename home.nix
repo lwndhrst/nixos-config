@@ -26,6 +26,7 @@
       # File Management
       unzip
       ranger            # Terminal File Manager
+      gnome.nautilus    # Gnome File Manager
 
       # Apps
       discord
@@ -78,11 +79,17 @@
     theme = {
       package = pkgs.dracula-theme;
       name = "Dracula";
+
+      # package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
+      # name = "rose-pine";
     };
 
     iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
+      # package = pkgs.papirus-icon-theme;
+      # name = "Papirus-Dark";
+
+      package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
+      name = "rose-pine";
     };
 
     font = {
