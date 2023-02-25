@@ -22,6 +22,6 @@ in stdenv.mkDerivation rec {
     cp -a $src/gtk4/rose-pine.css $out/share/themes/${themeName}/gtk-4.0/gtk.css
 
     mkdir -p $out/share/icons/${themeName}
-    cp -aR $src/icons/rose-pine-icons/* $out/share/icons/${themeName}/
+    cp -aR $src/icons/rose-pine-dawn-icons/* $out/share/icons/${themeName}/
   '';
 }

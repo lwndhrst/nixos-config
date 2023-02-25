@@ -76,20 +76,26 @@
   gtk = {
     enable = true;
 
-    theme = {
-      package = pkgs.dracula-theme;
-      name = "Dracula";
+    # theme = {
+    #   package = pkgs.colloid-gtk-theme;
+    #   name = "Colloid-Dark";
 
-      # package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
-      # name = "rose-pine";
-    };
+    #   # package = pkgs.dracula-theme;
+    #   # name = "Dracula";
+
+    #   # package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
+    #   # name = "rose-pine";
+    # };
 
     iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
+      # package = pkgs.colloid-icon-theme;
+      # name = "Colloid-dark";
 
-      # package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
-      # name = "rose-pine";
+      # package = pkgs.papirus-icon-theme;
+      # name = "Papirus-Dark";
+
+      package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
+      name = "rose-pine";
     };
 
     font = {

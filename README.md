@@ -27,7 +27,7 @@ Note: Make sure to stage new files if using git before rebuilding as they will
 be ignored otherwise.
 
 ```
-sudo nixos-rebuild switch --flake ~/.config/nixos
+sudo nixos-rebuild switch --flake ~/.config/nixos#nixos
 ```
 
 
