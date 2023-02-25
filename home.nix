@@ -98,8 +98,8 @@
       name = "rose-pine";
     };
 
-    font = {
-      name = "DejaVu Sans";
-    };
+    # font = {
+    #   name = "DejaVu Sans";
+    # };
   };
 }
