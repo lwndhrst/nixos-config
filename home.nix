@@ -1,6 +1,10 @@
 { config, lib, pkgs, ... }:
 
-{
+let 
+  derivations = {
+    gtk-rose-pine-theme = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
+  };
+in {
   imports = 
     (import ./modules/editors) ++
     (import ./modules/programs) ++
@@ -14,7 +18,7 @@
     packages = with pkgs; [
       # Term Utils
       htop              # System Resources
-      nitch             # Minimal Fetch
+      pfetch            # Minimalistic Fetch
       ripgrep           # Grep but Rust
       fd                # Alternative to find
       xclip             # Access X clipboard from terminal
@@ -26,7 +30,6 @@
       # File Management
       unzip
       ranger            # Terminal File Manager
-      # gnome.nautilus    # Gnome File Manager
 
       # Apps
       discord
@@ -83,7 +86,7 @@
     #   # package = pkgs.dracula-theme;
     #   # name = "Dracula";
 
-    #   # package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
+    #   # package = derivations.gtk-rose-pine-theme;
     #   # name = "rose-pine";
     # };
 
@@ -94,7 +97,7 @@
       # package = pkgs.papirus-icon-theme;
       # name = "Papirus-Dark";
 
-      package = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
+      package = derivations.gtk-rose-pine-theme;
       name = "rose-pine";
     };
 
