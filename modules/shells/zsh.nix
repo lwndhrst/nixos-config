@@ -18,9 +18,6 @@
       # Spaceship Theme
       source ${pkgs.spaceship-prompt}/share/zsh/site-functions/prompt_spaceship_setup
       autoload -U promptinit; promptinit
-
-      # Eye candy
-      pfetch
     '';
   };
 }

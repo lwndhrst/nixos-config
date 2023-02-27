@@ -73,6 +73,11 @@ in {
       # name = "capitaine-cursors-white";
     };
 
+    sessionVariables = {
+      # pfetch configuration
+      PF_INFO = "ascii title os kernel uptime pkgs memory";
+    };
+
     stateVersion = "22.11";
   };
 
