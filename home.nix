@@ -18,7 +18,7 @@ in {
     packages = with pkgs; [
       # Term Utils
       htop              # System Resources
-      pfetch            # Minimalistic Fetch
+      nitch             # Fetch system info
       ripgrep           # Grep but Rust
       fd                # Alternative to find
       xclip             # Access X clipboard from terminal
@@ -40,6 +40,7 @@ in {
       zathura           # PDF Viewer
       gimp
       flameshot         # Screenshot Tool
+      zotero            # Literature Manager
 
       # Dev stuff
       gh                # GitHub CLI
@@ -73,10 +74,7 @@ in {
       # name = "capitaine-cursors-white";
     };
 
-    sessionVariables = {
-      # pfetch configuration
-      PF_INFO = "ascii title os kernel uptime pkgs memory";
-    };
+    sessionVariables = { };
 
     stateVersion = "22.11";
   };
