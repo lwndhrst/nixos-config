@@ -34,7 +34,7 @@
             # Enable NUR repos via config.nur.repos.<...>
             nur.nixosModules.nur
 
-            ./configuration.nix 
+            ./configuration.nix
 
             home-manager.nixosModules.home-manager {
               home-manager.users.${user} = { config, pkgs, lib, ... }: {

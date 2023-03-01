@@ -140,22 +140,22 @@
     };
 
     systemPackages = with pkgs; [
-        gcc
-        vim
-        wget
-        git
+      gcc
+      vim
+      wget
+      git
 
-        # NUR packages
-        # config.nur.repos.shadowrz.sddm-sugar-candy
+      # NUR packages
+      # config.nur.repos.shadowrz.sddm-sugar-candy
 
-        # Cursor Theme
-        bibata-cursors
+      # Cursor Theme
+      bibata-cursors
 
-        # Needed for SDDM theme
-        libsForQt5.qt5.qtgraphicaleffects
+      # Needed for SDDM theme
+      libsForQt5.qt5.qtgraphicaleffects
 
-        # Custom packages
-        (callPackage ./derivations/sddm-rose-pine-theme.nix {})
+      # Custom packages
+      (callPackage ./derivations/sddm-rose-pine-theme.nix {})
     ];
   };
 
