@@ -5,12 +5,7 @@ let
     gtk-rose-pine-theme = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
   };
 in {
-  imports = 
-    (import ./modules/editors) ++
-    (import ./modules/programs) ++
-    (import ./modules/services) ++
-    (import ./modules/shells) ++
-    (import ./modules/terminals);
+  imports = import ./modules;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -49,6 +44,7 @@ in {
       tectonic          # TeX Engine
       texlab            # TeX LSP
       tree-sitter
+      openvpn
 
       # For GTK configuration
       dconf

@@ -1,4 +1,0 @@
-[
-  ./kitty.nix
-  # ./alacritty.nix
-]
