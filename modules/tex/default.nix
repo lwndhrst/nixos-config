@@ -2,7 +2,13 @@
 
 {
   home.packages = with pkgs; [
-    tectonic    # TeX Engine
-    texlab      # TeX LSP
+    # Alternative TeX Engine
+    # tectonic
+
+    texlive.combined.scheme-full
+    latexrun
+
+    # TeX LSP
+    texlab
   ];
 }
