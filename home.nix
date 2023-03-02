@@ -76,20 +76,20 @@ in {
   gtk = {
     enable = true;
 
-    # theme = {
-    #   package = pkgs.colloid-gtk-theme;
-    #   name = "Colloid-Dark";
+    theme = {
+      # package = pkgs.colloid-gtk-theme;
+      # name = "Colloid-Dark";
 
-    #   # package = pkgs.dracula-theme;
-    #   # name = "Dracula";
-    # };
+      package = pkgs.dracula-theme;
+      name = "Dracula";
+    };
 
     iconTheme = {
       # package = pkgs.colloid-icon-theme;
       # name = "Colloid-dark";
 
       package = pkgs.papirus-icon-theme;
-      name = "Papirus-Light";
+      name = "Papirus-Dark";
     };
 
     # font = {
