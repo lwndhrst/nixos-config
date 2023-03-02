@@ -82,20 +82,14 @@ in {
 
     #   # package = pkgs.dracula-theme;
     #   # name = "Dracula";
-
-    #   # package = derivations.gtk-rose-pine-theme;
-    #   # name = "rose-pine";
     # };
 
     iconTheme = {
       # package = pkgs.colloid-icon-theme;
       # name = "Colloid-dark";
 
-      # package = pkgs.papirus-icon-theme;
-      # name = "Papirus-Dark";
-
-      package = derivations.gtk-rose-pine-theme;
-      name = "rose-pine";
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Light";
     };
 
     # font = {
