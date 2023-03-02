@@ -24,10 +24,10 @@
     in {
       nixosConfigurations = {
         nixos = lib.nixosSystem {
-          inherit pkgs system;
+          inherit lib pkgs system;
 
           specialArgs = {
-            inherit user;
+            inherit nixpkgs user;
           };
 
           modules = [ 
@@ -37,7 +37,7 @@
             ./configuration.nix
 
             home-manager.nixosModules.home-manager {
-              home-manager.users.${user} = { config, pkgs, lib, ... }: {
+              home-manager.users.${user} = { config, lib, pkgs, ... }: {
                 imports = [ ./home.nix ];
               };
             }

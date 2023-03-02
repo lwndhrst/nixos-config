@@ -4,12 +4,15 @@
 
 { config, lib, pkgs, nur, user, ... }:
 
-{
-  imports =
-    [ 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+let
+  derivations = import ./derivations {
+    inherit pkgs;
+  };
+in {
+  imports = [ 
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   boot = {
     # Use the latest available Kernel packages.
@@ -155,7 +158,7 @@
       libsForQt5.qt5.qtgraphicaleffects
 
       # Custom packages
-      (callPackage ./derivations/sddm-rose-pine-theme.nix {})
+      derivations.sddm-rose-pine-theme
     ];
   };
 

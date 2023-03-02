@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
 
-let 
-  derivations = {
-    gtk-rose-pine-theme = pkgs.callPackage ./derivations/gtk-rose-pine-theme.nix {};
+let
+  derivations = import ./derivations {
+    inherit pkgs;
   };
 in {
   imports = import ./modules;
