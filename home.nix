@@ -41,8 +41,6 @@ in {
       gh                # GitHub CLI
       rustup            # Rust Toolchain Utility
       rust-analyzer     # Rust LSP
-      tectonic          # TeX Engine
-      texlab            # TeX LSP
       tree-sitter
       openvpn
 

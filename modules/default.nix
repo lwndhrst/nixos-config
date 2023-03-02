@@ -1,8 +1,9 @@
 [
+  ./android
   ./kitty
-  ./zsh
+  ./nvim
   ./picom
   ./rofi
-  ./nvim
-  ./android
+  ./tex
+  ./zsh
 ]
