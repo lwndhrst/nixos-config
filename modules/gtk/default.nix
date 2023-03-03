@@ -32,4 +32,9 @@ in {
     #   name = "DejaVu Sans";
     # };
   };
+
+  home.file.".config/gtk-4.0" = {
+    recursive = true;
+    source = "${derivations.colloid-gtk-theme}/share/themes/Colloid-Dark-RosePine/gtk-4.0";
+  };
 }

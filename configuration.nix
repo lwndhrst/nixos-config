@@ -112,7 +112,7 @@ in {
     };
 
     # Needed for Gnome Files/Nautilus
-    gvfs.enable = true;
+    # gvfs.enable = true;
   };
 
   fonts = {
@@ -151,9 +151,6 @@ in {
 
       # Cursor Theme
       bibata-cursors
-
-      # Needed for SDDM theme
-      libsForQt5.qt5.qtgraphicaleffects
 
       # Custom packages
       derivations.sddm-rose-pine-theme

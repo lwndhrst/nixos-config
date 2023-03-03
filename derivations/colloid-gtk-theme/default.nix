@@ -23,14 +23,16 @@ lib.checkListOfEnum "${pname}: tweaks" [ "rose_pine" "nord" "black" "dracula" "r
 
 stdenvNoCC.mkDerivation rec {
   inherit pname;
-  version = "0.2";
+  version = "0.3";
 
   src = fetchFromGitHub {
     owner = "leonWindhorst";
     repo = pname;
     rev = "v${version}";
+    sha256 = "RwglSrU13F/YDCdIWko1PsV2G4ycs2fAasRykuvUykg=";
+
     # rev = "main";
-    sha256 = "1FbHWUxto+s/9alunXZFLC4Az5PPwxe7/rRcJPHIaGQ=";
+    # sha256 = "RwglSrU13F/YDCdIWko1PsV2G4ycs2fAasRykuvUykg=";
   };
 
   nativeBuildInputs = [
