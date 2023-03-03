@@ -1,5 +1,6 @@
 [
   ./android
+  ./gtk
   ./kitty
   ./nvim
   ./picom

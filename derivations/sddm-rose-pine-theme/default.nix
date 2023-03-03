@@ -1,6 +1,8 @@
-{ stdenv, fetchFromGitHub }:
+{ stdenvNoCC
+, fetchFromGitHub
+}:
 
-stdenv.mkDerivation rec {
+stdenvNoCC.mkDerivation rec {
   pname = "sddm-rose-pine-theme";
   version = "1.2";
   dontBuild = true;
@@ -9,7 +11,7 @@ stdenv.mkDerivation rec {
     owner = "leonWindhorst";
     repo = "sddm-rose-pine";
     rev = "v${version}";
-    sha256 = "sha256-sHIeck++vUS21OXcUmaKimKSoiTPxzD8ST749QSaAkQ=";
+    sha256 = "sHIeck++vUS21OXcUmaKimKSoiTPxzD8ST749QSaAkQ=";
   };
 
   installPhase = ''
