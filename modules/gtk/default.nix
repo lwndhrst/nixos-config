@@ -10,22 +10,22 @@ in {
       # package = pkgs.colloid-gtk-theme;
       # name = "Colloid-Dark";
 
-      # package = pkgs.dracula-theme;
-      # name = "Dracula";
+      package = pkgs.dracula-theme;
+      name = "Dracula";
 
-      package = derivations.colloid-gtk-theme;
-      name = "Colloid-Dark-RosePine";
+      # package = derivations.colloid-gtk-theme;
+      # name = "Colloid-Dark-RosePine";
     };
 
     iconTheme = {
       # package = pkgs.colloid-icon-theme;
       # name = "Colloid-dark";
 
-      # package = pkgs.papirus-icon-theme;
-      # name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
 
-      package = derivations.rose-pine-icon-theme;
-      name = "rose-pine";
+      # package = derivations.rose-pine-icon-theme;
+      # name = "rose-pine";
     };
 
     # font = {
@@ -35,6 +35,8 @@ in {
 
   home.file.".config/gtk-4.0" = {
     recursive = true;
-    source = "${derivations.colloid-gtk-theme}/share/themes/Colloid-Dark-RosePine/gtk-4.0";
+
+    source = "${pkgs.dracula-theme}/share/themes/Dracula/gtk-4.0";
+    # source = "${derivations.colloid-gtk-theme}/share/themes/Colloid-Dark-RosePine/gtk-4.0";
   };
 }
