@@ -10,6 +10,9 @@
       # ];
 
       shadow = true;
+      shadow-exclude = [
+        "class_g = 'Rofi'"
+      ];
     };
   };
 }

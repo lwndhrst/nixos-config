@@ -11,7 +11,7 @@
     theme = "Rosé Pine";
     extraConfig = ''
       background            #0c0b11
-      background_opacity    0.95
+      background_opacity    0.90
       disable_ligatures     always
     '';
   };

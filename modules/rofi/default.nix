@@ -33,7 +33,7 @@
     @import "rounded-common.rasi"
 
     window {
-        border-radius: 8px;
+        border-radius: 12px;
     }
 
     inputbar, message, element {
