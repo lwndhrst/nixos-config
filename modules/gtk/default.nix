@@ -17,16 +17,16 @@ in {
       # name = "Colloid-Dark-RosePine";
     };
 
-    iconTheme = {
-      # package = pkgs.colloid-icon-theme;
-      # name = "Colloid-dark";
+    # iconTheme = {
+    #   # package = pkgs.colloid-icon-theme;
+    #   # name = "Colloid-dark";
 
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
+    #   package = pkgs.papirus-icon-theme;
+    #   name = "Papirus-Dark";
 
-      # package = derivations.rose-pine-icon-theme;
-      # name = "rose-pine";
-    };
+    #   # package = derivations.rose-pine-icon-theme;
+    #   # name = "rose-pine";
+    # };
 
     # font = {
     #   name = "DejaVu Sans";
@@ -35,7 +35,6 @@ in {
 
   home.file.".config/gtk-4.0" = {
     recursive = true;
-
     source = "${pkgs.dracula-theme}/share/themes/Dracula/gtk-4.0";
     # source = "${derivations.colloid-gtk-theme}/share/themes/Colloid-Dark-RosePine/gtk-4.0";
   };
