@@ -12,6 +12,25 @@
 let
   pname = "hardcode-tray";
 
+  # None of this is working and i have no clue why at this point
+  steam-data = ''
+    {
+      \"name\": \"Steam\",
+      \"app_path\": [
+        \"{userhome}/.steam/\"
+      ],
+      \"icons_path\": [
+        \"/run/current-system/sw/share/pixmaps/\"
+      ],
+      \"icons\": {
+        \"indicator\": {
+          \"original\": \"steam_tray_mono.png\",
+          \"theme\": \"steam_tray_mono\"
+        }
+      }
+    }
+  '';
+
 in stdenvNoCC.mkDerivation rec {
   inherit pname;
   version = "4.3";
@@ -28,10 +47,10 @@ in stdenvNoCC.mkDerivation rec {
     pkg-config
     gobject-introspection
     wrapGAppsHook
+    gtk3
   ];
 
   buildInputs = [
-    gtk3
     meson
     ninja
   ];
@@ -48,6 +67,9 @@ in stdenvNoCC.mkDerivation rec {
 
     meson $out/tmp/builddir --prefix=$out
     ninja -C $out/tmp/builddir install
+
+    # Only trying to use this for steam atm
+    echo "${steam-data}" > $out/share/hardcode-tray/database/steam.json
 
     export PATH=$out/bin:$PATH
 

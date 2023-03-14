@@ -39,9 +39,7 @@ in {
     # };
   };
 
-  home.packages = with pkgs; [
-    # derivations.hardcode-tray
-  ];
+  # home.packages = with pkgs; [ derivations.hardcode-tray ];
 
   home.file = {
     ".config/gtk-4.0" = {
@@ -49,9 +47,9 @@ in {
       source = "${pkgs.dracula-theme}/share/themes/Dracula/gtk-4.0";
     };
 
-    # ".local/share/icons/Papirus-Dark" = {
-    #   source = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
-    # };
+    ".local/share/icons/Papirus-Dark" = {
+      source = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
+    };
 
     # ".local/share/icons/Vimix-dark" = {
     #   source = "${pkgs.vimix-icon-theme}/share/icons/Vimix-dark";
