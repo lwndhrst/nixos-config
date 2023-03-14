@@ -6,6 +6,7 @@
 
 let
   derivations = import ./derivations { inherit pkgs; };
+
 in {
   imports = [ 
     # Include the results of the hardware scan.
