@@ -17,7 +17,8 @@ in {
       xclip             # Access X clipboard from terminal
 
       # Video/Audio
-      feh               # Image Viewer
+      feh               # Raster-Image Viewer
+      librsvg           # SVG Viewer
       pavucontrol       # Pulse Audio Settings
 
       # File Management
