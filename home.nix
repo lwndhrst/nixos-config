@@ -19,7 +19,7 @@ in {
 
       # Video/Audio
       feh               # Raster-Image Viewer
-      librsvg           # SVG Viewer
+      librsvg           # SVG Conversion Utility
       pavucontrol       # Pulse Audio Settings
 
       # File Management
