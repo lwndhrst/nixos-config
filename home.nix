@@ -34,7 +34,6 @@ in {
       thunderbird       # Email
       zathura           # PDF Viewer
       gimp
-      flameshot         # Screenshot Tool
       zotero            # Literature Manager
 
       # Dev stuff

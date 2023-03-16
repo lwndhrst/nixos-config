@@ -1,5 +1,6 @@
 [
   ./android
+  ./flameshot
   ./gtk
   ./kitty
   ./nvim

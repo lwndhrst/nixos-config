@@ -1,4 +1,4 @@
-{ home, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   derivations = import ../../derivations { inherit pkgs; };
