@@ -17,7 +17,7 @@ in {
     network-manager-applet.enable = true;
 
     # PulseAudio systray
-    pasystray.enable = true;
+    # pasystray.enable = true;
   };
 
   home = {
