@@ -18,7 +18,7 @@ git clone https://github.com/leonWindhorst/nixos-config /mnt/home/<user>/.config
 ```
 
 ```
-cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/<user>/.config/nixos
+cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/<user>/.config/nixos/hosts/<host>/
 ```
 
 ```
