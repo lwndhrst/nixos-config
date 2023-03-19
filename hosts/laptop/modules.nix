@@ -1,4 +1,5 @@
 [
+  ../../modules/android
   ../../modules/flameshot
   ../../modules/gtk
   ../../modules/kitty
