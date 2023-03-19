@@ -33,6 +33,7 @@ in {
       feh               # Raster-Image Viewer
       librsvg           # SVG Conversion Utility
       pavucontrol       # PulseAudio Settings
+      pamixer           # PulseAudio Mixer CLI
 
       # File Management
       unzip
