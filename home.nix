@@ -8,6 +8,14 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
+  services = {
+    # Network Manager systray
+    network-manager-applet.enable = true;
+
+    # PulseAudio systray
+    pasystray.enable = true;
+  };
+
   home = {
     packages = with pkgs; [
       # Term Utils
@@ -39,7 +47,7 @@ in {
       # Dev stuff
       gh                # GitHub CLI
       rustup            # Rust Toolchain Utility
-      rust-analyzer     # Rust LSP
+      rust-analyzer     # Rust LSPapplet
       tree-sitter
       openvpn
 
