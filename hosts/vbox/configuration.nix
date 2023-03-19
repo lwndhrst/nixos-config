@@ -2,10 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, nur, user, ... }:
+{ config
+, lib
+, pkgs
+, nur
+, user
+, ... 
+}:
 
 let
-  derivations = import ./derivations { inherit pkgs; };
+  derivations = import ../../derivations { inherit pkgs; };
 
 in {
   imports = [ 
@@ -15,7 +21,7 @@ in {
 
   boot = {
     # Use the latest available Kernel packages.
-    kernelPackages = pkgs.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_latest;
 
     # Use the systemd-boot EFI boot loader.
     loader = {
@@ -52,7 +58,6 @@ in {
   services = {
     xserver = {
       enable = true;
-      videoDrivers = [ "amdgpu" ];
 
       layout = "us";
       xkbOptions = "caps:escape";
@@ -76,9 +81,9 @@ in {
 
         defaultSession = "none+awesome";
 
-        setupCommands = ''
-          ${pkgs.xorg.xrandr}/bin/xrandr -s 1920x1080 -r 240
-        '';
+        # setupCommands = ''
+        #   ${pkgs.xorg.xrandr}/bin/xrandr -s 1920x1080 -r 240
+        # '';
       };
 
       windowManager.awesome.enable = true;
@@ -88,29 +93,29 @@ in {
     };
 
     # Printer stuff
-    printing.enable = true;
+    # printing.enable = true;
 
     # Needed for wireless printer/scanner
-    avahi = { 
-      enable = true;
-      nssmdns = true;
-      publish = {
-        enable = true;
-        addresses = true;
-        userServices = true;
-      };
-    };
+    # avahi = { 
+    #   enable = true;
+    #   nssmdns = true;
+    #   publish = {
+    #     enable = true;
+    #     addresses = true;
+    #     userServices = true;
+    #   };
+    # };
 
     # Sound
-    pipewire = {
-      enable = true;
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
-      pulse.enable = true;
-      jack.enable = true;
-    };
+    # pipewire = {
+    #   enable = true;
+    #   alsa = {
+    #     enable = true;
+    #     support32Bit = true;
+    #   };
+    #   pulse.enable = true;
+    #   jack.enable = true;
+    # };
 
     # Needed for Gnome Files/Nautilus
     # gvfs.enable = true;
@@ -158,9 +163,9 @@ in {
     ];
   };
 
-  programs = {
-    steam.enable = true;
-  };
+  # programs = {
+  #   steam.enable = true;
+  # };
 
   nix = {
     settings.auto-optimise-store = true;

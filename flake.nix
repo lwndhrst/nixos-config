@@ -14,7 +14,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -25,27 +25,11 @@
       lib = nixpkgs.lib;
 
     in {
-      nixosConfigurations = {
-        nixos = lib.nixosSystem {
-          inherit lib pkgs system;
-
-          specialArgs = {
-            inherit nixpkgs user;
-          };
-
-          modules = [ 
-            # Enable NUR repos via config.nur.repos.<...>
-            nur.nixosModules.nur
-
-            ./configuration.nix
-
-            home-manager.nixosModules.home-manager {
-              home-manager.users.${user} = { config, lib, pkgs, ... }: {
-                imports = [ ./home.nix ];
-              };
-            }
-          ];
-        };
-      };
+      nixosConfigurations = (
+        import ./hosts {
+          inherit (nixpkgs) lib;
+          inherit inputs nixpkgs home-manager nur user;
+        }
+      );
     };
 }

@@ -1,10 +1,14 @@
-{ config, lib, pkgs, ... }:
+{ config
+, lib
+, pkgs
+, ... 
+}:
 
 let
-  derivations = import ./derivations { inherit pkgs; };
+  derivations = import ../../derivations { inherit pkgs; };
 
 in {
-  imports = import ./modules;
+  imports = import ./modules.nix;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -28,18 +32,18 @@ in {
       # Video/Audio
       feh               # Raster-Image Viewer
       librsvg           # SVG Conversion Utility
-      pavucontrol       # Pulse Audio Settings
+      # pavucontrol       # Pulse Audio Settings
 
       # File Management
       unzip
       ranger            # Terminal File Manager
 
       # Apps
-      discord
+      # discord
       firefox           # Browser
-      zoom-us           # Video Conferencing
-      portfolio         # Portfolio Performance
-      thunderbird       # Email
+      # zoom-us           # Video Conferencing
+      # portfolio         # Portfolio Performance
+      # thunderbird       # Email
       zathura           # PDF Viewer
       gimp
       zotero            # Literature Manager
@@ -47,7 +51,7 @@ in {
       # Dev stuff
       gh                # GitHub CLI
       rustup            # Rust Toolchain Utility
-      rust-analyzer     # Rust LSPapplet
+      rust-analyzer     # Rust LSP
       tree-sitter
       openvpn
 
