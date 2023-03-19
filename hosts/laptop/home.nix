@@ -28,6 +28,7 @@ in {
       ripgrep           # Grep but Rust
       fd                # Alternative to find
       xclip             # Access X clipboard from terminal
+      mons              # 2-Monitor Setup Script
 
       # Video/Audio
       feh               # Raster-Image Viewer

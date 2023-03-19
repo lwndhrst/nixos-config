@@ -28,11 +28,13 @@ in {
       ripgrep           # Grep but Rust
       fd                # Alternative to find
       xclip             # Access X clipboard from terminal
+      mons              # 2-Monitor Setup Script
 
       # Video/Audio
       feh               # Raster-Image Viewer
       librsvg           # SVG Conversion Utility
       pavucontrol       # PulseAudio Settings
+      pamixer           # PulseAudio Mixer CLI
 
       # File Management
       unzip
