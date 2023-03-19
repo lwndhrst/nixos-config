@@ -32,7 +32,7 @@ in {
       # Video/Audio
       feh               # Raster-Image Viewer
       librsvg           # SVG Conversion Utility
-      pavucontrol       # Pulse Audio Settings
+      pavucontrol       # PulseAudio Settings
 
       # File Management
       unzip

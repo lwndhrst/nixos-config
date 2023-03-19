@@ -59,7 +59,6 @@ in {
   services = {
     xserver = {
       enable = true;
-      videoDrivers = [ "amdgpu" ];
 
       layout = "us";
       xkbOptions = "caps:escape";
@@ -84,14 +83,17 @@ in {
         defaultSession = "none+awesome";
 
         # setupCommands = ''
-        #   ${pkgs.xorg.xrandr}/bin/xrandr -s 1920x1080 -r 240
+        #   ${pkgs.xorg.xrandr}/bin/xrandr -s 1920x1080
         # '';
       };
 
       windowManager.awesome.enable = true;
 
       # Enable touchpad support (enabled default in most desktopManager).
-      libinput.enable = true;
+      libinput = {
+        enable = true;
+        touchpad.naturalScrolling = true;
+      };
     };
 
     # Printer stuff
@@ -121,6 +123,9 @@ in {
 
     # Needed for Gnome Files/Nautilus
     # gvfs.enable = true;
+
+    # Daemon for controlling brightness with brightness buttons
+    illum.enable = true;
   };
 
   fonts = {
@@ -165,9 +170,9 @@ in {
     ];
   };
 
-  programs = {
-    steam.enable = true;
-  };
+  # programs = {
+  #   steam.enable = true;
+  # };
 
   nix = {
     settings.auto-optimise-store = true;

@@ -15,9 +15,6 @@ in {
   services = {
     # Network Manager systray
     network-manager-applet.enable = true;
-
-    # PulseAudio systray
-    # pasystray.enable = true;
   };
 
   home = {
@@ -32,7 +29,7 @@ in {
       # Video/Audio
       feh               # Raster-Image Viewer
       librsvg           # SVG Conversion Utility
-      # pavucontrol       # Pulse Audio Settings
+      # pavucontrol       # PulseAudio Settings
 
       # File Management
       unzip
