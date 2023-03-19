@@ -5,7 +5,7 @@ Personal NixOS configuration
 
 ## Setup
 
-Available hosts are:
+Available hosts:
 - desktop
 - laptop
 - vbox
