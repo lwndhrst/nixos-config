@@ -30,6 +30,7 @@ in {
       fd                # Alternative to find
       xclip             # Access X clipboard from terminal
       mons              # 2-Monitor Setup Script
+      acpi              # Battery Status Fetcher
 
       # Video/Audio
       feh               # Raster-Image Viewer

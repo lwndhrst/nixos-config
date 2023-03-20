@@ -126,6 +126,14 @@ in {
 
     # Daemon for controlling brightness with brightness buttons
     illum.enable = true;
+
+    # Rebind power button to suspend
+    logind = {
+      extraConfig = ''
+        # suspend when power button is pressed
+        HandlePowerKey=suspend
+      '';
+    };
   };
 
   fonts = {
