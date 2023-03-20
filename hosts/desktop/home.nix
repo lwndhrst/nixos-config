@@ -6,9 +6,10 @@
 
 let
   derivations = import ../../derivations { inherit pkgs; };
+  modules = import ../../modules {};
 
 in {
-  imports = import ./modules.nix;
+  imports = modules.desktop;
 
   nixpkgs.config.allowUnfree = true;
 
