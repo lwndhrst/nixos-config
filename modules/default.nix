@@ -1,5 +1,3 @@
-{ ... }:
-
 let
   shared = [
     ./flameshot
