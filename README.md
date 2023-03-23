@@ -14,7 +14,7 @@ Available hosts:
 ### Fresh installation
 
 ```
-git clone https://github.com/leonWindhorst/nixos-config /mnt/home/<user>/.config/nixos
+git clone https://github.com/lwndhrst/nixos-config /mnt/home/<user>/.config/nixos
 ```
 
 ```

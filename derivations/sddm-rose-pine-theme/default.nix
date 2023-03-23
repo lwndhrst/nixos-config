@@ -13,7 +13,7 @@ stdenvNoCC.mkDerivation rec {
   ];
 
   src = fetchFromGitHub {
-    owner = "leonWindhorst";
+    owner = "lwndhrst";
     repo = "sddm-rose-pine";
     rev = "v${version}";
     sha256 = "sHIeck++vUS21OXcUmaKimKSoiTPxzD8ST749QSaAkQ=";
