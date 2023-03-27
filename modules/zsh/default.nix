@@ -20,8 +20,6 @@
 
       # Spaceship async jobs aren't working correctly, so disable them for now
       export SPACESHIP_PROMPT_ASYNC=false
-
-      autoload -U promptinit; promptinit
     '';
   };
 }
