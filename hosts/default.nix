@@ -14,80 +14,50 @@ let
     config.allowUnfree = true;
   };
   lib = nixpkgs.lib;
+  nixosSystem = { hostConfig }: lib.nixosSystem {
+    inherit lib pkgs system;
+
+    specialArgs = {
+      inherit nixpkgs user;
+    };
+
+    modules = [ 
+      # Enable NUR repos via config.nur.repos.<...>
+      nur.nixosModules.nur
+
+      ./configuration.nix
+      hostConfig.system
+
+      home-manager.nixosModules.home-manager {
+        home-manager.users.${user} = { config, lib, pkgs, ... }: {
+          imports = [
+            ./home.nix
+            hostConfig.home
+          ];
+        };
+      }
+    ];
+  };
 
 in {
-  desktop = lib.nixosSystem {
-    inherit lib pkgs system;
-
-    specialArgs = {
-      inherit nixpkgs user;
+  desktop = nixosSystem {
+    hostConfig = { 
+      system = ./desktop/configuration.nix;
+      home = ./desktop/home.nix;
     };
-
-    modules = [ 
-      # Enable NUR repos via config.nur.repos.<...>
-      nur.nixosModules.nur
-
-      ./configuration.nix
-      ./desktop/configuration.nix
-
-      home-manager.nixosModules.home-manager {
-        home-manager.users.${user} = { config, lib, pkgs, ... }: {
-          imports = [
-            ./home.nix
-            ./desktop/home.nix
-          ];
-        };
-      }
-    ];
   };
 
-  laptop = lib.nixosSystem {
-    inherit lib pkgs system;
-
-    specialArgs = {
-      inherit nixpkgs user;
+  laptop = nixosSystem {
+    hostConfig = { 
+      system = ./laptop/configuration.nix;
+      home = ./laptop/home.nix;
     };
-
-    modules = [ 
-      # Enable NUR repos via config.nur.repos.<...>
-      nur.nixosModules.nur
-
-      ./configuration.nix
-      ./laptop/configuration.nix
-
-      home-manager.nixosModules.home-manager {
-        home-manager.users.${user} = { config, lib, pkgs, ... }: {
-          imports = [
-            ./home.nix
-            ./laptop/home.nix
-          ];
-        };
-      }
-    ];
   };
 
-  vbox = lib.nixosSystem {
-    inherit lib pkgs system;
-
-    specialArgs = {
-      inherit nixpkgs user;
+  vbox = nixosSystem {
+    hostConfig = { 
+      system = ./vbox/configuration.nix;
+      home = ./vbox/home.nix;
     };
-
-    modules = [ 
-      # Enable NUR repos via config.nur.repos.<...>
-      nur.nixosModules.nur
-
-      ./configuration.nix
-      ./vbox/configuration.nix
-
-      home-manager.nixosModules.home-manager {
-        home-manager.users.${user} = { config, lib, pkgs, ... }: {
-          imports = [
-            ./home.nix
-            ./vbox/home.nix
-          ];
-        };
-      }
-    ];
   };
 }
