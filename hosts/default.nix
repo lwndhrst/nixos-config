@@ -27,11 +27,15 @@ in {
       # Enable NUR repos via config.nur.repos.<...>
       nur.nixosModules.nur
 
+      ./configuration.nix
       ./desktop/configuration.nix
 
       home-manager.nixosModules.home-manager {
         home-manager.users.${user} = { config, lib, pkgs, ... }: {
-          imports = [ ./desktop/home.nix ];
+          imports = [
+            ./home.nix
+            ./desktop/home.nix
+          ];
         };
       }
     ];
@@ -48,11 +52,15 @@ in {
       # Enable NUR repos via config.nur.repos.<...>
       nur.nixosModules.nur
 
+      ./configuration.nix
       ./laptop/configuration.nix
 
       home-manager.nixosModules.home-manager {
         home-manager.users.${user} = { config, lib, pkgs, ... }: {
-          imports = [ ./laptop/home.nix ];
+          imports = [
+            ./home.nix
+            ./laptop/home.nix
+          ];
         };
       }
     ];
@@ -69,11 +77,15 @@ in {
       # Enable NUR repos via config.nur.repos.<...>
       nur.nixosModules.nur
 
+      ./configuration.nix
       ./vbox/configuration.nix
 
       home-manager.nixosModules.home-manager {
         home-manager.users.${user} = { config, lib, pkgs, ... }: {
-          imports = [ ./vbox/home.nix ];
+          imports = [
+            ./home.nix
+            ./vbox/home.nix
+          ];
         };
       }
     ];
