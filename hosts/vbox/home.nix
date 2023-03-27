@@ -42,7 +42,6 @@ in {
       # zoom-us           # Video Conferencing
       # portfolio         # Portfolio Performance
       # thunderbird       # Email
-      zathura           # PDF Viewer
       gimp
       zotero            # Literature Manager
 

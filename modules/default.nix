@@ -7,6 +7,7 @@ let
     ./picom
     ./rofi
     ./tex
+    ./zathura
     ./zsh
   ];
 
