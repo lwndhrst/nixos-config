@@ -1,7 +1,5 @@
 # nixos-config
 
-Personal NixOS configuration
-
 
 ## Setup
 
@@ -28,8 +26,7 @@ sudo nixos-install --flake /mnt/home/<user>/.config/nixos#<host>
 
 ### Rebuild
 
-Note: Make sure to stage new files if using git before rebuilding as they will
-be ignored otherwise.
+Make sure to <code>git add</code> new files before rebuilding as they will be ignored otherwise.
 
 ```
 sudo nixos-rebuild switch --flake ~/.config/nixos#<host>
