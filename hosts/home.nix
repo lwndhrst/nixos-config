@@ -6,7 +6,6 @@
 
 let
   derivations = import ../derivations { inherit pkgs; };
-  modules = import ../modules;
 
 in {
   nixpkgs.config.allowUnfree = true;
@@ -45,13 +44,14 @@ in {
       rustup            # Rust Toolchain Utility
       rust-analyzer     # Rust LSP
       tree-sitter
+      stylua
       openvpn
 
       # For GTK configuration
       dconf
 
       # Wine for both 32 and 64 bit
-      wineWowPackages.stableFull
+      # wineWowPackages.stableFull
     ];
 
     pointerCursor = {

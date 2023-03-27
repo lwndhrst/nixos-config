@@ -3,10 +3,10 @@
 {
   home.packages = with pkgs; [
     # Alternative TeX Engine
-    # tectonic
+    tectonic
 
-    texlive.combined.scheme-full
-    latexrun
+    # texlive.combined.scheme-full
+    # latexrun
 
     # TeX LSP
     texlab
