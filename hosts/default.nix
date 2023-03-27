@@ -14,7 +14,7 @@ let
     config.allowUnfree = true;
   };
   lib = nixpkgs.lib;
-  nixosSystem = { hostConfig }: lib.nixosSystem {
+  nixosSystem = { host }: lib.nixosSystem {
     inherit lib pkgs system;
 
     specialArgs = {
@@ -26,13 +26,13 @@ let
       nur.nixosModules.nur
 
       ./configuration.nix
-      hostConfig.system
+      host.config
 
       home-manager.nixosModules.home-manager {
         home-manager.users.${user} = { config, lib, pkgs, ... }: {
           imports = [
             ./home.nix
-            hostConfig.home
+            host.home
           ];
         };
       }
@@ -41,22 +41,22 @@ let
 
 in {
   desktop = nixosSystem {
-    hostConfig = { 
-      system = ./desktop/configuration.nix;
+    host = { 
+      config = ./desktop/configuration.nix;
       home = ./desktop/home.nix;
     };
   };
 
   laptop = nixosSystem {
-    hostConfig = { 
-      system = ./laptop/configuration.nix;
+    host = { 
+      config = ./laptop/configuration.nix;
       home = ./laptop/home.nix;
     };
   };
 
   vbox = nixosSystem {
-    hostConfig = { 
-      system = ./vbox/configuration.nix;
+    host = { 
+      config = ./vbox/configuration.nix;
       home = ./vbox/home.nix;
     };
   };
