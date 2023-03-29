@@ -1,6 +1,8 @@
 { lib
 , inputs
+, system
 , nixpkgs
+, pkgs
 , home-manager
 , nur
 , user
@@ -8,12 +10,6 @@
 }:
 
 let
-  system = "x86_64-linux";
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
-  lib = nixpkgs.lib;
   nixosSystem = { host }: lib.nixosSystem {
     inherit lib pkgs system;
 
