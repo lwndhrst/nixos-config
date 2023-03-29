@@ -8,8 +8,6 @@ let
   derivations = import ../derivations { inherit pkgs; };
 
 in {
-  nixpkgs.config.allowUnfree = true;
-
   services = {
     # Network Manager systray
     network-manager-applet.enable = true;

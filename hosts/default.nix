@@ -1,8 +1,8 @@
 { lib
-, inputs
 , system
 , nixpkgs
 , pkgs
+, config
 , home-manager
 , nur
 , user
@@ -25,6 +25,10 @@ let
       host.config
 
       home-manager.nixosModules.home-manager {
+        home-manager.extraSpecialArgs = {
+          inherit nixpkgs pkgs;
+        };
+
         home-manager.users.${user} = { config, lib, pkgs, ... }: {
           imports = [
             ./home.nix

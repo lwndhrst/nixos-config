@@ -11,8 +11,6 @@ let
 in {
   imports = modules.laptop;
 
-  nixpkgs.config.allowUnfree = true;
-
   services = {
     # PulseAudio systray
     pasystray.enable = true;
