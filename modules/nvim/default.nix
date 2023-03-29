@@ -7,6 +7,9 @@
 
     # list of available plugins in the overlay:
     # https://github.com/NixNeovim/NixNeovimPlugins/blob/main/plugins.md
+    #
+    # plugins are still configured via lua for now:
+    # https://github.com/lwndhrst/dotfiles-nvim
     plugins = with pkgs.vimExtraPlugins; [
       plenary-nvim
 
