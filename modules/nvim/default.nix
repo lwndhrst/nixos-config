@@ -50,8 +50,6 @@
       vimtex
 
       # Themes
-      gruvbox-material
-      catppuccin
       rose-pine
     ];
   };
