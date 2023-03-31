@@ -41,7 +41,6 @@
       # Misc
       nvim-web-devicons
       telescope-nvim
-      nvim-tree-lua
       lualine-nvim
       dashboard-nvim
       harpoon
