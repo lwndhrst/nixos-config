@@ -23,6 +23,7 @@ in {
       xclip             # Access X clipboard from terminal
       mons              # 2-Monitor Setup Script
       acpi              # Battery Status Fetcher
+      libqalculate      # Calculator/Equation Solver CLI (qalc)
 
       # Video/Audio
       feh               # Raster-Image Viewer
