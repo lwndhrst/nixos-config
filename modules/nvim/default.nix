@@ -44,6 +44,7 @@
       lualine-nvim
       dashboard-nvim
       harpoon
+      nvim-colorizer-lua
 
       # Latex
       vimtex
