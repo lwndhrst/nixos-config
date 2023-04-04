@@ -5,7 +5,7 @@
 
 let
   cmd = "path-of-building";
-  dataPathWin = "C:\\ProgramData\\PathOfBuilding\\Builds";
+  dataPathWine = "C:\\ProgramData\\PathOfBuilding\\Builds";
   dataPathUnix = "~/.wine/drive_c/ProgramData/PathOfBuilding/Builds";
 
 in stdenvNoCC.mkDerivation rec {
@@ -56,7 +56,7 @@ in stdenvNoCC.mkDerivation rec {
           defaultItemAffixQuality=\"0.5\" 
           defaultGemQuality=\"0\" 
           decimalSeparator=\".\" 
-          buildPath=\"${dataPathWin}\\\"
+          buildPath=\"${dataPathWine}\\\"
         />
       </PathOfBuilding>
     " > $out/etc/Settings.xml
