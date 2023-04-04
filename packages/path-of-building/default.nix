@@ -6,7 +6,7 @@
 let
   cmd = "path-of-building";
   dataPathWin = "C:\\ProgramData\\PathOfBuilding\\Builds";
-  dataPathUnix = ".wine/drive_c/ProgramData/PathOfBuilding/Builds";
+  dataPathUnix = "~/.wine/drive_c/ProgramData/PathOfBuilding/Builds";
 
 in stdenvNoCC.mkDerivation rec {
   pname = "path-of-building";
@@ -63,12 +63,12 @@ in stdenvNoCC.mkDerivation rec {
 
 
     # This is the script that will be added to PATH.
-    # It will run PoB via wine and create the data dir if it doesn't exist yet.
+    # It will run PoB via wine and create the data dir on wine's C:\ drive if it doesn't exist yet.
     mkdir -p $out/bin
     echo "\
       ${wineWowPackages.stableFull}/bin/wine $out/etc/Path\ Of\ Building.exe &
-      if [ ! -d ~/${dataPathUnix} ]; then
-        mkdir -p ~/${dataPathUnix}
+      if [ ! -d ${dataPathUnix} ]; then
+        mkdir -p ${dataPathUnix}
       fi
     " > $out/bin/${cmd}
     chmod +x $out/bin/${cmd}
