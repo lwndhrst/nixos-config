@@ -27,6 +27,8 @@ in {
       zoom-us           # Video Conferencing
       portfolio         # Portfolio Performance
       thunderbird       # Email
+
+      derivations.path-of-building
     ];
   };
 }
