@@ -79,7 +79,7 @@ in stdenvNoCC.mkDerivation rec {
     Type=Application
     Terminal=false
     Exec=$out/bin/${cmd}
-    Name=Path Of Building
+    Name=Path of Building
     " > $out/share/applications/path-of-building.desktop
   '';
 }
