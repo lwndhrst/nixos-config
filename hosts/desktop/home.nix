@@ -5,8 +5,8 @@
 }:
 
 let
-  derivations = import ../../derivations { inherit pkgs; };
   modules = import ../../modules;
+  packages = import ../../packages { inherit pkgs; };
 
 in {
   imports = modules.desktop;
@@ -28,7 +28,7 @@ in {
       portfolio         # Portfolio Performance
       thunderbird       # Email
 
-      derivations.path-of-building
+      packages.path-of-building
     ];
   };
 }

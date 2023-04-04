@@ -7,7 +7,7 @@
 }:
 
 let
-  derivations = import ../../derivations { inherit pkgs; };
+  packages = import ../../packages { inherit pkgs; };
 
 in {
   imports = [ 

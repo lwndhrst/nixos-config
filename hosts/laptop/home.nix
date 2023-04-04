@@ -5,8 +5,8 @@
 }:
 
 let
-  derivations = import ../../derivations { inherit pkgs; };
   modules = import ../../modules;
+  packages = import ../../packages { inherit pkgs; };
 
 in {
   imports = modules.laptop;

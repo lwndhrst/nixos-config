@@ -5,7 +5,7 @@
 }:
 
 let
-  derivations = import ../derivations { inherit pkgs; };
+  packages = import ../packages { inherit pkgs; };
 
 in {
   services = {
@@ -48,9 +48,6 @@ in {
 
       # For GTK configuration
       dconf
-
-      # Wine for both 32 and 64 bit
-      # wineWowPackages.stableFull
     ];
 
     pointerCursor = {

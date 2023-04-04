@@ -7,7 +7,7 @@
 }:
 
 let
-  derivations = import ../derivations { inherit pkgs; };
+  packages = import ../packages { inherit pkgs; };
 
 in {
   boot = {
@@ -100,7 +100,7 @@ in {
       bibata-cursors
 
       # Custom packages
-      derivations.sddm-rose-pine-theme
+      packages.sddm-rose-pine-theme
     ];
   };
 
