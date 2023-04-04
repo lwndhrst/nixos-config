@@ -27,6 +27,7 @@ in stdenvNoCC.mkDerivation rec {
     mkdir -p $out/etc
     cp -r $src/* $out/etc
 
+
     # The build path has to be set to a writeable directory via PoB's Settings.xml. 
     # In this case we use a dir on the wine C:\ drive, which is located at $HOME/.wine/drive_c/.
     echo "\
