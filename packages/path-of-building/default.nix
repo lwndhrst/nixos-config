@@ -71,8 +71,7 @@ in stdenvNoCC.mkDerivation rec {
 
     # Remove PoB's builtin update error message.
     # The messages defined in ./UpdateCheck.lua will be used instead.
-    chmod +w $out/etc/Modules/
-    chmod +w $out/etc/Modules/Main.lua
+    chmod +w $out/etc/Modules $out/etc/Modules/Main.lua
     sed -i 's/Update check failed!\\n//g' $out/etc/Modules/Main.lua
 
 
