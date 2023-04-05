@@ -65,6 +65,11 @@ in stdenvNoCC.mkDerivation rec {
 
     chmod +w $out/etc/UpdateCheck.lua
     echo '${lib.strings.fileContents ./UpdateCheck.lua}' > $out/etc/UpdateCheck.lua
+  
+
+    chmod +w $out/etc/Modules/
+    chmod +w $out/etc/Modules/Main.lua
+    sed -i 's/Update check failed!\\n//g' $out/etc/Modules/Main.lua
 
 
     # This is the script that will be added to PATH.

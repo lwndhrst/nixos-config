@@ -5,6 +5,9 @@
 --
 local connectionProtocol, proxyURL = ...
 
+local updateAvailableMsg = "Update available!\n"
+local updateCheckFailedMsg = "Update check failed!\n"
+
 local xml = require("xml")
 local sha1 = require("sha1")
 local curl = require("lcurl.safe")
@@ -122,7 +125,7 @@ if localManXML and localManXML[1].elem == "PoBVersion" then
 end
 if not localVer or not localSource or not localBranch or not next(localFiles) then
     ConPrintf("Update check failed: invalid local manifest")
-    return nil, "Invalid local manifest"
+    return nil, updateCheckFailedMsg .. "Invalid local manifest"
 end
 localSource = localSource:gsub("{branch}", localBranch)
 
@@ -132,7 +135,8 @@ local remoteManText, errMsg = downloadFileText(localSource, "manifest.xml")
 if not remoteManText then
     ConPrintf("Update check failed: could not download version manifest")
     return nil,
-        "Could not download version manifest.\nReason: "
+        updateCheckFailedMsg
+            .. "Could not download version manifest.\nReason: "
             .. errMsg
             .. "\nCheck your internet connectivity.\nIf you are using a proxy, specify it in Options."
 end
@@ -148,11 +152,11 @@ if remoteManXML and remoteManXML[1].elem == "PoBVersion" then
 end
 if not remoteVer then
     ConPrintf("Update check failed: invalid remote manifest")
-    return nil, "Invalid remote manifest"
+    return nil, updateCheckFailedMsg .. "Invalid remote manifest"
 end
 
 -- Display notification if there is an update available.
 -- On NixOS it cannot be applied automatically, so the package version has to be updated manually.
 if remoteVer > localVer then
-    return nil, "Update available!\nLatest version: " .. remoteVer .. "\nUpdate your nix package you lazy fuck!"
+    return nil, updateAvailableMsg .. "Latest version: " .. remoteVer .. "\nUpdate your nix package you lazy fuck!"
 end
