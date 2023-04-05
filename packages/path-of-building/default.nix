@@ -25,8 +25,8 @@ in stdenvNoCC.mkDerivation rec {
   };
 
   installPhase = ''
-    mkdir -p $out/run
-    cp -r $src/* $out/run
+    mkdir -p $out/src
+    cp -r $src/* $out/src
 
 
     # The build path has to be set to a writeable directory via PoB's Settings.xml. 
@@ -59,26 +59,26 @@ in stdenvNoCC.mkDerivation rec {
           buildPath="${dataPathWine}"
         />
       </PathOfBuilding>
-    ' > $out/run/Settings.xml
+    ' > $out/src/Settings.xml
 
 
     # Replace PoB's update script, since the version is controlled by this package.
     # The replacement update script will simply display a notification if a new version is available.
-    chmod +w $out/run/UpdateCheck.lua
-    echo '${lib.strings.fileContents ./UpdateCheck.lua}' > $out/run/UpdateCheck.lua
+    chmod +w $out/src/UpdateCheck.lua
+    echo '${lib.strings.fileContents ./UpdateCheck.lua}' > $out/src/UpdateCheck.lua
   
 
     # Remove PoB's builtin update error message.
     # The messages defined in ./UpdateCheck.lua will be used instead.
-    chmod +w $out/run/Modules $out/run/Modules/Main.lua
-    sed -i 's/Update check failed!\\n//g' $out/run/Modules/Main.lua
+    chmod +w $out/src/Modules $out/src/Modules/Main.lua
+    sed -i 's/Update check failed!\\n//g' $out/src/Modules/Main.lua
 
 
     # This is the script that will be added to PATH.
     # It will run PoB via wine and create the data dir on wine's C:\ drive if it doesn't exist yet.
     mkdir -p $out/bin
     echo "
-      ${wineWowPackages.stableFull}/bin/wine $out/run/Path\ Of\ Building.exe &
+      ${wineWowPackages.stableFull}/bin/wine $out/src/Path\ Of\ Building.exe &
       if [ ! -d ${dataPathUnix} ]; then
         mkdir -p ${dataPathUnix}
       fi
@@ -98,4 +98,9 @@ in stdenvNoCC.mkDerivation rec {
       Name=Path of Building
     " > $out/share/applications/path-of-building.desktop
   '';
+
+  meta = with lib; {
+    description = "Offline build planner for Path of Exile";
+    homepage = "https://github.com/PathOfBuildingCommunity/PathOfBuilding";
+  };
 }
