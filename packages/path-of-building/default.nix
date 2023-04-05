@@ -1,12 +1,14 @@
 { stdenvNoCC
 , fetchzip
 , wineWowPackages
+, lib
 }:
 
 let
   cmd = "path-of-building";
   dataPathWine = "C:\\ProgramData\\PathOfBuilding\\Builds";
   dataPathUnix = "~/.wine/drive_c/ProgramData/PathOfBuilding/Builds";
+  updateCheck = ./UpdateCheck.lua;
 
 in stdenvNoCC.mkDerivation rec {
   pname = "path-of-building";
@@ -60,6 +62,10 @@ in stdenvNoCC.mkDerivation rec {
         />
       </PathOfBuilding>
     " > $out/etc/Settings.xml
+
+
+    chmod +w $out/etc/UpdateCheck.lua
+    echo '${lib.strings.fileContents ./UpdateCheck.lua}' > $out/etc/UpdateCheck.lua
 
 
     # This is the script that will be added to PATH.
