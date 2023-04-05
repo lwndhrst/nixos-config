@@ -6,7 +6,7 @@
 
 let
   cmd = "path-of-building";
-  dataPathWine = "C:\\ProgramData\\PathOfBuilding\\Builds";
+  dataPathWine = "C:\\ProgramData\\PathOfBuilding\\Builds\\";
   dataPathUnix = "~/.wine/drive_c/ProgramData/PathOfBuilding/Builds";
 
 in stdenvNoCC.mkDerivation rec {
@@ -31,36 +31,35 @@ in stdenvNoCC.mkDerivation rec {
 
     # The build path has to be set to a writeable directory via PoB's Settings.xml. 
     # In this case we use a dir on the wine C:\ drive, which is located at $HOME/.wine/drive_c/.
-    echo "\
-      <?xml version=\"1.0\" encoding=\"UTF-8\"?>
+    echo '
+      <?xml version="1.0" encoding="UTF-8"?>
       <PathOfBuilding>
-        <Mode mode=\"LIST\">
+        <Mode mode="LIST">
         </Mode>
-        <Accounts lastAccountName=\"Taikutan\" lastRealm=\"PC\">
-          <Account accountName=\"Taikutan\"/>
+        <Accounts lastAccountName="Taikutan" lastRealm="PC">
+          <Account accountName="Taikutan"/>
         </Accounts>
         <SharedItems/>
         <Misc 
-          betaTest=\"false\" 
-          connectionProtocol=\"0\" 
-          thousandsSeparator=\",\" 
-          showThousandsSeparators=\"true\" 
-          slotOnlyTooltips=\"true\" 
-          invertSliderScrollDirection=\"false\" 
-          showTitlebarName=\"true\" 
-          disableDevAutoSave=\"false\" 
-          POESESSID=\"\" 
-          defaultCharLevel=\"1\" 
-          nodePowerTheme=\"RED/BLUE\" 
-          buildSortMode=\"EDITED\" 
-          showWarnings=\"true\" 
-          defaultItemAffixQuality=\"0.5\" 
-          defaultGemQuality=\"0\" 
-          decimalSeparator=\".\" 
-          buildPath=\"${dataPathWine}\\\"
+          betaTest="false"
+          connectionProtocol="0"
+          thousandsSeparator=","
+          showThousandsSeparators="true"
+          slotOnlyTooltips="true"
+          invertSliderScrollDirection="false"
+          showTitlebarName="true"
+          disableDevAutoSave="false"
+          defaultCharLevel="1"
+          nodePowerTheme="RED/BLUE"
+          buildSortMode="EDITED"
+          showWarnings="true"
+          defaultItemAffixQuality="0.5"
+          defaultGemQuality="20"
+          decimalSeparator="."
+          buildPath="${dataPathWine}"
         />
       </PathOfBuilding>
-    " > $out/etc/Settings.xml
+    ' > $out/etc/Settings.xml
 
 
     # Replace PoB's update script, since the version is controlled by this package.
@@ -78,7 +77,7 @@ in stdenvNoCC.mkDerivation rec {
     # This is the script that will be added to PATH.
     # It will run PoB via wine and create the data dir on wine's C:\ drive if it doesn't exist yet.
     mkdir -p $out/bin
-    echo "\
+    echo "
       ${wineWowPackages.stableFull}/bin/wine $out/etc/Path\ Of\ Building.exe &
       if [ ! -d ${dataPathUnix} ]; then
         mkdir -p ${dataPathUnix}
@@ -89,7 +88,7 @@ in stdenvNoCC.mkDerivation rec {
 
     # Add a desktop file for PoB so it can be launched as a desktop app.
     mkdir -p $out/share/applications
-    echo "\
+    echo "
       [Desktop Entry]
       Encoding=UTF-8
       Version=${version}
