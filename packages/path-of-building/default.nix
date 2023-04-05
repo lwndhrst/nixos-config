@@ -63,10 +63,14 @@ in stdenvNoCC.mkDerivation rec {
     " > $out/etc/Settings.xml
 
 
+    # Replace PoB's update script, since the version is controlled by this package.
+    # The replacement update script will simply display a notification if a new version is available.
     chmod +w $out/etc/UpdateCheck.lua
     echo '${lib.strings.fileContents ./UpdateCheck.lua}' > $out/etc/UpdateCheck.lua
   
 
+    # Remove PoB's builtin update error message.
+    # The messages defined in ./UpdateCheck.lua will be used instead.
     chmod +w $out/etc/Modules/
     chmod +w $out/etc/Modules/Main.lua
     sed -i 's/Update check failed!\\n//g' $out/etc/Modules/Main.lua
