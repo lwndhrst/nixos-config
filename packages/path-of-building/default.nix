@@ -8,11 +8,10 @@ let
   cmd = "path-of-building";
   dataPathWine = "C:\\ProgramData\\PathOfBuilding\\Builds";
   dataPathUnix = "~/.wine/drive_c/ProgramData/PathOfBuilding/Builds";
-  updateCheck = ./UpdateCheck.lua;
 
 in stdenvNoCC.mkDerivation rec {
   pname = "path-of-building";
-  version = "2.26.2";
+  version = "2.26.3";
   dontBuild = true;
 
   propagatedBuildInputs = [
@@ -21,7 +20,7 @@ in stdenvNoCC.mkDerivation rec {
 
   src = fetchzip {
     url = "https://github.com/PathOfBuildingCommunity/PathOfBuilding/releases/download/v${version}/PathOfBuildingCommunity-Portable-${version}.zip";
-    sha256 = "0m8mb2qrprkg4bykl427gn09dz9x2kinfp4jpfq4l36c6qf6s5hk";
+    sha256 = "17lns0pm1ajk2ndlgahll1jl2gb5n3fx1i83bl2dh9zmhryj2adf";
     stripRoot = false;
   };
 
