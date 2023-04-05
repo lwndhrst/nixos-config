@@ -25,8 +25,8 @@ in stdenvNoCC.mkDerivation rec {
   };
 
   installPhase = ''
-    mkdir -p $out/etc
-    cp -r $src/* $out/etc
+    mkdir -p $out/run
+    cp -r $src/* $out/run
 
 
     # The build path has to be set to a writeable directory via PoB's Settings.xml. 
@@ -59,26 +59,26 @@ in stdenvNoCC.mkDerivation rec {
           buildPath="${dataPathWine}"
         />
       </PathOfBuilding>
-    ' > $out/etc/Settings.xml
+    ' > $out/run/Settings.xml
 
 
     # Replace PoB's update script, since the version is controlled by this package.
     # The replacement update script will simply display a notification if a new version is available.
-    chmod +w $out/etc/UpdateCheck.lua
-    echo '${lib.strings.fileContents ./UpdateCheck.lua}' > $out/etc/UpdateCheck.lua
+    chmod +w $out/run/UpdateCheck.lua
+    echo '${lib.strings.fileContents ./UpdateCheck.lua}' > $out/run/UpdateCheck.lua
   
 
     # Remove PoB's builtin update error message.
     # The messages defined in ./UpdateCheck.lua will be used instead.
-    chmod +w $out/etc/Modules $out/etc/Modules/Main.lua
-    sed -i 's/Update check failed!\\n//g' $out/etc/Modules/Main.lua
+    chmod +w $out/run/Modules $out/run/Modules/Main.lua
+    sed -i 's/Update check failed!\\n//g' $out/run/Modules/Main.lua
 
 
     # This is the script that will be added to PATH.
     # It will run PoB via wine and create the data dir on wine's C:\ drive if it doesn't exist yet.
     mkdir -p $out/bin
     echo "
-      ${wineWowPackages.stableFull}/bin/wine $out/etc/Path\ Of\ Building.exe &
+      ${wineWowPackages.stableFull}/bin/wine $out/run/Path\ Of\ Building.exe &
       if [ ! -d ${dataPathUnix} ]; then
         mkdir -p ${dataPathUnix}
       fi
