@@ -6,6 +6,7 @@
 
     file.".ideavimrc".text = ''
       set relativenumber
+      set number
       set visualbell
       set noerrorbells
     '';
