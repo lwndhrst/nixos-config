@@ -40,8 +40,6 @@ in {
 
       # Dev stuff
       gh                # GitHub CLI
-      rustup            # Rust Toolchain Utility
-      rust-analyzer     # Rust LSP
       tree-sitter
       stylua
       openvpn

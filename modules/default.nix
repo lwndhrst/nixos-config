@@ -6,9 +6,13 @@ let
     ./nvim
     ./picom
     ./rofi
-    ./tex
     ./zathura
     ./zsh
+
+    # Languages, Toolchains, ...
+    ./rust
+    ./tex
+    ./zig
   ];
 
 in {
