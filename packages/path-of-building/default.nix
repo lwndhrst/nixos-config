@@ -11,7 +11,7 @@ let
 
 in stdenvNoCC.mkDerivation rec {
   pname = "path-of-building";
-  version = "2.26.3";
+  version = "2.28.0";
   dontBuild = true;
 
   propagatedBuildInputs = [
@@ -20,7 +20,7 @@ in stdenvNoCC.mkDerivation rec {
 
   src = fetchzip {
     url = "https://github.com/PathOfBuildingCommunity/PathOfBuilding/releases/download/v${version}/PathOfBuildingCommunity-Portable-${version}.zip";
-    sha256 = "17lns0pm1ajk2ndlgahll1jl2gb5n3fx1i83bl2dh9zmhryj2adf";
+    sha256 = "082ic9mns0haz3ydvcqfg164q0jn0a52z1y8gvb1ih5gbacll917";
     stripRoot = false;
   };
 
