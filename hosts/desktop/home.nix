@@ -29,6 +29,8 @@ in {
       thunderbird       # Email
 
       packages.path-of-building
+
+      packages.odin
     ];
   };
 }
