@@ -9,7 +9,13 @@ let
   packages = import ../../packages { inherit pkgs; };
 
 in {
-  imports = modules.vbox;
+  imports = with modules; [
+    odin
+    rust
+    tex
+    zig
+  ];
+
 
   services = { };
 

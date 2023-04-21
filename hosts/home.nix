@@ -5,9 +5,21 @@
 }:
 
 let
+  modules  = import ../modules;
   packages = import ../packages { inherit pkgs; };
 
 in {
+  imports = with modules; [
+    flameshot
+    gtk 
+    kitty
+    nvim
+    picom
+    rofi
+    zathura
+    zsh
+  ];
+
   services = {
     # Network Manager systray
     network-manager-applet.enable = true;

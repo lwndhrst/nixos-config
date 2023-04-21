@@ -9,7 +9,12 @@ let
   packages = import ../../packages { inherit pkgs; };
 
 in {
-  imports = modules.desktop;
+  imports = with modules; [
+    odin
+    rust
+    tex
+    zig
+  ];
 
   services = {
     # PulseAudio systray
