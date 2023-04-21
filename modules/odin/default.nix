@@ -10,5 +10,6 @@ in {
 
     # TODO: Odin LSP
     # https://github.com/DanielGavin/ols
+    packages.ols
   ];
 }
