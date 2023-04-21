@@ -18,6 +18,7 @@ let
 in {
   desktop = shared ++ [
     ./android
+    ./odin
   ];
 
   laptop = shared ++ [
