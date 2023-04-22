@@ -13,9 +13,14 @@
     extraConfig = ''
       include themes/rose-pine.conf
 
-      background            #0c0b11
-      background_opacity    0.90
-      disable_ligatures     always
+      background              #0c0b11
+      background_opacity      0.90
+
+      # setting cursor to none makes it use the text color under the cursor
+      cursor                  none
+      cursor_blink_interval   0
+
+      disable_ligatures       always
     '';
   };
 
