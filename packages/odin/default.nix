@@ -1,11 +1,8 @@
 { lib
 , fetchFromGitHub
 , llvmPackages
-, libllvm
 , makeWrapper
-, git
 , which
-, libiconv
 }:
 
 let
@@ -25,15 +22,14 @@ in stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     makeWrapper
-    git
     which
-    libllvm
   ];
 
-  buildInputs = lib.optional stdenv.isDarwin libiconv;
+  LLVM_CONFIG = "${llvmPackages.llvm.dev}/bin/llvm-config";
 
   postPatch = ''
-    sed -i 's/^GIT_SHA=.*$/GIT_SHA=/' Makefile
+    sed -i 's/^GIT_SHA=.*$/GIT_SHA=/' build_odin.sh
+    sed -i 's/LLVM-C/LLVM/' build_odin.sh
     patchShebangs build_odin.sh
   '';
 
@@ -45,6 +41,7 @@ in stdenv.mkDerivation rec {
     mkdir -p $out/bin
     cp odin $out/bin/odin
     cp -r core $out/bin/core
+    cp -r vendor $out/bin/vendor
 
     wrapProgram $out/bin/odin --prefix PATH : ${lib.makeBinPath (with llvmPackages; [
       bintools
@@ -57,8 +54,7 @@ in stdenv.mkDerivation rec {
   meta = with lib; {
     description = "A fast, concise, readable, pragmatic and open sourced programming language";
     homepage = "https://odin-lang.org/";
-    license = licenses.bsd2;
-    maintainers = with maintainers; [ luc65r ];
+    license = licenses.bsd3;
     platforms = platforms.x86_64;
   };
 }
