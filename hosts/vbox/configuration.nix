@@ -16,4 +16,12 @@ in {
   ];
 
   networking.hostName = "nixos-vbox"; # Define your hostname.
+
+  services = {
+    xserver = {
+      displayManager.setupCommands = ''
+        ${pkgs.xorg.xrandr}/bin/xrandr -s 1680x1050
+      '';
+    };
+  };
 }
