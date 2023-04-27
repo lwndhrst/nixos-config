@@ -11,8 +11,8 @@ let
 
 in {
   boot = {
-    # Use latest available Kernel packages.
-    kernelPackages = pkgs.linuxPackages_latest;
+    # Use latest available Kernel packages by default.
+    kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
 
     # Use systemd-boot EFI boot loader.
     loader = {
