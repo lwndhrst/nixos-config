@@ -2,7 +2,7 @@
   description = "Personal NixOS configuration";
 
   inputs = {
-    nixpkgs ={
+    nixpkgs = {
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
