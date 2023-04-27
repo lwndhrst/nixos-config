@@ -29,7 +29,7 @@ sudo nixos-install --flake /mnt/home/<user>/.config/nixos#<host>
 
 ### Rebuild
 
-Make sure to <code>git add</code> new files before rebuilding as they will be ignored otherwise.
+Make sure to `git add` new files before rebuilding as they will be ignored otherwise.
 
 ```
 sudo nixos-rebuild switch --flake ~/.config/nixos#<host>
@@ -66,7 +66,7 @@ Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`
       let 
         pkgs = import nixpkgs { inherit system; };
 
-      in rec {
+      in {
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
             texlive.combined.scheme-full
