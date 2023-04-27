@@ -9,9 +9,7 @@ let
   packages = import ../../packages { inherit pkgs; };
 
 in {
-  imports = with modules; [
-    tex
-  ];
+  imports = with modules; [ ];
 
 
   services = { };
