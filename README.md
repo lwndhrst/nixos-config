@@ -64,9 +64,7 @@ Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`
   outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let 
-        pkgs = import nixpkgs {
-          inherit system;
-        };
+        pkgs = import nixpkgs { inherit system; };
 
       in rec {
         devShell = pkgs.mkShell {
