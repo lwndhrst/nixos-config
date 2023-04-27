@@ -66,7 +66,7 @@ Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`
       let 
         pkgs = import nixpkgs { inherit system; };
 
-      in rec {
+      in {
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
             texlive.combined.scheme-full
