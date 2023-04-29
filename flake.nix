@@ -21,6 +21,7 @@
 
     nix-extra-pkgs = {
       url = "github:lwndhrst/nix-extra-pkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
