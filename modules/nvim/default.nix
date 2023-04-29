@@ -20,7 +20,8 @@
       cmp-buffer
       cmp-path
       cmp-cmdline
-      cmp-luasnip
+      # cmp-luasnip
+      pkgs.vimPlugins.cmp_luasnip
       LuaSnip
 
       # Formatter
@@ -53,7 +54,7 @@
       vimtex
 
       # Themes
-      rose-pine
+      pkgs.vimPlugins.rose-pine
     ];
   };
 }
