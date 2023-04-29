@@ -4,7 +4,7 @@
   flameshot = ./flameshot;
   gtk       = ./gtk;
   kitty     = ./kitty;
-  nvim      = ./nvim;
+  neovim    = ./neovim;
   picom     = ./picom;
   rofi      = ./rofi;
   zathura   = ./zathura;

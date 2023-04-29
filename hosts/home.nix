@@ -12,7 +12,7 @@ in {
     flameshot
     gtk 
     kitty
-    nvim
+    neovim
     picom
     rofi
     zathura
