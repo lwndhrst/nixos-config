@@ -18,9 +18,13 @@
     nix-neovim-plugins = {
       url = "github:NixNeovim/NixNeovimPlugins";
     };
+
+    nix-extra-pkgs = {
+      url = "github:lwndhrst/nix-extra-pkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nix-neovim-plugins, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, nur, nix-neovim-plugins, nix-extra-pkgs, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -29,6 +33,7 @@
         config.allowUnfree = true;
         overlays = [
           nix-neovim-plugins.overlays.default
+          nix-extra-pkgs.overlays.default
         ];
       };
       config = pkgs.config;

@@ -1,9 +1,6 @@
 { pkgs, ... }:
 
-let
-  packages = import ../../packages { inherit pkgs; };
-
-in {
+{
   gtk = {
     enable = true;
 
@@ -13,7 +10,7 @@ in {
     };
 
     iconTheme = {
-      package = packages.papirus-icon-theme;
+      package = pkgs.nixExtraPkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
   };

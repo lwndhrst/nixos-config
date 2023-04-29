@@ -6,10 +6,7 @@
 , ... 
 }:
 
-let
-  packages = import ../packages { inherit pkgs; };
-
-in {
+{
   boot = {
     # Use latest available Kernel packages by default.
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
@@ -99,8 +96,8 @@ in {
       # Cursor theme
       bibata-cursors
 
-      # Custom packages
-      packages.sddm-rose-pine-theme
+      # Custom packages from https://github.com/lwndhrst/nix-extra-pkgs
+      nixExtraPkgs.sddm-rose-pine-theme
     ];
   };
 

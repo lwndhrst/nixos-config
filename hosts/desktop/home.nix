@@ -6,7 +6,6 @@
 
 let
   modules = import ../../modules;
-  packages = import ../../packages { inherit pkgs; };
 
 in {
   imports = with modules; [
@@ -32,7 +31,7 @@ in {
       portfolio         # Portfolio Performance
       thunderbird       # Email
 
-      packages.path-of-building
+      nixExtraPkgs.path-of-building
     ];
   };
 }

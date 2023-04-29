@@ -6,7 +6,6 @@
 
 let
   modules  = import ../modules;
-  packages = import ../packages { inherit pkgs; };
 
 in {
   imports = with modules; [
@@ -63,18 +62,6 @@ in {
     pointerCursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
-
-      # package = pkgs.phinger-cursors;
-      # name = "phinger-cursors-light";
-      
-      # package = pkgs.quintom-cursor-theme;
-      # name = "Quintom_Snow";
-
-      # package = pkgs.catppuccin-cursors.mochaLight;
-      # name = "Catppuccin-Mocha-Light-Cursors";
-
-      # package = pkgs.capitaine-cursors;
-      # name = "capitaine-cursors-white";
     };
 
     sessionVariables = { };
