@@ -2,10 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    # Clang, this package also includes clangd (LSP)
-    llvmPackages_15.libclang
+    llvmPackages.clang
 
-    # GCC
-    # gcc12
+    # clangd (LSP), etc.
+    clang-tools
   ];
 }
