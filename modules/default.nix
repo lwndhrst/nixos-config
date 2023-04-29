@@ -11,6 +11,7 @@
   zsh       = ./zsh;
 
   # Languages, Toolchains, LSP, ...
+  c         = ./c;
   odin      = ./odin;
   rust      = ./rust;
   tex       = ./tex;

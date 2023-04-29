@@ -9,6 +9,7 @@ let
 
 in {
   imports = with modules; [
+    c
     odin
     rust
     tex
