@@ -19,6 +19,8 @@ in {
   services = {
     # PulseAudio systray
     pasystray.enable = true;
+
+
   };
 
   home = {

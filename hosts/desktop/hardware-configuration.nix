@@ -24,14 +24,14 @@
       fsType = "ext4";
     };
 
-  fileSystems."/mnt/ssd" =
-    { device = "/dev/disk/by-label/ssd";
-      fsType = "ext4";
-    };
-
   fileSystems."/boot" =
     { device = "/dev/disk/by-label/boot";
       fsType = "vfat";
+    };
+
+  fileSystems."/mnt/ssd" =
+    { device = "/dev/disk/by-label/ssd";
+      fsType = "ext4";
     };
 
   swapDevices =
@@ -52,4 +52,7 @@
 
   # Vulkan support
   hardware.opengl.driSupport = true;
+
+  # Enable bluetooth
+  hardware.bluetooth.enable = true;
 }
