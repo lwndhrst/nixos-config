@@ -26,11 +26,16 @@
     };
 
     initExtra = ''
-      # Spaceship Theme
-      source ${pkgs.spaceship-prompt}/share/zsh/site-functions/prompt_spaceship_setup
-
-      # Spaceship async jobs aren't working correctly, so disable them for now
-      export SPACESHIP_PROMPT_ASYNC=false
+      # Starship Theme
+      export STARSHIP_CONFIG=~/.config/starship/starship.toml
+      eval "$(${pkgs.starship}/bin/starship init zsh)"
     '';
   };
+  
+  # Starship prompt config
+  home.file.".config/starship/starship.toml".text = ''
+    [character]
+    success_symbol = '[➜](bold green)'
+    error_symbol   = '[➜](bold red)'
+  '';
 }
