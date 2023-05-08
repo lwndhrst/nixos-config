@@ -33,9 +33,7 @@
   };
   
   # Starship prompt config
-  home.file.".config/starship/starship.toml".text = ''
-    [character]
-    success_symbol = '[➜](bold green)'
-    error_symbol   = '[➜](bold red)'
-  '';
+  home.file.".config/starship/starship.toml" = {
+    source = ./starship.toml;
+  };
 }
