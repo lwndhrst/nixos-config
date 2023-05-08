@@ -96,8 +96,8 @@
       # Cursor theme
       bibata-cursors
 
-      # Custom packages from https://github.com/lwndhrst/nix-extra-pkgs
-      nixExtraPkgs.sddm-rose-pine-theme
+      # Custom packages from https://github.com/lwndhrst/custom-nixpkgs
+      customPkgs.sddm-rose-pine-theme
     ];
   };
 

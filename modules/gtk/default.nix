@@ -10,7 +10,7 @@
     };
 
     iconTheme = {
-      package = pkgs.nixExtraPkgs.papirus-icon-theme;
+      package = pkgs.customPkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
   };

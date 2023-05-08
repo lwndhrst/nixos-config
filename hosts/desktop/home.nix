@@ -35,7 +35,7 @@ in {
       portfolio         # Portfolio Performance
       thunderbird       # Email
 
-      nixExtraPkgs.path-of-building
+      customPkgs.path-of-building
     ];
   };
 }

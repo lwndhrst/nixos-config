@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "custom-nixpkgs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1683572868,
+        "narHash": "sha256-j/WPVDFVF01hQ/UbwRuR5YIgAotCI3qx410KlhH3c7g=",
+        "owner": "lwndhrst",
+        "repo": "custom-nixpkgs",
+        "rev": "960418321e6089e34138e6d91175fa63c1d2a805",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lwndhrst",
+        "repo": "custom-nixpkgs",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -48,26 +68,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "nix-extra-pkgs": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1682762335,
-        "narHash": "sha256-AU1nRu0+25u7GhWKhYAngtTMM1/6EhJUrVRNck/LZT4=",
-        "owner": "lwndhrst",
-        "repo": "nix-extra-pkgs",
-        "rev": "8d9132f68038cb17b9dc54982f8f55183829cfcf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lwndhrst",
-        "repo": "nix-extra-pkgs",
         "type": "github"
       }
     },
@@ -125,11 +125,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1683544382,
-        "narHash": "sha256-0IpIcU8dIsJ+Jq8nAvYCh0Ik32OI59UkyQi103XNPjQ=",
+        "lastModified": 1683567704,
+        "narHash": "sha256-I67+40ke0yOPCX/VMo3fAmgTQLBPCPBGIH8DN0QViyo=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "522ec7bef8d5f2ef6007d208b36fefd5061ceb83",
+        "rev": "4b983bcd9d4115d03a5f0e6804190e0923d0a068",
         "type": "github"
       },
       "original": {
@@ -140,8 +140,8 @@
     },
     "root": {
       "inputs": {
+        "custom-nixpkgs": "custom-nixpkgs",
         "home-manager": "home-manager",
-        "nix-extra-pkgs": "nix-extra-pkgs",
         "nix-neovim-plugins": "nix-neovim-plugins",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur"

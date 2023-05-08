@@ -3,10 +3,9 @@
 {
   home.packages = with pkgs; [
     # Odin language
-    nixExtraPkgs.odin
+    customPkgs.odin
 
-    # TODO: Odin LSP
     # https://github.com/DanielGavin/ols
-    nixExtraPkgs.ols
+    customPkgs.ols
   ];
 }
