@@ -6,7 +6,7 @@
     settings.enable_audio_bell = false;
 
     font = {
-      name = "CaskaydiaCove Nerd Font Mono";
+      name = "Cascadia Mono";
       size = 15;
     };
 

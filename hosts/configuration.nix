@@ -57,15 +57,14 @@
 
   fonts = {
     fonts = with pkgs; [
+      cascadia-code
+
       # CJK fonts
       source-han-sans
       source-han-serif
 
-      # Icons, emoji, etc.
-      font-awesome
-
       # Nerdfont overrides
-      (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     ];
   };
 
