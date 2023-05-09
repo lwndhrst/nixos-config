@@ -6,7 +6,7 @@
   programs = {
     rofi = {
       enable = true;
-      font = "CaskaydiaCove Nerd Font Mono 14";
+      font = "Cascadia Mono 14";
       terminal = "${pkgs.kitty}/bin/kitty";
       theme = "~/.config/rofi/theme.rasi";
     };
