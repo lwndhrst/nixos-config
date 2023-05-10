@@ -28,7 +28,7 @@ in {
     packages = with pkgs; [
       # Term Utils
       htop              # System Resources
-      nitch             # Fetch system info
+      customPkgs.nitch  # System Info Fetcher
       ripgrep           # Grep but Rust
       fd                # Alternative find
       xclip             # Access X clipboard from terminal
