@@ -4,6 +4,7 @@
   flameshot = ./flameshot;
   gtk       = ./gtk;
   kitty     = ./kitty;
+  lightdm   = ./lightdm;
   neovim    = ./neovim;
   picom     = ./picom;
   rofi      = ./rofi;

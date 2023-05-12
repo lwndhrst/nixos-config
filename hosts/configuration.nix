@@ -6,7 +6,10 @@
 , ... 
 }:
 
-{
+let
+  modules  = import ../modules;
+
+in {
   boot = {
     # Use latest available Kernel packages by default.
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
@@ -41,16 +44,13 @@
       layout = "us";
       xkbOptions = "caps:escape";
 
-      windowManager.awesome.enable = true;
+      windowManager = {
+        awesome.enable = true;
+      };
+
       displayManager = {
         defaultSession = "none+awesome";
-        sddm = {
-          enable = true;
-          theme = "rose-pine";
-          settings = {
-            Theme.CursorTheme = "Bibata-Modern-Ice";
-          };
-        };
+        lightdm = import modules.lightdm { inherit user; };
       };
     };
   };
