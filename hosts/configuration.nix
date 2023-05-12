@@ -88,15 +88,6 @@ in {
       vim
       wget
       git
-
-      # NUR packages
-      # config.nur.repos.shadowrz.sddm-sugar-candy
-
-      # Cursor theme
-      bibata-cursors
-
-      # Custom packages from https://github.com/lwndhrst/custom-nixpkgs
-      customPkgs.sddm-rose-pine-theme
     ];
   };
 
