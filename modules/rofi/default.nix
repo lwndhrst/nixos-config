@@ -33,11 +33,13 @@
     @import "rounded-common.rasi"
 
     window {
-        border-radius: 12px;
+        // border-radius: 12px;
+        border-radius: 0px;
     }
 
     inputbar, message, element {
-        border-radius: 6px;
+        // border-radius: 6px;
+        border-radius: 0px;
     }
 
     element selected {
