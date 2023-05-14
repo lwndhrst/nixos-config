@@ -18,9 +18,12 @@
 
       # setting cursor to none makes it use the text color under the cursor
       cursor                  none
+      cursor_shape            block
       cursor_blink_interval   0
 
       disable_ligatures       always
+
+      shell_integration       no-cursor
     '';
   };
 
