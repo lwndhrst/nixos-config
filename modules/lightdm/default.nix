@@ -22,7 +22,7 @@
         # The text shown when an invalid password is entered. May be blank.
         invalid-password-text = invalid password
         # Show a blinking cursor in the password input.
-        show-input-cursor = true
+        show-input-cursor = false
         # The text alignment for the password input. Possible values are:
         # "left" or "right"
         password-alignment = left
