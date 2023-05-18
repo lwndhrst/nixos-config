@@ -35,6 +35,7 @@ in {
       portfolio         # Portfolio Performance
       thunderbird       # Email
       lutris            # Game Platform (Emulation, etc.)
+      protontricks      # Winetricks wrapper for proton games
 
       customPkgs.path-of-building
     ];
