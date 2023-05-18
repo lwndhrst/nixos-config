@@ -34,6 +34,7 @@ in {
       zoom-us           # Video Conferencing
       portfolio         # Portfolio Performance
       thunderbird       # Email
+      lutris            # Game Platform (Emulation, etc.)
 
       customPkgs.path-of-building
     ];
