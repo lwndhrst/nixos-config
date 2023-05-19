@@ -54,6 +54,7 @@ in {
       tree-sitter
       stylua
       openvpn
+      nil               # Nix Language Server
 
       # For GTK configuration
       dconf
