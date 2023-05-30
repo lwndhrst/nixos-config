@@ -9,6 +9,7 @@
   picom     = ./picom;
   rofi      = ./rofi;
   zathura   = ./zathura;
+  zotero    = ./zotero;
   zsh       = ./zsh;
 
   # Languages, Toolchains, LSP, ...

@@ -16,6 +16,7 @@ in {
     picom
     rofi
     zathura
+    zotero
     zsh
   ];
 
@@ -47,7 +48,6 @@ in {
       # Apps
       firefox           # Browser
       gimp
-      zotero            # Literature Manager
 
       # Dev stuff
       gh                # GitHub CLI
