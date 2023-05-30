@@ -1,24 +1,42 @@
 { pkgs, ... }:
 
-{
-  gtk = {
-    enable = true;
-
-    theme = {
+let
+  gtkThemes = {
+    dracula = {
       package = pkgs.dracula-theme;
       name = "Dracula";
     };
 
-    iconTheme = {
+    graphite = {
+      package = pkgs.graphite-gtk-theme;
+      name = "Graphite-Dark";
+    };
+
+    orchis = {
+      package = pkgs.orchis-theme;
+      name = "Orchis-Dark";
+    };
+  };
+
+  iconThemes = {
+    papirus = {
       package = pkgs.customPkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
   };
 
-  home.file = {
-    ".config/gtk-4.0" = {
-      recursive = true;
-      source = "${pkgs.dracula-theme}/share/themes/Dracula/gtk-4.0";
-    };
+  # set theme here
+  theme = gtkThemes.graphite;
+  iconTheme = iconThemes.papirus;
+
+in {
+  gtk = {
+    inherit theme iconTheme;
+    enable = true;
+  };
+
+  home.file.".config/gtk-4.0" = {
+    recursive = true;
+    source = "${theme.package}/share/themes/${theme.name}/gtk-4.0";
   };
 }
