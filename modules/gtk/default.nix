@@ -20,7 +20,7 @@ let
 
   iconThemes = {
     papirus = {
-      package = pkgs.customPkgs.papirus-icon-theme;
+      package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
   };
