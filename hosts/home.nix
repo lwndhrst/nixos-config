@@ -37,7 +37,7 @@ in {
       acpi              # Battery Status Fetcher
       libqalculate      # Calculator/Equation Solver CLI (qalc)
 
-      # Video/Audio
+      # Image/Video/Audio
       feh               # Raster-Image Viewer
       librsvg           # SVG Conversion Utility
 

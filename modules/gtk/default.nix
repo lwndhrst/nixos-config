@@ -23,11 +23,6 @@ let
       package = pkgs.customPkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
-
-    tela-circle = {
-      package = pkgs.customPkgs.tela-circle-icon-theme;
-      name = "Tela-circle-dark";
-    };
   };
 
   # set theme here
