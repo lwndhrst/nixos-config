@@ -26,7 +26,7 @@ let
   };
 
   # set theme here
-  theme = gtkThemes.graphite;
+  theme = gtkThemes.dracula;
   iconTheme = iconThemes.papirus;
 
 in {
