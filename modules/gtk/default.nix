@@ -19,6 +19,11 @@ let
   };
 
   iconThemes = {
+    adwaita = {
+      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+
     papirus = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
@@ -26,8 +31,8 @@ let
   };
 
   # set theme here
-  theme = gtkThemes.dracula;
-  iconTheme = iconThemes.papirus;
+  theme = null;
+  iconTheme = iconThemes.adwaita;
 
 in {
   gtk = {
@@ -35,8 +40,8 @@ in {
     enable = true;
   };
 
-  home.file.".config/gtk-4.0" = {
-    recursive = true;
-    source = "${theme.package}/share/themes/${theme.name}/gtk-4.0";
-  };
+  # home.file.".config/gtk-4.0" = {
+  #   recursive = true;
+  #   source = "${theme.package}/share/themes/${theme.name}/gtk-4.0";
+  # };
 }
