@@ -2,6 +2,8 @@
 
 let
   gtkThemes = {
+    adwaita = null;
+
     dracula = {
       package = pkgs.dracula-theme;
       name = "Dracula";
@@ -19,11 +21,6 @@ let
   };
 
   iconThemes = {
-    adwaita = {
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita";
-    };
-
     papirus = {
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
@@ -31,13 +28,17 @@ let
   };
 
   # set theme here
-  theme = null;
-  iconTheme = iconThemes.adwaita;
+  theme = gtkThemes.adwaita;
+  iconTheme = iconThemes.papirus;
 
 in {
   gtk = {
     inherit theme iconTheme;
     enable = true;
+
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
   };
 
   # home.file.".config/gtk-4.0" = {
