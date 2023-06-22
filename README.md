@@ -59,7 +59,7 @@ Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`
 
   outputs = { self, nixpkgs }:
     let
-      system = "86_64-linux";
+      system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
 
     in {
