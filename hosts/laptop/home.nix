@@ -28,7 +28,7 @@ in {
 
       # Apps
       discord
-      zoom-us           # Video Conferencing
+      # zoom-us           # Video Conferencing
       portfolio         # Portfolio Performance
       thunderbird       # Email
     ];
