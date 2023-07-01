@@ -13,15 +13,6 @@ in {
   boot = {
     # Use latest available Kernel packages by default.
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
-
-    # Use systemd-boot EFI boot loader.
-    loader = {
-      systemd-boot = { 
-        enable = true;
-        configurationLimit = 5;
-      };
-      efi.canTouchEfiVariables = true;
-    };
   };
 
   networking.networkmanager = {

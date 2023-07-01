@@ -12,6 +12,19 @@
     ./hardware-configuration.nix
   ];
 
+  # Use grub for dual boot support.
+  boot.loader = {
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+    };
+  };
+
+  # Fixes time issues when dual booting Windows.
+  time.hardwareClockInLocalTime = true;
+
   networking.hostName = "nixos"; # Define your hostname.
 
   services = {
