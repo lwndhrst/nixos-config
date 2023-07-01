@@ -16,6 +16,7 @@
   boot.loader = {
     grub = {
       enable = true;
+      configurationLimit = 5;
       efiSupport = true;
       efiInstallAsRemovable = true;
       device = "nodev";
