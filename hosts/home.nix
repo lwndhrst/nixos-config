@@ -56,7 +56,7 @@ in {
       openvpn
       nil               # Nix Language Server
 
-      # For GTK configuration
+      # Misc
       dconf
     ];
 

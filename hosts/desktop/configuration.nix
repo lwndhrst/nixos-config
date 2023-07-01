@@ -51,4 +51,20 @@
   programs = {
     steam.enable = true;
   };
+
+  # Virtualisation
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.swtpm.enable = true;
+  };
+
+  environment.systemPackages = with pkgs; [
+    virt-manager
+  ];
+
+  users.users.${user} = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "libvirtd" ];
+  };
 }
