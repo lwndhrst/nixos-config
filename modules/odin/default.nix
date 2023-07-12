@@ -2,10 +2,10 @@
 
 {
   home.packages = with pkgs; [
-    # Odin language
-    customPkgs.odin
+    # customPkgs.odin
+    odin-dev
 
-    # https://github.com/DanielGavin/ols
-    customPkgs.ols
+    # customPkgs.ols
+    ols
   ];
 }
