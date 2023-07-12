@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
     # customPkgs.odin
-    odin-dev
+    odin
 
     # customPkgs.ols
     ols
