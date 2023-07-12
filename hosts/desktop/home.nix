@@ -37,7 +37,8 @@ in {
       lutris            # Game Platform (Emulation, etc.)
       protontricks      # Winetricks wrapper for proton games
 
-      customPkgs.path-of-building
+      # customPkgs.path-of-building
+      path-of-building
     ];
   };
 }
