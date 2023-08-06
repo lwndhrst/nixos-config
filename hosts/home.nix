@@ -10,6 +10,7 @@ let
 in {
   imports = with modules; [
     flameshot
+    fzf
     gtk 
     kitty
     neovim
@@ -36,7 +37,6 @@ in {
       mons              # 2-Monitor Setup Script
       acpi              # Battery Status Fetcher
       libqalculate      # Calculator/Equation Solver CLI (qalc)
-      fzf               # Fuzzy Finder
 
       # Image/Video/Audio
       feh               # Raster-Image Viewer

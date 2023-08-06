@@ -2,6 +2,7 @@
   # Apps
   android   = ./android;
   flameshot = ./flameshot;
+  fzf       = ./fzf;
   gtk       = ./gtk;
   kitty     = ./kitty;
   lightdm   = ./lightdm;
