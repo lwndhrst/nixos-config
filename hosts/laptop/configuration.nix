@@ -67,6 +67,10 @@
     };
   };
 
+  programs = {
+    steam.enable = true;
+  };
+
   users.users.${user} = {
     isNormalUser = true;
     shell = pkgs.zsh;
