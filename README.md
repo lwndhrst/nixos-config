@@ -14,15 +14,13 @@ Available hosts:
 ### Fresh installation
 
 ```
-git clone https://github.com/lwndhrst/nixos /mnt/home/<user>/.config/nixos
+git clone https://github.com/lwndhrst/nixos /mnt/etc/nixos
 ```
 
-```
-cp /mnt/etc/nixos/hardware-configuration.nix /mnt/home/<user>/.config/nixos/hosts/<host>/
-```
+Make sure to replace `/mnt/etc/nixos/hosts/<host>/hardware-configuration.nix` to an appropriate one for your system (see: `nixos-generate-config`).
 
 ```
-sudo nixos-install --flake /mnt/home/<user>/.config/nixos#<host>
+sudo nixos-install --flake /mnt/etc/nixos#<host>
 ```
 
 
@@ -32,7 +30,7 @@ sudo nixos-install --flake /mnt/home/<user>/.config/nixos#<host>
 Make sure to `git add` new files before rebuilding as they will be ignored otherwise.
 
 ```
-sudo nixos-rebuild switch --flake ~/.config/nixos#<host>
+sudo nixos-rebuild switch --flake /etc/nixos#<host>
 ```
 
 
