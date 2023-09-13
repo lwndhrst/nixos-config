@@ -1,4 +1,4 @@
-# nixos-config
+# Personal NixOS Configuration
 
 
 
@@ -14,7 +14,7 @@ Available hosts:
 ### Fresh installation
 
 ```
-git clone https://github.com/lwndhrst/nixos-config /mnt/home/<user>/.config/nixos
+git clone https://github.com/lwndhrst/nixos /mnt/home/<user>/.config/nixos
 ```
 
 ```
