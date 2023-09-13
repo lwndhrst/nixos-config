@@ -17,7 +17,7 @@ Available hosts:
 git clone https://github.com/lwndhrst/nixos /mnt/etc/nixos
 ```
 
-Make sure to replace `/mnt/etc/nixos/hosts/<host>/hardware-configuration.nix` to an appropriate one for your system (see: `nixos-generate-config`).
+Make sure to replace `/mnt/etc/nixos/hosts/<host>/hardware-configuration.nix` with an appropriate one for your system (see: `nixos-generate-config`).
 
 ```
 sudo nixos-install --flake /mnt/etc/nixos#<host>
