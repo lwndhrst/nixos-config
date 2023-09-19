@@ -1,4 +1,4 @@
-# Personal NixOS Configuration
+# Personal NixOS Config
 
 
 
