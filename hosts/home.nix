@@ -41,6 +41,7 @@ in {
       # Image/Video/Audio
       feh               # Raster-Image Viewer
       librsvg           # SVG Conversion Utility
+      vlc
 
       # File Management
       unzip
