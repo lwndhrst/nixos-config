@@ -14,7 +14,7 @@ Available hosts:
 ### Fresh installation
 
 ```
-git clone https://github.com/lwndhrst/nixos /mnt/etc/nixos
+git clone https://github.com/lwndhrst/nixos-config /mnt/etc/nixos
 ```
 
 Make sure to replace `/mnt/etc/nixos/hosts/<host>/hardware-configuration.nix` with an appropriate one for your system (see: `nixos-generate-config`).
