@@ -21,6 +21,14 @@ in {
     zsh
   ];
 
+  # For some reason home-manager systray services depend on tray.target
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = [ "graphical-session-pre.target" ];
+    };
+  };
+
   services = {
     # Network Manager systray
     network-manager-applet.enable = true;
