@@ -10,7 +10,6 @@ let
 in {
   imports = with modules; [
     c
-    docker
     odin
     rust
     tex

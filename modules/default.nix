@@ -15,7 +15,6 @@
 
   # Languages, Toolchains, LSP, ...
   c         = ./c;
-  docker    = ./docker;
   odin      = ./odin;
   rust      = ./rust;
   tex       = ./tex;
