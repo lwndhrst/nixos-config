@@ -27,10 +27,11 @@
     home-manager-config = {
       url = "github:lwndhrst/home-manager-config/refactor";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager-config, nur, nix-neovim-plugins, custom-nixpkgs, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager, home-manager-config, nur, nix-neovim-plugins, custom-nixpkgs, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -43,13 +44,12 @@
         ];
       };
       config = pkgs.config;
-      lib = nixpkgs.lib;
 
     in {
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit system nixpkgs pkgs config home-manager-config nur user;
+          inherit system nixpkgs pkgs config home-manager home-manager-config nur user;
         }
       );
     };
