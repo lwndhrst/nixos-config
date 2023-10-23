@@ -23,9 +23,14 @@
       url = "github:lwndhrst/custom-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    home-manager-config = {
+      url = "github:lwndhrst/home-manager-config/refactor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, nur, nix-neovim-plugins, custom-nixpkgs, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager-config, nur, nix-neovim-plugins, custom-nixpkgs, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -44,7 +49,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit system nixpkgs pkgs config home-manager nur user;
+          inherit system nixpkgs pkgs config home-manager-config nur user;
         }
       );
     };
