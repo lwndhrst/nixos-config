@@ -76,6 +76,6 @@
   users.users.${user} = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
   };
 }
