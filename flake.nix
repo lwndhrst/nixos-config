@@ -6,17 +6,8 @@
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nur = {
       url = "github:nix-community/NUR"; # Nix User Repository
-    };
-
-    nix-neovim-plugins = {
-      url = "github:NixNeovim/NixNeovimPlugins";
     };
 
     custom-nixpkgs = {
@@ -25,13 +16,12 @@
     };
 
     home-manager-config = {
-      url = "github:lwndhrst/home-manager-config/refactor";
+      url = "github:lwndhrst/home-manager-config";
       inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager, home-manager-config, nur, nix-neovim-plugins, custom-nixpkgs, ... }:
+  outputs = inputs @ { self, nixpkgs, home-manager-config, nur, custom-nixpkgs, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -39,7 +29,6 @@
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          nix-neovim-plugins.overlays.default
           custom-nixpkgs.overlays.default
         ];
       };
@@ -49,7 +38,7 @@
       nixosConfigurations = (
         import ./hosts {
           inherit (nixpkgs) lib;
-          inherit system nixpkgs pkgs config home-manager home-manager-config nur user;
+          inherit system nixpkgs pkgs config home-manager-config nur user;
         }
       );
     };

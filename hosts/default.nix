@@ -2,7 +2,6 @@
 , system
 , nixpkgs
 , pkgs
-, home-manager
 , home-manager-config
 , nur
 , user
@@ -24,17 +23,8 @@ let
       ./configuration.nix
       host.config
 
-      home-manager.nixosModules.home-manager {
-        home-manager.extraSpecialArgs = {
-          inherit nixpkgs pkgs;
-        };
-
-        home-manager.users.${user} = { config, lib, pkgs, ... }: {
-          imports = [
-            host.home
-          ];
-        };
-      }
+      # Home config from home-manager-config flake
+      host.home
     ];
   };
 
