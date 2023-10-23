@@ -25,13 +25,37 @@
       plugins = [ ];
     };
 
+    envExtra = ''
+      # Add nix packages to PATH, only relevant for non-NixOS systems
+      export PATH=$PATH:~/.nix-profile/bin
+    '';
+
     initExtra = ''
-      # Starship Theme
+      # Starship Prompt
       export STARSHIP_CONFIG=~/.config/starship/starship.toml
       eval "$(${pkgs.starship}/bin/starship init zsh)"
+
+      fzf-cd() {
+        DIR=$(${pkgs.fd}/bin/fd --type directory | ${pkgs.fzf}/bin/fzf)
+        if [[ $DIR && -d $DIR ]]; then
+          cd $DIR
+        fi
+      }
+
+      fzf-edit() {
+        FILE=$(${pkgs.fd}/bin/fd --type file | ${pkgs.fzf}/bin/fzf)
+        if [[ $FILE && -f $FILE ]]; then
+          $EDITOR $FILE
+        fi
+      }
     '';
+
+    shellAliases = {
+      fcd = "fzf-cd";
+      fe = "fzf-edit";
+    };
   };
-  
+
   # Starship prompt config
   home.file.".config/starship/starship.toml" = {
     source = ./starship.toml;
