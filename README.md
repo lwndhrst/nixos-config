@@ -1,4 +1,4 @@
-# Personal NixOS Config
+# Personal NixOS + Home Manager Config
 
 
 ## Setup as NixOS configuration
