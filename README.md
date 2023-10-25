@@ -1,7 +1,7 @@
 # Personal NixOS + Home Manager Config
 
 
-## Setup as NixOS configuration
+## Setup as NixOS Configuration
 
 Available hosts:
 - desktop
