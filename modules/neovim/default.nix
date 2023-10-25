@@ -51,6 +51,7 @@
       vimPlugins.lualine-nvim
       vimPlugins.dashboard-nvim
       vimPlugins.nvim-colorizer-lua
+      vimPlugins.todo-comments-nvim
       customPkgs.vimPlugins.ranger-nvim
       customPkgs.vimPlugins.harpoon
 
