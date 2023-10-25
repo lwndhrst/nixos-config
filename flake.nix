@@ -15,13 +15,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    home-manager-config = {
-      url = "github:lwndhrst/home-manager-config";
+    home-manager = {
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs @ { self, nixpkgs, home-manager-config, nur, custom-nixpkgs, ... }:
+  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -33,13 +33,14 @@
         ];
       };
       config = pkgs.config;
+      hosts = import ./hosts {
+        inherit (nixpkgs) lib;
+        inherit system nixpkgs pkgs config home-manager nur user;
+      };
 
     in {
-      nixosConfigurations = (
-        import ./hosts {
-          inherit (nixpkgs) lib;
-          inherit system nixpkgs pkgs config home-manager-config nur user;
-        }
-      );
+      nixosConfigurations = hosts.nixosConfigurations;
+      nixosModules        = hosts.nixosModules;
+      homeConfigurations  = hosts.homeConfigurations;
     };
 }
