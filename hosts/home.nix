@@ -37,39 +37,35 @@ in {
     username = "${user}";
     homeDirectory = "/home/${user}";
 
+    # TODO: holy shit, this is ugly
     packages = with pkgs; [
-      # Term Utils
-      htop              # System Resources
-      customPkgs.nitch  # System Info Fetcher
-      ripgrep           # Grep but Rust
-      fd                # Alternative find
-      xclip             # Access X clipboard from terminal
-      mons              # 2-Monitor Setup Script
-      acpi              # Battery Status Fetcher
-      libqalculate      # Calculator/Equation Solver CLI (qalc)
+      htop
+      customPkgs.nitch
+      ripgrep
+      fd
+      xclip
+      mons
+      acpi
+      libqalculate
+      dconf
 
-      # Image/Video/Audio
-      feh               # Raster-Image Viewer
-      librsvg           # SVG Conversion Utility
+      feh
+      librsvg
       vlc
 
-      # File Management
       unzip
-      ranger            # Terminal File Manager
+      ranger
 
-      # Apps
-      firefox           # Browser
+      firefox
       gimp
 
-      # Dev stuff
-      gh                # GitHub CLI
+      nil
+      gh
       tree-sitter
       stylua
-      openvpn
-      nil               # Nix Language Server
 
-      # Misc
-      dconf
+      openvpn
+      networkmanager-openvpn
     ];
 
     pointerCursor = {
