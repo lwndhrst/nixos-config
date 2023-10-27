@@ -11,13 +11,14 @@ in {
   programs.home-manager.enable = true;
 
   imports = with modules; [
-    c
+    # c
+    # odin
+    # rust
+    # tex
+
     fzf
     neovim
-    rust
-    tex
     tmux
-    odin
     zathura
     zsh
   ];
