@@ -15,9 +15,18 @@ in {
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
   };
 
-  networking.networkmanager = {
-    enable = true;
-    wifi.powersave = false;
+  networking = {
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+    };
+
+    # firewall = {
+    #   enable = true;
+    #   allowedUDPPorts = [
+    #     1194 # OpenVPN
+    #   ];
+    # };
   };
 
   time.timeZone = "Europe/Berlin";
