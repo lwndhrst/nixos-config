@@ -46,4 +46,5 @@
 
   # Vulkan support
   hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
 }

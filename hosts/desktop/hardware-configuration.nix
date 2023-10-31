@@ -52,6 +52,7 @@
 
   # Vulkan support
   hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
