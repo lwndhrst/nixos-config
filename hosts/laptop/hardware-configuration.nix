@@ -45,7 +45,15 @@
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   # Vulkan support
-  hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver  # LIBVA_DRIVER_NAME=iHD
+      vaapiIntel          # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+      vaapiVdpau
+      libvdpau-va-gl
+    ];
+  };
 }
