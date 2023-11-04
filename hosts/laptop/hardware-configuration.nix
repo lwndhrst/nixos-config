@@ -15,7 +15,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "vmd" "nvme" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "i915" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
@@ -50,5 +50,14 @@
     # Vulkan support
     driSupport = true;
     driSupport32Bit = true;
+
+    # Hardware accelerated video playback
+    extraPackages = with pkgs; [
+      intel-compute-runtime
+      intel-vaapi-driver
+      intel-media-driver
+      libvdpau-va-gl
+    ];
   };
 }
+

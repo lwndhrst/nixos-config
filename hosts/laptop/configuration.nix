@@ -24,10 +24,14 @@
   networking.hostName = "nixos-laptop"; # Define your hostname.
 
   services = {
-    # Enable touchpad support (enabled default in most desktopManager).
-    xserver.libinput = {
-      enable = true;
-      touchpad.naturalScrolling = true;
+    xserver = {
+      videoDrivers = [ "intel" ];
+
+      # Enable touchpad support (enabled default in most desktopManager).
+      libinput = {
+        enable = true;
+        touchpad.naturalScrolling = true;
+      };
     };
 
     # Printer stuff

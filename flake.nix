@@ -10,13 +10,13 @@
       url = "github:nix-community/NUR"; # Nix User Repository
     };
 
-    custom-nixpkgs = {
-      url = "github:lwndhrst/custom-nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    home-manager = {
-      url = "github:nix-community/home-manager";
+    custom-nixpkgs = {
+      url = "github:lwndhrst/custom-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
