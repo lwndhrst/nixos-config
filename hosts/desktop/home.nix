@@ -13,14 +13,14 @@ in {
 
   home = {
     packages = with pkgs; [
-      pavucontrol       # PulseAudio Settings
-      pamixer           # PulseAudio Mixer CLI
+      pavucontrol
+      pamixer
 
       discord
-      portfolio         # Portfolio Performance
-      thunderbird       # Email
-      lutris            # Game Platform (Emulation, etc.)
-      protontricks      # Winetricks wrapper for proton games
+      portfolio
+      thunderbird
+      lutris
+      protontricks
 
       path-of-building
     ];

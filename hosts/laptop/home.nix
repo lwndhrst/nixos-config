@@ -13,12 +13,14 @@ in {
 
   home = {
     packages = with pkgs; [
-      pavucontrol       # PulseAudio Settings
-      pamixer           # PulseAudio Mixer CLI
+      pavucontrol
+      pamixer
 
       discord
-      portfolio         # Portfolio Performance
-      thunderbird       # Email
+      portfolio
+      thunderbird
+
+      godot_4
     ];
   };
 }
