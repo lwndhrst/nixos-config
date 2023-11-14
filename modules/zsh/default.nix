@@ -48,6 +48,12 @@
           $EDITOR $FILE
         fi
       }
+
+      zle -N fzf-cd
+      bindkey "^p" fzf-cd
+
+      zle -N fzf-edit
+      bindkey "^o" fzf-edit
     '';
 
     shellAliases = {
