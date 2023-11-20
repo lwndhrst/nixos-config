@@ -21,6 +21,7 @@ in {
       thunderbird
 
       godot_4
+      aseprite
     ];
   };
 }

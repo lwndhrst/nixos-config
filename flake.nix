@@ -28,9 +28,7 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        config.permittedInsecurePackages = [ 
-          "zotero-6.0.27" 
-        ];
+        config.permittedInsecurePackages = [];
         overlays = [
           custom-nixpkgs.overlays.default
         ];
