@@ -35,6 +35,7 @@
         c
         cpp
         css
+        gdscript
         html
         javascript
         lua
