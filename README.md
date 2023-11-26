@@ -197,7 +197,14 @@ Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`
 
 
 
-## Flake for working with Godot in WSL 2
+## Working with Godot on WSL 2
+
+Godot on Windows:
+- set language server address to `0.0.0.0` and hit enter
+- Windows should open a dialog to update firewall settings
+- update firewall manually otherwise
+
+Add a flake like this to your Godot project:
 
 ```nix
 {
@@ -226,4 +233,16 @@ Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`
       });
     };
 }
+```
+
+Update LSP config for your text editor to use the remote address (Windows host) instead.
+Here's an example for Neovim using [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig):
+
+```lua
+-- gdscript lsp
+local gdscript_addr = os.getenv("GDScript_Addr") or "127.0.0.1"
+local gdscript_port = os.getenv("GDScript_Port") or "6005"
+lsp.gdscript.setup(vim.tbl_extend("error", default_config, {
+	cmd = vim.lsp.rpc.connect(gdscript_addr, gdscript_port),
+}))
 ```
