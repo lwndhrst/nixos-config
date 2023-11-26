@@ -167,12 +167,6 @@ lib.nixosSystem {
 ```
 
 
-
-
-
-
-
-
 ## Example flake for `nix develop`
 
 Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`.
@@ -199,4 +193,56 @@ Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`
       };
     };
 }
+```
+
+
+
+## Working with Godot on WSL 2
+
+Godot on Windows:
+- set language server address to `0.0.0.0` and hit enter
+- Windows should open a dialog to update firewall settings
+- update firewall manually otherwise
+
+Add a flake like this to your Godot project:
+
+```nix
+{
+  inputs = {
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+  };
+
+  outputs = { self, nixpkgs }:
+    let
+      forEachSystem = fn:
+        nixpkgs.lib.genAttrs [
+          "x86_64-linux"
+        ] (system: fn (import nixpkgs { inherit system; }) system);
+
+    in {
+      devShells = forEachSystem (pkgs: system: {
+        default = pkgs.mkShell {
+          name = "godot";
+          packages = with pkgs; [];
+          shellHook = ''
+            export GDScript_Addr=$(ip route list default | awk '{print $3}')
+          '';
+        };
+      });
+    };
+}
+```
+
+Update LSP config for your text editor to use the remote address (Windows host) instead.
+Here's an example for Neovim using [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig):
+
+```lua
+-- gdscript lsp
+local gdscript_addr = os.getenv("GDScript_Addr") or "127.0.0.1"
+local gdscript_port = os.getenv("GDScript_Port") or "6005"
+lsp.gdscript.setup(vim.tbl_extend("error", default_config, {
+	cmd = vim.lsp.rpc.connect(gdscript_addr, gdscript_port),
+}))
 ```
