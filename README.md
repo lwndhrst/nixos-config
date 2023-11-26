@@ -167,12 +167,6 @@ lib.nixosSystem {
 ```
 
 
-
-
-
-
-
-
 ## Example flake for `nix develop`
 
 Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`.
@@ -197,6 +191,39 @@ Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`
           texlab
         ];
       };
+    };
+}
+```
+
+
+
+## Flake for working with Godot in WSL 2
+
+```nix
+{
+  inputs = {
+    nixpkgs = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+  };
+
+  outputs = { self, nixpkgs }:
+    let
+      forEachSystem = fn:
+        nixpkgs.lib.genAttrs [
+          "x86_64-linux"
+        ] (system: fn (import nixpkgs { inherit system; }) system);
+
+    in {
+      devShells = forEachSystem (pkgs: system: {
+        default = pkgs.mkShell {
+          name = "godot";
+          packages = with pkgs; [];
+          shellHook = ''
+            export GDScript_Addr=$(ip route list default | awk '{print $3}')
+          '';
+        };
+      });
     };
 }
 ```
