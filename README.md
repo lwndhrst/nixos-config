@@ -197,7 +197,7 @@ Put flake into `path/to/project/flake.nix` and enter dev shell via `nix develop`
 
 
 
-## Working with Godot on WSL 2
+## Working with Godot and WSL 2
 
 Godot on Windows:
 - set language server address to `0.0.0.0` and hit enter
