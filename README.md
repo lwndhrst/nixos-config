@@ -246,3 +246,18 @@ lsp.gdscript.setup(vim.tbl_extend("error", default_config, {
 	cmd = vim.lsp.rpc.connect(gdscript_addr, gdscript_port),
 }))
 ```
+
+To allow Godot to open files in Neovim running in WSL, start `nvim` as a server.
+
+```sh
+nvim --listen ~/.cache/nvim/godot.pipe
+```
+
+Make a batch file and set it as the external editor executable in Godot.
+Exec flags should be smth like `{file}`. Unfortunately flags such as `+call cursor({line}, {col})` don't seem to work with `nvim --remote`.
+
+```console
+@echo off
+wsl ~/.nix-profile/bin/nvim --server ~/.cache/nvim/godot.pipe --remote $(wslpath %1)
+```
+
