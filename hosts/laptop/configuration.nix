@@ -72,6 +72,7 @@
   };
 
   virtualisation.docker.enable = true;
+  networking.firewall.trustedInterfaces = [ "docker0" ];
 
   programs = {
     steam.enable = true;

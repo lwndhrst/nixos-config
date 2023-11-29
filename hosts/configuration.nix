@@ -20,13 +20,6 @@ in {
       enable = true;
       wifi.powersave = false;
     };
-
-    # firewall = {
-    #   enable = true;
-    #   allowedUDPPorts = [
-    #     1194 # OpenVPN
-    #   ];
-    # };
   };
 
   time.timeZone = "Europe/Berlin";
