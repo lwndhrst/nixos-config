@@ -42,6 +42,7 @@
         markdown
         nix
         odin
+        python
         rust
         toml
       ]))
