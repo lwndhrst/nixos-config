@@ -129,6 +129,22 @@ Invoke OpenGL/Vulkan programs by prefixing the appropriate wrapper:
    ```sh
    chsh -s /home/<user>/.nix-profile/bin/zsh
    ```
+- Wezterm config for WSL 2:
+   ```lua
+   local wezterm = require('wezterm')
+   local colors = require('lua/rose-pine').colors()
+
+   return {
+       default_domain = 'WSL:Debian',
+       enable_tab_bar = false,
+
+       colors = colors,
+       force_reverse_video_cursor = true,
+
+       font = wezterm.font('Cascadia Mono'),
+       font_size = 14.0,
+   }
+   ```
 
 
 ## Usage as NixOS Module
