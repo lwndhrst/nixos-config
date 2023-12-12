@@ -40,7 +40,8 @@ in {
     # TODO: holy shit, this is ugly
     packages = with pkgs; [
       htop
-      customPkgs.nitch
+      # customPkgs.nitch
+      nitch
       ripgrep
       fd
       xclip
