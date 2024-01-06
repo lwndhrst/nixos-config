@@ -132,7 +132,14 @@ Invoke OpenGL/Vulkan programs by prefixing the appropriate wrapper:
 - Wezterm config for WSL 2:
    ```lua
    local wezterm = require('wezterm')
+   local muz = wezterm.mux
+   
    local colors = require('lua/rose-pine').colors()
+
+   wezterm.on("gui-startup", function()
+       local tab, pane, window = mux.spawn_window{}
+       window:gui_window():maximize()
+   end)
 
    return {
        default_domain = 'WSL:Debian',
