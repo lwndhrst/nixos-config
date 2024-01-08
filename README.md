@@ -132,7 +132,7 @@ Invoke OpenGL/Vulkan programs by prefixing the appropriate wrapper:
 - Wezterm config for WSL 2:
    ```lua
    local wezterm = require('wezterm')
-   local muz = wezterm.mux
+   local mux = wezterm.mux
    
    local colors = require('lua/rose-pine').colors()
 
