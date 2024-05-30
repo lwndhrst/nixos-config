@@ -17,7 +17,7 @@ in {
     # tex
 
     fzf
-    neovim
+    # neovim
     tmux
     zathura
     zsh

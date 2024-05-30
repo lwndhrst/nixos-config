@@ -28,6 +28,9 @@
     envExtra = ''
       # Add nix packages to PATH, only relevant for non-NixOS systems
       export PATH=$PATH:~/.nix-profile/bin
+
+      # Assuming neovim is installed independently
+      export PATH=$PATH:/opt/nvim-linux64/bin 
     '';
 
     initExtra = ''
