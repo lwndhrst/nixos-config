@@ -11,13 +11,7 @@ in {
   programs.home-manager.enable = true;
 
   imports = with modules; [
-    # c
-    # odin
-    # rust
-    # tex
-
     fzf
-    # neovim
     tmux
     zathura
     zsh
@@ -29,6 +23,7 @@ in {
 
     packages = with pkgs; [
       fd
+      gcc
       gh
       git
       htop
@@ -38,6 +33,7 @@ in {
       openssh
       ranger
       ripgrep
+      rustup
       stylua
       tree-sitter
       unzip
