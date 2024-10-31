@@ -18,12 +18,46 @@ in {
   boot = {
     # Use latest available Kernel packages by default.
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
+
+    systemd-boot = { 
+      enable = true;
+      configurationLimit = 5;
+    };
+    efi.canTouchEfiVariables = true;
   };
 
   networking = {
+    hostName = "nixos";
     networkmanager = {
       enable = true;
       wifi.powersave = false;
+    };
+  };
+
+  services = {
+    # Printer stuff
+    printing.enable = true;
+
+    # Needed for wireless printer/scanner
+    avahi = { 
+      enable = true;
+      nssmdns4 = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        userServices = true;
+      };
+    };
+
+    # Sound
+    pipewire = {
+      enable = true;
+      alsa = {
+        enable = true;
+        support32Bit = true;
+      };
+      pulse.enable = true;
+      jack.enable = true;
     };
   };
 
