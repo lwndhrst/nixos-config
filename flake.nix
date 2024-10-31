@@ -21,7 +21,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, ... }:
+  outputs = { nixpkgs, home-manager, nur, hyprland, custom-nixpkgs, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -36,7 +36,7 @@
       config = pkgs.config;
       hosts = import ./hosts {
         inherit (nixpkgs) lib;
-        inherit system nixpkgs pkgs config home-manager nur user;
+        inherit system nixpkgs pkgs config home-manager nur user hyprland;
       };
 
     in {

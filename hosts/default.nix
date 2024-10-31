@@ -62,6 +62,33 @@ in {
       };
     };
 
+    desktop-hyprland = lib.nixosSystem {
+      inherit lib pkgs system;
+
+      specialArgs = {
+        inherit user;
+      };
+
+      modules = [ 
+        # Enable NUR repos via config.nur.repos.<...>
+        nur.nixosModules.nur
+
+        ./desktop-hyprland/configuration.nix
+
+        home-manager.nixosModules.home-manager {
+          home-manager.extraSpecialArgs = {
+            inherit pkgs user;
+          };
+
+          home-manager.users.${user} = { config, pkgs, lib, ... }: {
+            imports = [
+              ./desktop-hyprland/home.nix
+            ];
+          };
+        }
+      ];
+    };
+
     laptop = nixosSystem {
       host = { 
         config = ./laptop/configuration.nix;
