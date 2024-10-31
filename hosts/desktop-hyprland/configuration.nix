@@ -10,6 +10,11 @@ let
   modules  = import ../modules;
 
 in {
+  imports = [ 
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+
   boot = {
     # Use latest available Kernel packages by default.
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
@@ -45,12 +50,19 @@ in {
 
   programs = {
     hyprland.enable = true;
+    steam.enable = true;
     zsh.enable = true;
+  };
+
+  users.users.${user} = {
+    isNormalUser = true;
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "libvirtd" ];
   };
 
   # Set system-wide variables and packages.
   environment = {
-    shells = with pkgs; [ zsh ];
+    shells = [ pkgs.zsh ];
     pathsToLink = [
       "/share/zsh"
     ];
