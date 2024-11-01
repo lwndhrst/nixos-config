@@ -21,6 +21,7 @@ in {
       fd
       firefox
       git
+      hyprpaper
       lutris
       nil
       pavucontrol
