@@ -22,6 +22,7 @@ in {
       fd
       nil
       firefox
+      pavucontrol
       wofi
       waybar
     ];
