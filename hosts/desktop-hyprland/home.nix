@@ -17,6 +17,7 @@ in {
     username = "${user}";
     homeDirectory = "/home/${user}";
     packages = with pkgs; [
+      ags
       anki
       fd
       firefox
