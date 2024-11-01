@@ -17,14 +17,17 @@ in {
     username = "${user}";
     homeDirectory = "/home/${user}";
     packages = with pkgs; [
-      git
-      ripgrep
+      anki
       fd
-      nil
       firefox
+      git
+      lutris
+      nil
       pavucontrol
-      wofi
+      ripgrep
+      thunderbird
       waybar
+      wofi
     ];
 
     sessionVariables = {
