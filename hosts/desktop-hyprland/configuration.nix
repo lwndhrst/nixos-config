@@ -19,11 +19,13 @@ in {
     # Use latest available Kernel packages by default.
     kernelPackages = lib.mkDefault pkgs.linuxPackages_latest;
 
-    systemd-boot = { 
-      enable = true;
-      configurationLimit = 5;
+    loader = {
+      systemd-boot = { 
+        enable = true;
+        configurationLimit = 5;
+      };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
   };
 
   networking = {
@@ -101,12 +103,7 @@ in {
       "/share/zsh"
     ];
 
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
-
-    systemPackages = with pkgs; [
-    ];
+    systemPackages = with pkgs; [ ];
   };
 
   nix = {
@@ -118,8 +115,7 @@ in {
     };
 
     # Enable flakes.
-    package = pkgs.nixFlakes;
-    extraOptions = "experimental-features = nix-command flakes";
+    settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
   # This value determines the NixOS release from which the default
