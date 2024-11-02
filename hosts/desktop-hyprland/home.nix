@@ -19,7 +19,9 @@ in {
     homeDirectory = "/home/${user}";
 
     packages = with pkgs; [
-      ags
+      (ags.overrideAttrs (old: {
+        buildInputs = old.buildInputs ++ [ pkgs.libdbusmenu-gtk3 ];
+      }))
       anki
       fd
       firefox
@@ -52,5 +54,10 @@ in {
     };
 
     stateVersion = "24.05";
+  };
+
+  gtk.iconTheme = {
+    package = pkgs.papirus-icon-theme;
+    name = "Papirus-Dark";
   };
 }
