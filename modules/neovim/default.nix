@@ -26,6 +26,7 @@
       (vimPlugins.nvim-treesitter.withPlugins (p: with p; [
         bash
         c
+        cmake
         cpp
         css
         gdscript
