@@ -22,20 +22,14 @@
       vimPlugins.cmp-cmdline
       vimPlugins.cmp_luasnip
       vimPlugins.luasnip
-
-      # Formatter
-      vimPlugins.formatter-nvim
-
-      # Treesitter
-      # vimPlugins.nvim-treesitter
       
-      # If using default treesitter parser dir, all parsers have to be installed from here
       (vimPlugins.nvim-treesitter.withPlugins (p: with p; [
         bash
         c
         cpp
         css
         gdscript
+        glsl
         html
         javascript
         lua
@@ -47,15 +41,17 @@
         toml
       ]))
 
+      # Formatting
+      vimPlugins.conform-nvim
+
       # Misc
-      vimPlugins.nvim-web-devicons
       vimPlugins.telescope-nvim
+      vimPlugins.oil-nvim
+      vimPlugins.harpoon2
       vimPlugins.lualine-nvim
       vimPlugins.dashboard-nvim
       vimPlugins.nvim-colorizer-lua
       vimPlugins.todo-comments-nvim
-      customPkgs.vimPlugins.ranger-nvim
-      customPkgs.vimPlugins.harpoon
 
       # Latex
       vimPlugins.vimtex

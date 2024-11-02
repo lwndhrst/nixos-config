@@ -9,13 +9,10 @@ in {
     kitty
     neovim
     stylix
-    # zathura
-    # zotero
+    zathura
+    zotero
     zsh
   ];
-
-  # programs.fzf.enable = true;
-  # programs.kitty.enable = true;
 
   home = {
     username = "${user}";
@@ -31,6 +28,7 @@ in {
       kdePackages.dolphin
       kdePackages.qtsvg
       kdePackages.qtwayland
+      lua-language-server
       lutris
       nil
       pavucontrol
@@ -38,6 +36,7 @@ in {
       ripgrep
       thunderbird
       waybar
+      wget
       wofi
     ];
 
