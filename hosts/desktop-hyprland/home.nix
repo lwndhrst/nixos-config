@@ -8,14 +8,19 @@ in {
     fzf
     kitty
     neovim
-    zathura
-    zotero
+    stylix
+    # zathura
+    # zotero
     zsh
   ];
+
+  # programs.fzf.enable = true;
+  # programs.kitty.enable = true;
 
   home = {
     username = "${user}";
     homeDirectory = "/home/${user}";
+
     packages = with pkgs; [
       ags
       anki
@@ -23,25 +28,30 @@ in {
       firefox
       git
       hyprpaper
+      kdePackages.dolphin
+      kdePackages.qtsvg
+      kdePackages.qtwayland
       lutris
       nil
       pavucontrol
+      ranger
       ripgrep
       thunderbird
       waybar
       wofi
     ];
 
+    # pointerCursor = {
+    #   package = pkgs.bibata-cursors;
+    #   name = "Bibata-Modern-Ice";
+    #   size = 24;
+    #   gtk.enable = true;
+    # };
+
     sessionVariables = {
       EDITOR = "nvim";
-    };
-
-    pointerCursor = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
     };
 
     stateVersion = "24.05";
   };
 }
-

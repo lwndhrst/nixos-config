@@ -5,15 +5,12 @@
     enable = true;
     settings.enable_audio_bell = false;
 
-    font = {
-      name = "Cascadia Mono";
-      size = 15;
-    };
-
     extraConfig = ''
-      include themes/rose-pine.conf
+      # include themes/rose-pine.conf
 
-      background              #0c0b11
+      font_size               15
+
+      # background              #0c0b11
       background_opacity      0.90
 
       # setting cursor to none makes it use the text color under the cursor

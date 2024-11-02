@@ -1,48 +1,33 @@
 { pkgs, ... }:
 
-let
-  gtkThemes = {
-    adwaita = null;
-
-    dracula = {
-      package = pkgs.dracula-theme;
-      name = "Dracula";
-    };
-
-    graphite = {
-      package = pkgs.graphite-gtk-theme;
-      name = "Graphite-Dark";
-    };
-
-    orchis = {
-      package = pkgs.orchis-theme;
-      name = "Orchis-Dark";
-    };
-  };
-
-  iconThemes = {
-    papirus = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
-    };
-  };
-
-  # set theme here
-  theme = gtkThemes.adwaita;
-  iconTheme = iconThemes.papirus;
-
-in {
+{
   gtk = {
-    inherit theme iconTheme;
     enable = true;
-
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
+    theme = {
+      package = pkgs.gnome.gnome-themes-extra;
+      name = "Adwaita-dark";
+    };
+    iconTheme = {
+      package = pkgs.tela-circle-icon-theme;
+      name = "Tela-circle-Dark";
     };
   };
 
-  # home.file.".config/gtk-4.0" = {
-  #   recursive = true;
-  #   source = "${theme.package}/share/themes/${theme.name}/gtk-4.0";
+  # Cursor theme is set via home.pointerCursor
+  # gtk.cursorTheme = {
+  #   package = pkgs.bibata-cursors;
+  #   name = "Bibata-Modern-Ice";
   # };
+
+  home.pointerCursor.gtk.enable = true;
+
+  # home.file.".local/share/themes/Lavanda-Dark" = {
+  #   recursive = true;
+  #   source = ./themes/Lavanda-Dark;
+  # };
+
+  qt.style = {
+    package = pkgs.adwaita-qt;
+    name = "awaita-dark";
+  };
 }

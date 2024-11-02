@@ -19,9 +19,13 @@
       url = "github:lwndhrst/custom-nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:danth/stylix";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, ... }:
+  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, stylix, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -36,7 +40,7 @@
       config = pkgs.config;
       hosts = import ./hosts {
         inherit (nixpkgs) lib;
-        inherit system nixpkgs pkgs config home-manager nur user;
+        inherit system nixpkgs pkgs config home-manager nur user stylix;
       };
 
     in {

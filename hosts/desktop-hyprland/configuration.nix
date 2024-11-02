@@ -7,7 +7,7 @@
 }:
 
 let
-  modules  = import ../modules;
+  modules  = import ../../modules;
 
 in {
   imports = [ 

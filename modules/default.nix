@@ -10,6 +10,7 @@
   neovim    = ./neovim;
   picom     = ./picom;
   rofi      = ./rofi;
+  stylix    = ./stylix;
   tmux      = ./tmux;
   zathura   = ./zathura;
   zotero    = ./zotero;

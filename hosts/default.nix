@@ -4,6 +4,7 @@
 , home-manager
 , nur
 , user
+, stylix
 , ... 
 }:
 
@@ -82,6 +83,7 @@ in {
 
           home-manager.users.${user} = { config, pkgs, lib, ... }: {
             imports = [
+              stylix.homeManagerModules.stylix
               ./desktop-hyprland/home.nix
             ];
           };
