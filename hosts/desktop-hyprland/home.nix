@@ -23,6 +23,7 @@ in {
         buildInputs = old.buildInputs ++ [ pkgs.libdbusmenu-gtk3 ];
       }))
       anki
+      discord
       fd
       firefox
       git
@@ -51,6 +52,7 @@ in {
 
     sessionVariables = {
       EDITOR = "nvim";
+      NIXOS_OZONE_WL = "1";
     };
 
     stateVersion = "24.05";
