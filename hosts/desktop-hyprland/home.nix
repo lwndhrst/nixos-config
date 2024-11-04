@@ -27,6 +27,7 @@ in {
       fd
       firefox
       git
+      hypridle
       hyprpaper
       hyprshot
       kdePackages.dolphin
