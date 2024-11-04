@@ -28,6 +28,7 @@ in {
       firefox
       git
       hyprpaper
+      hyprshot
       kdePackages.dolphin
       kdePackages.qtsvg
       kdePackages.qtwayland
