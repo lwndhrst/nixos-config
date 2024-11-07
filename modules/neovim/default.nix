@@ -40,6 +40,7 @@
         python
         rust
         toml
+        typst
       ]))
 
       # Formatting

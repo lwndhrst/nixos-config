@@ -23,10 +23,7 @@
 
     autoEnable = false;
     targets = {
-      fzf.enable = true;
       gtk.enable = true;
-      kde.enable = true;
-      kitty.enable = true;
     };
   };
 }
