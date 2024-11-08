@@ -26,6 +26,7 @@ in {
       discord
       fd
       firefox
+      gimp
       git
       hypridle
       hyprpaper
