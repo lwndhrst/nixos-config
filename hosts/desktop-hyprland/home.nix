@@ -41,6 +41,7 @@ in {
       ranger
       ripgrep
       thunderbird
+      unzip
       waybar
       wget
       wofi
