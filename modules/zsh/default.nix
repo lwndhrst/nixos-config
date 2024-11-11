@@ -37,32 +37,7 @@
       # Starship Prompt
       export STARSHIP_CONFIG=~/.config/starship/starship.toml
       eval "$(${pkgs.starship}/bin/starship init zsh)"
-
-      fzf-cd() {
-        DIR=$(${pkgs.fd}/bin/fd --type directory | ${pkgs.fzf}/bin/fzf)
-        if [[ $DIR && -d $DIR ]]; then
-          cd $DIR
-        fi
-      }
-
-      fzf-edit() {
-        FILE=$(${pkgs.fd}/bin/fd --type file | ${pkgs.fzf}/bin/fzf)
-        if [[ $FILE && -f $FILE ]]; then
-          $EDITOR $FILE
-        fi
-      }
-
-      zle -N fzf-cd
-      bindkey "^p" fzf-cd
-
-      zle -N fzf-edit
-      bindkey "^o" fzf-edit
     '';
-
-    shellAliases = {
-      fcd = "fzf-cd";
-      fe = "fzf-edit";
-    };
   };
 
   # Starship prompt config
