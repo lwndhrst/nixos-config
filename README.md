@@ -149,41 +149,6 @@ Invoke OpenGL/Vulkan programs by prefixing the appropriate wrapper:
    ```
 
 
-## Usage as NixOS Module
-
-Available modules:
-- desktop
-- laptop
-- vbox
-
-```nix
-inputs.nixos-config = {
-  url = "github:lwndhrst/nixos-config";
-  inputs.nixpkgs.follows = "nixpkgs";
-};
-```
-
-```nix
-# ...
-
-lib.nixosSystem {
-  inherit lib pkgs system;
-
-  specialArgs = {
-    inherit user;
-  };
-
-  modules = [
-    ./configuration.nix
-
-    # Home config from nixos-config flake
-    nixos-config.nixosModules.desktop;
-  ];
-};
-
-# ...
-```
-
 
 ## Example flake for `nix develop`
 
