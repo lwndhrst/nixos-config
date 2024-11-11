@@ -3,8 +3,8 @@
 
 ## Setup as NixOS Configuration
 
-Available hosts:
-- desktop-hyprland
+Available NixOS Configurations:
+- `desktop-hyprland`
 
 ### Fresh installation
 
@@ -32,8 +32,8 @@ nix flake update
 
 ## Setup with standalone Home Manager
 
-Available hosts:
-- wsl
+Available Home Manager Configurations:
+- `wsl`
 
 ### For non-NixOS Systems
 
@@ -49,13 +49,13 @@ Note: you may need to install a few extra packages, such as `curl` or `git`.
 git clone https://github.com/lwndhrst/nixos-config ~/.config/home-manager
 ```
 ```sh
-nix run home-manager/master -- switch --flake .#<host>
+nix run home-manager/master -- switch --flake ~/.config/home-manager#<host>
 ```
 
 ### Update as follows:
 
 ```sh
-nix flake update && home-manager switch --flake .#<host>
+nix flake update && home-manager switch --flake ~/.config/home-manager#<host>
 ```
 
 ### Get OpenGL and Vulkan to work on non-NixOS Systems with [nixGL](https://github.com/guibou/nixGL)
