@@ -4,9 +4,7 @@
 ## Setup as NixOS Configuration
 
 Available hosts:
-- desktop
-- laptop
-- vbox
+- desktop-hyprland
 
 ### Fresh installation
 
@@ -35,9 +33,6 @@ nix flake update
 ## Setup with standalone Home Manager
 
 Available hosts:
-- desktop
-- laptop
-- vbox
 - wsl
 
 ### For non-NixOS Systems

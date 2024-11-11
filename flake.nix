@@ -45,7 +45,6 @@
 
     in {
       nixosConfigurations = hosts.nixosConfigurations;
-      nixosModules        = hosts.nixosModules;
       homeConfigurations  = hosts.homeConfigurations;
     };
 }
