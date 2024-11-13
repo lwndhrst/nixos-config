@@ -27,10 +27,13 @@
 
     envExtra = ''
       # Add nix packages to PATH, only relevant for non-NixOS systems
-      export PATH=$PATH:~/.nix-profile/bin
+      # export PATH=$PATH:~/.nix-profile/bin
 
-      # Assuming neovim is installed independently
-      export PATH=$PATH:/opt/nvim-linux64/bin 
+      # If neovim is installed independently
+      # export PATH=$PATH:/opt/nvim-linux64/bin 
+
+      # Setting this mostly for 'nix develop'
+      export SHELL=${pkgs.zsh}/bin/zsh
     '';
 
     initExtra = ''
@@ -38,6 +41,10 @@
       export STARSHIP_CONFIG=~/.config/starship/starship.toml
       eval "$(${pkgs.starship}/bin/starship init zsh)"
     '';
+
+    shellAliases = {
+      nd = "nix develop -c $SHELL";
+    };
   };
 
   # Starship prompt config
