@@ -38,6 +38,7 @@ in {
       lutris
       nil
       pavucontrol
+      portfolio
       ranger
       ripgrep
       thunderbird
