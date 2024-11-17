@@ -86,6 +86,8 @@ in {
 
   programs = {
     hyprland.enable = true;
+    gamescope.enable = true;
+    gamemode.enable = true;
     steam.enable = true;
     zsh.enable = true;
   };
