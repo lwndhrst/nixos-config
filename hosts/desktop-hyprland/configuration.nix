@@ -65,7 +65,21 @@ in {
 
   time.timeZone = "Europe/Berlin";
 
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    inputMethod = {
+      type = "fcitx5";
+      enable = true;
+      fcitx5 = {
+        waylandFrontend = true;
+        addons = with pkgs; [
+          fcitx5-gtk
+          fcitx5-chinese-addons
+        ];
+      };
+    };
+  };
+
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";
