@@ -75,6 +75,9 @@ in {
         addons = with pkgs; [
           fcitx5-gtk
           fcitx5-chinese-addons
+
+          #Theme
+          customPkgs.fcitx5-rose-pine-edit
         ];
       };
     };
