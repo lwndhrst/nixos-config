@@ -24,6 +24,7 @@ in {
       }))
       anki
       discord
+      calibre
       fd
       firefox
       gimp
