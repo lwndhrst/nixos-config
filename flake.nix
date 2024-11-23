@@ -22,10 +22,16 @@
 
     stylix = {
       url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dotfiles-ags = {
+      url = "github:lwndhrst/dotfiles-ags/v2";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, stylix, ... }:
+  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, stylix, dotfiles-ags, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -40,7 +46,7 @@
       config = pkgs.config;
       hosts = import ./hosts {
         inherit (nixpkgs) lib;
-        inherit system nixpkgs pkgs config home-manager nur user stylix;
+        inherit system nixpkgs pkgs config home-manager nur user stylix dotfiles-ags;
       };
 
     in {

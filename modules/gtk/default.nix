@@ -8,8 +8,8 @@
       name = "Adwaita-dark";
     };
     iconTheme = {
-      package = pkgs.tela-circle-icon-theme;
-      name = "Tela-circle-Dark";
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
     };
   };
 

@@ -1,5 +1,49 @@
 {
   "nodes": {
+    "ags": {
+      "inputs": {
+        "astal": "astal",
+        "nixpkgs": [
+          "dotfiles-ags",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1732307740,
+        "narHash": "sha256-ZDsYdZOtg5qkK/wfLLB83B3SI+fE32S+/6Ey0ggHODM=",
+        "owner": "aylur",
+        "repo": "ags",
+        "rev": "81159966eb8b39b66c3efc133982fd76920c9605",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "ags",
+        "type": "github"
+      }
+    },
+    "astal": {
+      "inputs": {
+        "nixpkgs": [
+          "dotfiles-ags",
+          "ags",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731952585,
+        "narHash": "sha256-Sh1E7sJd8JJM3PCU1ZOei/QWz97OLCENIi2rTRoaniw=",
+        "owner": "aylur",
+        "repo": "astal",
+        "rev": "664c7a4ddfcf48c6e8accd3c33bb94424b0e8609",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "astal",
+        "type": "github"
+      }
+    },
     "base16": {
       "inputs": {
         "fromYaml": "fromYaml"
@@ -83,6 +127,28 @@
       "original": {
         "owner": "lwndhrst",
         "repo": "custom-nixpkgs",
+        "type": "github"
+      }
+    },
+    "dotfiles-ags": {
+      "inputs": {
+        "ags": "ags",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1732369457,
+        "narHash": "sha256-s1T9VtZVNHUAx0Kq7SdMiGjstaflymaUsDTidtnFrU8=",
+        "owner": "lwndhrst",
+        "repo": "dotfiles-ags",
+        "rev": "822149caaf8070a5bdfe917bb0cb9f646af8a5c2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lwndhrst",
+        "ref": "v2",
+        "repo": "dotfiles-ags",
         "type": "github"
       }
     },
@@ -213,22 +279,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1731531548,
-        "narHash": "sha256-sz8/v17enkYmfpgeeuyzniGJU0QQBfmAjlemAUYhfy8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "24f0d4acd634792badd6470134c387a3b039dace",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nur": {
       "locked": {
         "lastModified": 1731754035,
@@ -247,6 +297,7 @@
     "root": {
       "inputs": {
         "custom-nixpkgs": "custom-nixpkgs",
+        "dotfiles-ags": "dotfiles-ags",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
@@ -263,7 +314,9 @@
         "flake-utils": "flake-utils",
         "gnome-shell": "gnome-shell",
         "home-manager": "home-manager_2",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "systems": "systems",
         "tinted-foot": "tinted-foot",
         "tinted-kitty": "tinted-kitty",

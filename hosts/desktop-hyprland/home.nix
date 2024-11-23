@@ -1,4 +1,4 @@
-{ pkgs, user, ... }:
+{ system, pkgs, user, dotfiles-ags, ... }:
 
 let
   modules = import ../../modules;
@@ -19,9 +19,8 @@ in {
     homeDirectory = "/home/${user}";
 
     packages = with pkgs; [
-      (ags.overrideAttrs (old: {
-        buildInputs = old.buildInputs ++ [ pkgs.libdbusmenu-gtk3 ];
-      }))
+      dotfiles-ags.packages.${system}.default
+      dotfiles-ags.packages.${system}.launcher
       anki
       discord
       calibre
@@ -64,8 +63,11 @@ in {
     stateVersion = "24.05";
   };
 
-  gtk.iconTheme = {
-    package = pkgs.papirus-icon-theme;
-    name = "Papirus-Dark";
+  gtk = {
+    enable = true;
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
+    };
   };
 }
