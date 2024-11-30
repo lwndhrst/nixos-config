@@ -97,7 +97,8 @@ in {
       source-han-serif
 
       # Nerdfont overrides
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      nerd-fonts.symbols-only
     ];
   };
 

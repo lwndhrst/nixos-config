@@ -44,6 +44,7 @@ in {
       thunderbird
       unzip
       waybar
+      webcord
       wget
       wofi
     ];
