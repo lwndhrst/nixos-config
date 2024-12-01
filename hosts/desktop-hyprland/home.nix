@@ -21,29 +21,36 @@ in {
     packages = with pkgs; [
       dotfiles-ags.packages.${system}.default
       dotfiles-ags.packages.${system}.launcher
-      anki
-      calibre
-      fd
-      firefox
-      gimp
-      git
       hypridle
       hyprpaper
       hyprshot
       kdePackages.dolphin
       kdePackages.qtsvg
       kdePackages.qtwayland
-      lua-language-server
-      lutris
-      nil
       pavucontrol
+
+      # apps
+      anki
+      calibre
+      firefox
+      gimp
+      lutris
+      obs-studio
       portfolio
+      thunderbird
+      webcord
+
+      # cli
+      fd
+      git
       ranger
       ripgrep
-      thunderbird
       unzip
-      webcord
       wget
+
+      # lsp
+      lua-language-server
+      nil
     ];
 
     # configured via stylix
