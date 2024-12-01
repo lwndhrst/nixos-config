@@ -22,7 +22,6 @@ in {
       dotfiles-ags.packages.${system}.default
       dotfiles-ags.packages.${system}.launcher
       anki
-      discord
       calibre
       fd
       firefox
@@ -43,12 +42,11 @@ in {
       ripgrep
       thunderbird
       unzip
-      waybar
       webcord
       wget
-      wofi
     ];
 
+    # configured via stylix
     # pointerCursor = {
     #   package = pkgs.bibata-cursors;
     #   name = "Bibata-Modern-Ice";
@@ -58,6 +56,7 @@ in {
 
     sessionVariables = {
       EDITOR = "nvim";
+      TERMINAL = "kitty";
       NIXOS_OZONE_WL = "1";
     };
 
