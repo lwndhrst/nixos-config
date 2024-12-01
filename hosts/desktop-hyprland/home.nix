@@ -38,6 +38,7 @@ in {
       obs-studio
       portfolio
       thunderbird
+      vlc
       webcord
 
       # cli
