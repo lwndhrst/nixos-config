@@ -33,7 +33,7 @@ in {
     desktop-hyprland = nixosSystem {
       hostModules = { 
         config = [
-          nur.nixosModules.nur
+          nur.modules.nixos.default
           ./desktop-hyprland/configuration.nix
         ];
         home = [
