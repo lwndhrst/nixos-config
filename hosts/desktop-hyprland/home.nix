@@ -19,6 +19,7 @@ in {
     homeDirectory = "/home/${user}";
 
     packages = with pkgs; [
+      # system
       dotfiles-ags.packages.${system}.default
       dotfiles-ags.packages.${system}.launcher
       hypridle
@@ -49,9 +50,10 @@ in {
       unzip
       wget
 
-      # lsp
+      # dev
       lua-language-server
       nil
+      unityhub
     ];
 
     # configured via stylix
