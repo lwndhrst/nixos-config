@@ -53,7 +53,6 @@ in {
       # dev
       lua-language-server
       nil
-      unityhub
     ];
 
     # configured via stylix
