@@ -29,6 +29,7 @@ in {
       kdePackages.qtsvg
       kdePackages.qtwayland
       pavucontrol
+      wl-clipboard
 
       # apps
       anki
@@ -65,7 +66,6 @@ in {
 
     sessionVariables = {
       EDITOR = "nvim";
-      TERMINAL = "kitty";
       NIXOS_OZONE_WL = "1";
     };
 
