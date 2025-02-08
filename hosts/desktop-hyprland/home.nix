@@ -46,6 +46,7 @@ in {
       # cli
       fd
       git
+      git-lfs
       ranger
       ripgrep
       unzip
@@ -54,6 +55,7 @@ in {
       # dev
       lua-language-server
       nil
+      unityhub
     ];
 
     # configured via stylix
