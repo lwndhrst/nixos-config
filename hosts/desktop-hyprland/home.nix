@@ -51,6 +51,7 @@ in {
       ripgrep
       unzip
       wget
+      zip
 
       # dev
       lua-language-server
