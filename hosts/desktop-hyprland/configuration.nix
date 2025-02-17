@@ -23,7 +23,17 @@ in {
       systemd-boot = { 
         enable = true;
         configurationLimit = 5;
+
+        windows = {
+          "11-home" = {
+            title = "Windows 11 Home Edition";
+            efiDeviceHandle = "FS1";
+          };
+        };
+
+        edk2-uefi-shell.enable = true;
       };
+
       efi.canTouchEfiVariables = true;
     };
   };
