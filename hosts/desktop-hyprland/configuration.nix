@@ -63,7 +63,12 @@ in {
     };
   };
 
-  time.timeZone = "Europe/Berlin";
+  time = {
+    timeZone = "Europe/Berlin";
+
+    # For consistency with Windows
+    hardwareClockInLocalTime = true;
+  };
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -76,7 +81,7 @@ in {
           fcitx5-gtk
           fcitx5-chinese-addons
 
-          #Theme
+          # Pinyin input overlay theme
           customPkgs.fcitx5-rose-pine-edit
         ];
       };

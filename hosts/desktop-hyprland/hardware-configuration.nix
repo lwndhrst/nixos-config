@@ -24,10 +24,10 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/mnt/secondary" =
-    { device = "/dev/disk/by-label/secondary";
-      fsType = "ext4";
-    };
+  # fileSystems."/mnt/secondary" =
+  #   { device = "/dev/disk/by-label/secondary";
+  #     fsType = "ext4";
+  #   };
 
   swapDevices =
     [ { device = "/dev/disk/by-label/swap"; }
