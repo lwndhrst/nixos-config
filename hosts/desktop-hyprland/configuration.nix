@@ -24,14 +24,15 @@ in {
         enable = true;
         configurationLimit = 5;
 
-        windows = {
-          "11-home" = {
-            title = "Windows 11 Home Edition";
-            efiDeviceHandle = "FS1";
-          };
-        };
+        # Apparently this is not needed even though it's on a different disk?
+        # windows = {
+        #   "11-home" = {
+        #     title = "Windows 11 Home Edition";
+        #     efiDeviceHandle = "FS1";
+        #   };
+        # };
 
-        edk2-uefi-shell.enable = true;
+        # edk2-uefi-shell.enable = true;
       };
 
       efi.canTouchEfiVariables = true;
