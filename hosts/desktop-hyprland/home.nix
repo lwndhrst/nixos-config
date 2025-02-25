@@ -21,7 +21,8 @@ in {
     packages = with pkgs; [
       # system
       dotfiles-ags.packages.${system}.default
-      dotfiles-ags.packages.${system}.launcher
+      dotfiles-ags.packages.${system}.scripts.launcher
+      dotfiles-ags.packages.${system}.scripts.quit
       hypridle
       hyprpaper
       hyprshot
