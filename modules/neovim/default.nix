@@ -42,6 +42,7 @@
         rust
         toml
         typst
+        typescript
       ]))
 
       # Formatting

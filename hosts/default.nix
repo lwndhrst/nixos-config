@@ -6,7 +6,6 @@
 , nur
 , user
 , stylix
-, dotfiles-ags
 , ... 
 }:
 
@@ -19,7 +18,7 @@ let
     modules = (hostModules.config ++ [ 
       home-manager.nixosModules.home-manager {
         home-manager.useGlobalPkgs = true;
-        home-manager.extraSpecialArgs = { inherit system user dotfiles-ags; };
+        home-manager.extraSpecialArgs = { inherit system user; };
         home-manager.users.${user} = {
           imports = hostModules.home;
         };

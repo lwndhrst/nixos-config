@@ -5,7 +5,7 @@
     enable = true;
 
     image = ./wallpaper.png;
-    base16Scheme = ./base16-dark-sakura.yaml;
+    base16Scheme = ./base16-rose-pine-edit.yaml;
     polarity = "dark";
 
     cursor = {

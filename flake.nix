@@ -25,13 +25,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    dotfiles-ags = {
-      url = "github:lwndhrst/dotfiles-ags/v2";
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, stylix, dotfiles-ags, ... }:
+  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, stylix, hyprpanel, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -41,12 +41,13 @@
         config.permittedInsecurePackages = [];
         overlays = [
           custom-nixpkgs.overlays.default
+          hyprpanel.overlay
         ];
       };
       config = pkgs.config;
       hosts = import ./hosts {
         inherit (nixpkgs) lib;
-        inherit system nixpkgs pkgs config home-manager nur user stylix dotfiles-ags;
+        inherit system nixpkgs pkgs config home-manager nur user stylix hyprpanel;
       };
 
     in {

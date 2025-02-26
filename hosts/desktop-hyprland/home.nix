@@ -1,4 +1,4 @@
-{ system, pkgs, user, dotfiles-ags, ... }:
+{ system, pkgs, user, ... }:
 
 let
   modules = import ../../modules;
@@ -20,10 +20,8 @@ in {
 
     packages = with pkgs; [
       # system
-      dotfiles-ags.packages.${system}.default
-      dotfiles-ags.packages.${system}.scripts.launcher
-      dotfiles-ags.packages.${system}.scripts.quit
       hypridle
+      hyprpanel
       hyprpaper
       hyprshot
       kdePackages.dolphin
@@ -31,6 +29,7 @@ in {
       kdePackages.qtwayland
       pavucontrol
       wl-clipboard
+      wofi
 
       # apps
       anki
@@ -58,6 +57,9 @@ in {
       lua-language-server
       nil
       unityhub
+
+      # scripts
+      customPkgs.scripts.override-rose-pine-colors
     ];
 
     # configured via stylix
