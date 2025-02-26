@@ -6,6 +6,7 @@ let
 in {
   imports = with modules; [ 
     fzf
+    hypr
     kitty
     neovim
     stylix
@@ -21,10 +22,6 @@ in {
 
     packages = with pkgs; [
       # system
-      hypridle
-      hyprpanel
-      hyprpaper
-      hyprshot
       kdePackages.dolphin
       kdePackages.qtsvg
       kdePackages.qtwayland

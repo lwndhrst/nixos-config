@@ -6,6 +6,7 @@
   flameshot = ./flameshot;
   fzf       = ./fzf;
   gtk       = ./gtk;
+  hypr      = ./hypr;
   kitty     = ./kitty;
   neovim    = ./neovim;
   picom     = ./picom;

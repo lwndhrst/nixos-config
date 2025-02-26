@@ -11,10 +11,13 @@
       padding-left = "35%";
       padding-top = "35%";
       result-spacing = 25;
+
+      font = "Cascadia Code";
+      font-size = 18;
       num-results = 5;
-      font = "monospace";
-      background-color = "#040e14cc";
-      selection-color = "#eb6f92";
+
+      background-color = "#040e14ee";
+      selection-color = "#f6c177";
     };
   };
 }
