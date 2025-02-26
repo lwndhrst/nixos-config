@@ -9,6 +9,7 @@ in {
     kitty
     neovim
     stylix
+    tofi
     zathura
     zotero
     zsh
@@ -29,7 +30,6 @@ in {
       kdePackages.qtwayland
       pavucontrol
       wl-clipboard
-      wofi
 
       # apps
       anki

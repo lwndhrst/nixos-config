@@ -12,6 +12,7 @@
   rofi      = ./rofi;
   stylix    = ./stylix;
   tmux      = ./tmux;
+  tofi      = ./tofi;
   zathura   = ./zathura;
   zotero    = ./zotero;
   zsh       = ./zsh;
