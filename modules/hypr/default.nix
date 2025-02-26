@@ -9,12 +9,12 @@
       hyprshot
     ];
     
-    file.".config/hypr/" = {
+    file.".config/hypr" = {
       source = ./hypr;
       recursive = true;
     };
 
-    file.".config/hyprpanel/" = {
+    file.".config/hyprpanel" = {
       source = ./hyprpanel;
       recursive = true;
     };
