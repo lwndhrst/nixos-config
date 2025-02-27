@@ -13,7 +13,7 @@
   "theme.bar.menus.enableShadow": false,
   "menus.clock.weather.unit": "metric",
   "menus.clock.weather.enabled": true,
-  "menus.clock.time.hideSeconds": true,
+  "menus.clock.time.hideSeconds": false,
   "menus.clock.time.military": true,
   "bar.battery.label": true,
   "bar.battery.hideLabelWhenFull": false,
