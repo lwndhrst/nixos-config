@@ -6,21 +6,20 @@
     enableZshIntegration = true;
 
     colors = { 
-      "fg" = "#999fa5";
-      "bg" = "#000f16";
+      "fg" = "#708593";
+      "bg" = "#040e14";
       "hl" = "#ebbcba";
-      "fg+" = "#dbdbdc";
-      "bg+" = "#203039";
+      "fg+" = "#c8d4dc";
+      "bg+" = "#102028";
       "hl+" = "#ebbcba";
-      "border" = "#495863";
+      "border" = "#203039";
       "header" = "#31748f";
-      "gutter" = "#000f16";
+      "gutter" = "#040e14";
       "spinner" = "#f6c177";
       "info" = "#9ccfd8";
-      "separator" = "#495863";
       "pointer" = "#c4a7e7";
       "marker" = "#eb6f92";
-      "prompt" = "#999fa5";
+      "prompt" = "#708593";
     };
   };
 }
