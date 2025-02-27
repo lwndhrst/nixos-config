@@ -37,7 +37,7 @@
   "theme.bar.menus.menu.volume.text": "#c8d4dc",
   "theme.bar.menus.menu.volume.card.color": "#0a161d",
   "theme.bar.menus.menu.volume.label.color": "#eb6f92",
-  "theme.bar.menus.popover.text": "#c4a7e7",
+  "theme.bar.menus.popover.text": "#c8d4dc",
   "theme.bar.menus.popover.background": "#0a161d",
   "theme.bar.menus.menu.dashboard.powermenu.shutdown": "#eb6f92",
   "theme.bar.menus.menu.dashboard.powermenu.confirmation.deny": "#eb6f92",
