@@ -58,27 +58,11 @@ in {
       customPkgs.scripts.override-rose-pine-colors
     ];
 
-    # configured via stylix
-    # pointerCursor = {
-    #   package = pkgs.bibata-cursors;
-    #   name = "Bibata-Modern-Ice";
-    #   size = 24;
-    #   gtk.enable = true;
-    # };
-
     sessionVariables = {
       EDITOR = "nvim";
       NIXOS_OZONE_WL = "1";
     };
 
     stateVersion = "24.05";
-  };
-
-  gtk = {
-    enable = true;
-    iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
-    };
   };
 }
