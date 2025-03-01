@@ -33,6 +33,7 @@ in {
       calibre
       firefox
       gimp
+      librewolf
       lutris
       obs-studio
       portfolio
