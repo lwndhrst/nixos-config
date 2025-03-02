@@ -66,4 +66,15 @@ in {
 
     stateVersion = "24.05";
   };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = [ "librewolf.desktop" ];
+      "x-scheme-handler/http" = [ "librewolf.desktop" ];
+      "x-scheme-handler/https" = [ "librewolf.desktop" ];
+
+      "application/pdf" = [ "zathura.desktop" ];
+    };
+  };
 }
