@@ -72,6 +72,10 @@ in {
       pulse.enable = true;
       jack.enable = true;
     };
+
+    # For connecting USB devices
+    # Calibre needs this apparently
+    udisks2.enable = true;
   };
 
   time = {
