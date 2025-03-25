@@ -37,6 +37,7 @@ in {
       lutris
       obs-studio
       portfolio
+      ppsspp-sdl-wayland
       thunderbird
       vlc
       webcord
