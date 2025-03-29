@@ -41,9 +41,18 @@ in {
 
   networking = {
     hostName = "nixos";
+
     networkmanager = {
       enable = true;
       wifi.powersave = false;
+    };
+
+    firewall = {
+      enable = false;
+      # allowedTCPPorts = [ 22 ];
+      # allowedTCPPortRanges = [
+      #   { from = 21; to = 22; }
+      # ];
     };
   };
 
