@@ -40,6 +40,8 @@ in {
       ppsspp-sdl-wayland
       thunderbird
       vlc
+      # wineWowPackages.waylandFull
+      wineWowPackages.full
       webcord
 
       # cli
