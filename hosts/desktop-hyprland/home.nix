@@ -36,12 +36,10 @@ in {
       librewolf
       lutris
       obs-studio
-      portfolio
       ppsspp-sdl-wayland
       thunderbird
       vlc
-      # wineWowPackages.waylandFull
-      wineWowPackages.full
+      wineWowPackages.waylandFull
       webcord
 
       # cli
