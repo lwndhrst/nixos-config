@@ -36,7 +36,7 @@
       export SHELL=${pkgs.zsh}/bin/zsh
     '';
 
-    initExtra = ''
+    initContent = ''
       # Starship Prompt
       export STARSHIP_CONFIG=~/.config/starship/starship.toml
       eval "$(${pkgs.starship}/bin/starship init zsh)"
