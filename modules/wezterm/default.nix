@@ -11,7 +11,7 @@
           "#9ccfd8" "#c4a7e7" "#ebbcba" "#c8d4dc"
         ];
         brights = [
-          "#102028" "#eb6f92" "#31748f" "#f6c177"
+          "#506471" "#eb6f92" "#31748f" "#f6c177"
           "#9ccfd8" "#c4a7e7" "#ebbcba" "#c8d4dc"
         ];
 
@@ -20,6 +20,10 @@
 
         selection_bg = "#203039";
         selection_fg = "#c8d4dc";
+
+        cursor_bg = "#c8d4dc";
+        cursor_border = "#c8d4dc";
+        cursor_fg = "#040e14";
       };
     };
 
