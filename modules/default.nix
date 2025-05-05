@@ -14,6 +14,7 @@
   stylix    = ./stylix;
   tmux      = ./tmux;
   tofi      = ./tofi;
+  wezterm   = ./wezterm;
   zathura   = ./zathura;
   zotero    = ./zotero;
   zsh       = ./zsh;

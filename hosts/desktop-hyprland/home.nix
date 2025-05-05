@@ -11,6 +11,7 @@ in {
     neovim
     stylix
     tofi
+    wezterm
     zathura
     zotero
     zsh
