@@ -30,7 +30,7 @@ in {
       wl-clipboard
 
       # apps
-      anki
+      anki-bin
       calibre
       firefox
       gimp
@@ -63,7 +63,10 @@ in {
 
     sessionVariables = {
       EDITOR = "nvim";
-      NIXOS_OZONE_WL = "1";
+
+      # wayland
+      NIXOS_OZONE_WL = 1;
+      ANKI_WAYLAND = 1;
     };
 
     stateVersion = "24.05";
