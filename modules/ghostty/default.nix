@@ -49,6 +49,8 @@
 
       cursor-invert-fg-bg = true;
 
+      app-notifications = false;
+
       keybind = [ ];
     };
   };
