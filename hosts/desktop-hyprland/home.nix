@@ -6,6 +6,7 @@ let
 in {
   imports = with modules; [ 
     fzf
+    ghostty
     hypr
     kitty
     neovim

@@ -3,9 +3,10 @@
 {
   programs.wezterm = {
     enable = true;
+    enableZshIntegration = true;
 
     colorSchemes = {
-      "Rose Pine Edit" = {
+      rose-pine-edit = {
         ansi = [
           "#102028" "#eb6f92" "#31748f" "#f6c177"
           "#9ccfd8" "#c4a7e7" "#ebbcba" "#c8d4dc"
@@ -32,7 +33,7 @@
         font = wezterm.font("Cascadia Mono"),
         font_size = 15.0,
 
-        color_scheme = "Rose Pine Edit",
+        color_scheme = "rose-pine-edit",
 
         enable_tab_bar = false,
         window_background_opacity = 0.90,
