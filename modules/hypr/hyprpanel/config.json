@@ -457,7 +457,7 @@
   "menus.dashboard.shortcuts.left.shortcut4.command": "webcord",
   "menus.dashboard.shortcuts.left.shortcut4.tooltip": "Discord",
   "menus.dashboard.shortcuts.right.shortcut1.icon": "",
-  "menus.dashboard.shortcuts.right.shortcut1.command": "wezterm",
+  "menus.dashboard.shortcuts.right.shortcut1.command": "ghostty --gtk-single-instance=true",
   "menus.dashboard.shortcuts.right.shortcut1.tooltip": "Terminal",
   "menus.dashboard.shortcuts.right.shortcut3.icon": "",
   "menus.dashboard.shortcuts.right.shortcut3.command": "tofi-drun --fuzzy-match=true --drun-launch=true",
