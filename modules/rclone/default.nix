@@ -5,7 +5,9 @@
     rclone
   ];
 
-  # Assuming rclone remote has been configured via cli
+  # Assumption:
+  # - rclone remote has been configured via cli
+  # - /mnt/gdrive exists and user has access
   systemd.user.services.rclone-gdrive-mount = {
     Unit = {
       Description = "Rclone config for mounting Google Drive.";
