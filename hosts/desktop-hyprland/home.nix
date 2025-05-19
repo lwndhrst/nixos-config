@@ -10,6 +10,7 @@ in {
     hypr
     kitty
     neovim
+    rclone
     stylix
     tofi
     wezterm
@@ -38,6 +39,7 @@ in {
       librewolf
       lutris
       obs-studio
+      portfolio
       ppsspp-sdl-wayland
       thunderbird
       vlc

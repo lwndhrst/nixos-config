@@ -11,6 +11,7 @@
   kitty     = ./kitty;
   neovim    = ./neovim;
   picom     = ./picom;
+  rclone    = ./rclone;
   rofi      = ./rofi;
   stylix    = ./stylix;
   tmux      = ./tmux;
