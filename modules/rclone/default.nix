@@ -15,8 +15,10 @@
     };
     Service = {
       Type = "notify";
-      ExecStart = "${pkgs.rclone}/bin/rclone mount \"gdrive:\" \"/mnt/gdrive\" --vfs-cache-mode full";
-      ExecStop="/bin/fusermount -u /mnt/gdrive";
+      ExecStart = "${pkgs.rclone}/bin/rclone mount gdrive:/ /mnt/gdrive --vfs-cache-mode full";
+      ExecStop="/run/current-system/sw/bin/fusermount -u /mnt/gdrive";
+      Restart = "on-failure";
+      RestartSec = "10s";
     };
     Install.WantedBy = [ "default.target" ];
   };
