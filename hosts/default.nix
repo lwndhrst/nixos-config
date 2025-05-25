@@ -36,7 +36,7 @@ in {
           ./desktop-hyprland/configuration.nix
         ];
         home = [
-          stylix.homeManagerModules.stylix
+          stylix.homeModules.stylix
           ./desktop-hyprland/home.nix
         ];
       };
