@@ -22,7 +22,13 @@
       vimPlugins.cmp-cmdline
       vimPlugins.cmp_luasnip
       vimPlugins.luasnip
+
+      # Debugging
+      vimPlugins.nvim-dap
+      vimPlugins.nvim-dap-ui
+      vimPlugins.nvim-dap-virtual-text
       
+      # Treesitter
       (vimPlugins.nvim-treesitter.withPlugins (p: with p; [
         bash
         c
