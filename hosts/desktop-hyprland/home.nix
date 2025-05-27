@@ -33,6 +33,7 @@ in {
 
       # apps
       anki-bin
+      customPkgs.azahar
       calibre
       firefox
       gimp
