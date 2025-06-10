@@ -91,7 +91,8 @@ in {
     timeZone = "Europe/Berlin";
 
     # For consistency with Windows
-    hardwareClockInLocalTime = true;
+    # Alternatively, configure Windows to use UTC instead of local time
+    # hardwareClockInLocalTime = true;
   };
 
   i18n = {
