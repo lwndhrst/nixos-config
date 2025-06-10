@@ -40,6 +40,7 @@ in {
       librewolf
       lutris
       obs-studio
+      path-of-building
       portfolio
       ppsspp-sdl-wayland
       thunderbird
@@ -51,6 +52,7 @@ in {
       fd
       git
       git-lfs
+      p7zip
       ranger
       ripgrep
       unzip
