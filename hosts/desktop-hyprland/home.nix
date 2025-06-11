@@ -40,12 +40,12 @@ in {
       librewolf
       lutris
       obs-studio
-      path-of-building
       portfolio
       ppsspp-sdl-wayland
       thunderbird
       vlc
-      wineWowPackages.waylandFull
+      # wineWowPackages.waylandFull # too unstable for now...
+      wineWowPackages.stableFull
       webcord
 
       # cli
