@@ -33,6 +33,7 @@ in {
 
       # apps
       anki-bin
+      blender
       customPkgs.azahar
       calibre
       firefox
