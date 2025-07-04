@@ -25,14 +25,9 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, stylix, hyprpanel, ... }:
+  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, stylix, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -42,13 +37,12 @@
         config.permittedInsecurePackages = [];
         overlays = [
           custom-nixpkgs.overlays.default
-          hyprpanel.overlay
         ];
       };
       config = pkgs.config;
       hosts = import ./hosts {
         inherit (nixpkgs) lib;
-        inherit system nixpkgs pkgs config home-manager nur user stylix hyprpanel;
+        inherit system nixpkgs pkgs config home-manager nur user stylix;
       };
 
     in {
