@@ -33,6 +33,7 @@ in {
 
       # apps
       anki-bin
+      ausweisapp
       blender
       customPkgs.azahar
       calibre
