@@ -6,6 +6,7 @@
       hypridle
       hyprpanel
       hyprpaper
+      hyprpicker
       hyprshot
     ];
     
