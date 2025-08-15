@@ -47,7 +47,7 @@ in {
       ppsspp-sdl-wayland
       thunderbird
       vlc
-      # wineWowPackages.waylandFull # too unstable for now...
+      # wineWowPackages.waylandFull # too cooked for now...
       wineWowPackages.stableFull
       webcord
 
@@ -63,6 +63,7 @@ in {
       zip
 
       # dev
+      godot
       lua-language-server
       nil
 
