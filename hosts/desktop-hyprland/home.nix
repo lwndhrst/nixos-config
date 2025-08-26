@@ -28,6 +28,7 @@ in {
       kdePackages.dolphin
       kdePackages.qtsvg
       kdePackages.qtwayland
+      kdePackages.skanpage
       pavucontrol
       wl-clipboard
 
