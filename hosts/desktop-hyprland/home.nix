@@ -28,7 +28,6 @@ in {
       kdePackages.dolphin
       kdePackages.qtsvg
       kdePackages.qtwayland
-      kdePackages.skanpage
       pavucontrol
       wl-clipboard
 
@@ -39,7 +38,7 @@ in {
       customPkgs.azahar
       calibre
       firefox
-      gimp
+      gimp3
       librewolf
       lutris
       meshlab
