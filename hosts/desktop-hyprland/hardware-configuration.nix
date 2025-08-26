@@ -51,4 +51,10 @@
   hardware.amdgpu.opencl.enable = true;
 
   hardware.bluetooth.enable = true;
+
+  # scanner shit
+  hardware.sane = {
+    enable = true;
+    extraBackends = [ pkgs.sane-airscan ];
+  };
 }
