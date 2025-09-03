@@ -38,6 +38,7 @@ in {
       customPkgs.azahar
       calibre
       firefox
+      fontforge-gtk
       gimp3
       librewolf
       lutris
