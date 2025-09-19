@@ -5,7 +5,6 @@
 , home-manager
 , nur
 , user
-, stylix
 , ... 
 }:
 
@@ -17,8 +16,7 @@ let
 
     modules = (hostModules.config ++ [ 
       home-manager.nixosModules.home-manager {
-        home-manager.useGlobalPkgs = true;
-        home-manager.extraSpecialArgs = { inherit system user; };
+        home-manager.extraSpecialArgs = { inherit pkgs system user; };
         home-manager.users.${user} = {
           imports = hostModules.home;
         };
@@ -36,7 +34,6 @@ in {
           ./desktop-hyprland/configuration.nix
         ];
         home = [
-          stylix.homeModules.stylix
           ./desktop-hyprland/home.nix
         ];
       };

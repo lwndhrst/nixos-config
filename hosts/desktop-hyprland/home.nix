@@ -8,10 +8,10 @@ in {
     fzf
     ghostty
     hypr
+    gtk
     kitty
     neovim
     rclone
-    stylix
     tofi
     wezterm
     zathura
@@ -71,6 +71,13 @@ in {
       # scripts
       customPkgs.scripts.override-rose-pine-colors
     ];
+
+    pointerCursor = {
+      enable = true;
+      package = pkgs.vanilla-dmz;
+      name = "Vanilla-DMZ";
+      size = 24;
+    };
 
     sessionVariables = {
       EDITOR = "nvim";

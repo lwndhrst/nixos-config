@@ -13,7 +13,6 @@
   picom     = ./picom;
   rclone    = ./rclone;
   rofi      = ./rofi;
-  stylix    = ./stylix;
   tmux      = ./tmux;
   tofi      = ./tofi;
   wezterm   = ./wezterm;
