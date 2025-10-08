@@ -1,9 +1,7 @@
 { lib
 , system
 , pkgs
-, config
 , home-manager
-, nur
 , user
 , ... 
 }:
@@ -30,7 +28,6 @@ in {
     desktop-hyprland = nixosSystem {
       hostModules = { 
         config = [
-          nur.modules.nixos.default
           ./desktop-hyprland/configuration.nix
         ];
         home = [

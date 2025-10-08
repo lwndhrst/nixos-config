@@ -6,11 +6,6 @@
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
-    nur = {
-      url = "github:nix-community/NUR"; # Nix User Repository
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +17,7 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, nur, custom-nixpkgs, ... }:
+  outputs = { nixpkgs, home-manager, custom-nixpkgs, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
@@ -37,7 +32,7 @@
       config = pkgs.config;
       hosts = import ./hosts {
         inherit (nixpkgs) lib;
-        inherit system nixpkgs pkgs config home-manager nur user;
+        inherit system nixpkgs pkgs config home-manager user;
       };
 
     in {
