@@ -42,7 +42,7 @@ in {
       gimp3
       librewolf
       lutris
-      meshlab
+      # meshlab
       obs-studio
       portfolio
       ppsspp-sdl-wayland

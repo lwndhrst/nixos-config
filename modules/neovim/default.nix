@@ -46,6 +46,7 @@
         odin
         python
         rust
+        slang
         toml
         typst
         typescript
