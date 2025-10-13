@@ -6,6 +6,10 @@
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
 
+    nixpkgs-stable = {
+      url = "github:nixos/nixpkgs/nixos-25.05";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,22 +21,30 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, custom-nixpkgs, ... }:
+  outputs = { nixpkgs, nixpkgs-stable, home-manager, custom-nixpkgs, ... }:
     let
       user = "leon";
       system = "x86_64-linux";
+
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        config.permittedInsecurePackages = [];
         overlays = [
           custom-nixpkgs.overlays.default
+
+          (_: _: {
+            stable = import nixpkgs-stable {
+              inherit system config;
+            };
+          })
         ];
       };
+
       config = pkgs.config;
+      
       hosts = import ./hosts {
         inherit (nixpkgs) lib;
-        inherit system nixpkgs pkgs config home-manager user;
+        inherit system pkgs config home-manager user;
       };
 
     in {

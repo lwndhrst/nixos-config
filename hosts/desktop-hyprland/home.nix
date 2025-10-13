@@ -1,4 +1,4 @@
-{ system, pkgs, user, ... }:
+{ pkgs, user, ... }:
 
 let
   modules = import ../../modules;
@@ -35,14 +35,14 @@ in {
       anki-bin
       ausweisapp
       blender
-      customPkgs.azahar
+      custom.azahar
       calibre
       firefox
       fontforge-gtk
       gimp3
       librewolf
       lutris
-      # meshlab
+      stable.meshlab
       obs-studio
       portfolio
       ppsspp-sdl-wayland
@@ -67,9 +67,10 @@ in {
       godot
       lua-language-server
       nil
+      stable.renderdoc
 
       # scripts
-      customPkgs.scripts.override-rose-pine-colors
+      custom.scripts.override-rose-pine-colors
     ];
 
     pointerCursor = {

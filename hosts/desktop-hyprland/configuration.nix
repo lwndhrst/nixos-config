@@ -118,7 +118,7 @@ in {
           fcitx5-chinese-addons
 
           # Pinyin input overlay theme
-          customPkgs.fcitx5-rose-pine-edit
+          custom.fcitx5-rose-pine-edit
         ];
       };
     };
