@@ -1,10 +1,11 @@
 import Quickshell
+import Quickshell.Widgets
 
 import QtQuick
 import QtQuick.Layouts
 
-import qs.style
-import qs.widgets
+import qs.Style
+import qs.Widgets
 
 Scope {
   Variants {
@@ -22,26 +23,43 @@ Scope {
         right: true
       }
 
-      implicitHeight: 20
+      implicitHeight: row.implicitHeight + 10
 
       RowLayout {
+        id: row
+
         anchors.fill: parent
+        spacing: 10
 
         // left
-        RowLayout {
+        WrapperRectangle {
           Layout.alignment: Qt.AlignLeft
+          Layout.leftMargin: 20
+
+          color: Style.palette.base
+
+          RowLayout {}
         }
 
         // center
-        RowLayout {
+        WrapperRectangle {
           Layout.alignment: Qt.AlignCenter
+
+          color: Style.palette.base
+
+          RowLayout {}
         }
 
         // right
-        RowLayout {
+        WrapperRectangle {
           Layout.alignment: Qt.AlignRight
-          ClockWidget {
-            color: Style.palette.text
+          Layout.rightMargin: 20
+
+          color: Style.palette.base
+
+          RowLayout {
+            SystemTrayWidget {}
+            ClockWidget {}
           }
         }
       }
