@@ -45,6 +45,7 @@
         nix
         odin
         python
+        qmljs
         rust
         slang
         toml

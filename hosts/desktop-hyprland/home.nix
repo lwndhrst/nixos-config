@@ -11,6 +11,7 @@ in {
     gtk
     kitty
     neovim
+    quickshell
     rclone
     tofi
     wezterm
