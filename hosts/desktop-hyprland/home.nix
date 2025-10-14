@@ -8,7 +8,6 @@ in {
     fzf
     ghostty
     hypr
-    gtk
     kitty
     neovim
     quickshell
@@ -29,6 +28,7 @@ in {
       kdePackages.dolphin
       kdePackages.qtsvg
       kdePackages.qtwayland
+      kdePackages.qt6ct
       pavucontrol
       wl-clipboard
 
@@ -87,8 +87,27 @@ in {
       # wayland
       NIXOS_OZONE_WL = 1;
       ANKI_WAYLAND = 1;
+
+      # qt
+      QT_QPA_PLATFORMTHEME = "qt6ct";
     };
 
     stateVersion = "24.05";
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.gnome-themes-extra;
+      name = "Adwaita-dark";
+    };
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
+    };
+  };
+
+  qt = {
+    enable = true;
   };
 }

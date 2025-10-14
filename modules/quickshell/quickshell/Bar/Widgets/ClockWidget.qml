@@ -8,7 +8,7 @@ import qs.Style
 WrapperRectangle {
   id: root
 
-  color: "transparent"
+  color: Style.palette.surface
   default property color textColor: Style.palette.text
 
   Text {

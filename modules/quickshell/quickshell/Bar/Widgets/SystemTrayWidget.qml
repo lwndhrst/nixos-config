@@ -1,15 +1,15 @@
-import Quickshell
 import Quickshell.Widgets
 import Quickshell.Services.SystemTray
 
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls
 
 import qs.Style
 
 WrapperRectangle {
   id: root
+
+  color: Style.palette.surface
 
   RowLayout {
     id: row
@@ -19,12 +19,16 @@ WrapperRectangle {
     Repeater {
       model: SystemTray.items
 
-      Text {
+      // TODO: Reusable component for tray items and bar buttons in general
+      Image {
         id: item
 
         required property SystemTrayItem modelData;
 
-        text: item.modelData.id
+        source: item.modelData.icon
+        sourceSize.width: 20
+        sourceSize.height: 20
+        cache: false
       }
     }
   }

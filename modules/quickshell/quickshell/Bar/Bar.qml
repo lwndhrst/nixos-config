@@ -5,7 +5,7 @@ import QtQuick
 import QtQuick.Layouts
 
 import qs.Style
-import qs.Widgets
+import qs.Bar.Widgets
 
 Scope {
   Variants {
@@ -50,6 +50,7 @@ Scope {
 
           RowLayout {
             SystemTrayWidget {}
+
             ClockWidget {}
           }
         }

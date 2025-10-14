@@ -1,7 +1,6 @@
 {
   fzf        = ./fzf;
   ghostty    = ./ghostty;
-  gtk        = ./gtk;
   hypr       = ./hypr;
   kitty      = ./kitty;
   neovim     = ./neovim;
