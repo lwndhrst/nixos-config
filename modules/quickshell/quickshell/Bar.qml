@@ -41,15 +41,6 @@ Scope {
           RowLayout {}
         }
 
-        // center
-        WrapperRectangle {
-          Layout.alignment: Qt.AlignCenter
-
-          color: Style.palette.base
-
-          RowLayout {}
-        }
-
         // right
         WrapperRectangle {
           Layout.alignment: Qt.AlignRight
