@@ -67,7 +67,7 @@ in {
       godot
       lua-language-server
       nil
-      stable.renderdoc
+      renderdoc
 
       # scripts
       custom.scripts.override-rose-pine-colors
