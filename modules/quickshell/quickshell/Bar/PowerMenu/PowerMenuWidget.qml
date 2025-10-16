@@ -1,4 +1,5 @@
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Io
 import Quickshell.Widgets
 
@@ -11,11 +12,24 @@ import qs.Style
 BarTextButton {
   id: root
 
+  property int menuWindowOffset: 0
+
   textColor: Style.palette.love
   text: "󰐥"
 
-  onClicked: event => {
+  onClicked: () => {
     menu.visible = !menu.visible
+    grab.active = !grab.active
+  }
+
+  HyprlandFocusGrab {
+    id: grab
+    windows: [ menu ]
+
+    onCleared: () => {
+      menu.visible = false;
+      grab.active = false;
+    }
   }
 
   PanelWindow {
@@ -27,7 +41,8 @@ BarTextButton {
     }
 
     margins {
-      left: Style.baseMargin + root.x
+      // left: Style.baseMargin + Style.baseSpacing + root.x
+      left: root.menuWindowOffset + root.x - Style.baseMargin / 2
     }
 
     aboveWindows: true
@@ -43,15 +58,16 @@ BarTextButton {
 
       color: Style.palette.base
 
-      leftMargin: Style.baseMargin
-      rightMargin: Style.baseMargin
-      topMargin: Style.baseMargin / 2
-      bottomMargin: Style.baseMargin
+      leftMargin: Style.baseMargin / 2
+      rightMargin: Style.baseMargin / 2
+      bottomMargin: Style.baseMargin / 2
 
       bottomRightRadius: Style.baseOuterRadius
       bottomLeftRadius: Style.baseOuterRadius
 
-      RowLayout {
+      ColumnLayout {
+        spacing: Style.baseSpacing
+
         BarTextButton {
           text: "󰐥"
           textColor: Style.palette.base

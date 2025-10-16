@@ -32,7 +32,7 @@ Scope {
         right: true
       }
 
-      implicitHeight: row.implicitHeight + 10
+      implicitHeight: row.implicitHeight + Style.baseMargin
 
       RowLayout {
         id: row
@@ -41,27 +41,35 @@ Scope {
 
         // left
         BarWidgetGroup {
+          id: left
+
           Layout.alignment: Qt.AlignLeft
           Layout.leftMargin: Style.baseMargin * 2
 
           RowLayout {
-            PowerMenuWidget {}
+            spacing: Style.baseSpacing
+
+            PowerMenuWidget { menuWindowOffset: left.x }
             WorkspacesWidget {}
           }
         }
 
         // right
         BarWidgetGroup {
+          id: right
+
           Layout.alignment: Qt.AlignRight
           Layout.rightMargin: Style.baseMargin * 2
 
           RowLayout {
+            spacing: Style.baseSpacing
+
             AudioWidget {}
             WifiWidget {}
             BluetoothWidget {}
             SystemTrayWidget {}
             ClockWidget {}
-            NotificationsWidget {}
+            NotificationsWidget { menuWindowOffset: right.x }
           }
         }
       }
