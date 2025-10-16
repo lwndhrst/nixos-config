@@ -1,11 +1,18 @@
 import Quickshell
-import Quickshell.Widgets
 
 import QtQuick
 import QtQuick.Layouts
 
 import qs.Style
-import qs.Bar.Widgets
+import qs.Bar
+import qs.Bar.Audio
+import qs.Bar.Bluetooth
+import qs.Bar.Clock
+import qs.Bar.Notifications
+import qs.Bar.PowerMenu
+import qs.Bar.SystemTray
+import qs.Bar.Wifi
+import qs.Bar.Workspaces
 
 Scope {
   Variants {
@@ -29,29 +36,30 @@ Scope {
         id: row
 
         anchors.fill: parent
-        spacing: 10
 
         // left
-        WrapperRectangle {
+        BarWidgetGroup {
           Layout.alignment: Qt.AlignLeft
-          Layout.leftMargin: 20
+          Layout.leftMargin: 16
 
-          color: Style.palette.base
-
-          RowLayout {}
+          RowLayout {
+            PowerMenuWidget {}
+            WorkspacesWidget {}
+          }
         }
 
         // right
-        WrapperRectangle {
+        BarWidgetGroup {
           Layout.alignment: Qt.AlignRight
-          Layout.rightMargin: 20
-
-          color: Style.palette.base
+          Layout.rightMargin: 16
 
           RowLayout {
+            AudioWidget {}
+            WifiWidget {}
+            BluetoothWidget {}
             SystemTrayWidget {}
-
             ClockWidget {}
+            NotificationsWidget {}
           }
         }
       }
