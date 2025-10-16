@@ -10,10 +10,10 @@ WrapperRectangle {
 
   color: Style.palette.surface
 
-  radius: 4
+  radius: Style.baseInnerRadius
 
-  leftMargin: 8
-  rightMargin: 8
-  topMargin: 4
-  bottomMargin: 4
+  leftMargin: Style.baseMargin
+  rightMargin: Style.baseMargin
+  topMargin: Style.baseMargin / 2
+  bottomMargin: Style.baseMargin / 2
 }

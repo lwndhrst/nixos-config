@@ -27,7 +27,7 @@ BarTextButton {
     }
 
     margins {
-      left: 8
+      left: Style.baseMargin + root.x
     }
 
     aboveWindows: true
@@ -43,13 +43,13 @@ BarTextButton {
 
       color: Style.palette.base
 
-      leftMargin: 8
-      rightMargin: 8
-      topMargin: 4
-      bottomMargin: 8
+      leftMargin: Style.baseMargin
+      rightMargin: Style.baseMargin
+      topMargin: Style.baseMargin / 2
+      bottomMargin: Style.baseMargin
 
-      bottomRightRadius: 8
-      bottomLeftRadius: 8
+      bottomRightRadius: Style.baseOuterRadius
+      bottomLeftRadius: Style.baseOuterRadius
 
       RowLayout {
         BarTextButton {

@@ -11,8 +11,8 @@ BarWidget {
   WrapperMouseArea {
     anchors.fill: parent
 
-    leftMargin: 8
-    rightMargin: 8
+    leftMargin: Style.baseMargin
+    rightMargin: Style.baseMargin
 
     implicitWidth: row.implicitWidth
 

@@ -42,7 +42,7 @@ Scope {
         // left
         BarWidgetGroup {
           Layout.alignment: Qt.AlignLeft
-          Layout.leftMargin: 16
+          Layout.leftMargin: Style.baseMargin * 2
 
           RowLayout {
             PowerMenuWidget {}
@@ -53,7 +53,7 @@ Scope {
         // right
         BarWidgetGroup {
           Layout.alignment: Qt.AlignRight
-          Layout.rightMargin: 16
+          Layout.rightMargin: Style.baseMargin * 2
 
           RowLayout {
             AudioWidget {}
