@@ -1,7 +1,5 @@
-import Quickshell
-import Quickshell.Hyprland
-import Quickshell.Widgets
 import Quickshell.Services.Notifications
+import Quickshell.Widgets
 
 import QtQuick
 import QtQuick.Layouts
@@ -12,79 +10,53 @@ import qs.Style
 BarTextButton {
   id: root
 
-  property int menuWindowOffset: 0
+  property int baseMenuWindowOffset: 0
 
-  textColor: Style.palette.iris
+  textColor: Style.palette.text
   text: "󰂚"
 
   onClicked: () => {
-    menu.visible = !menu.visible
-    grab.active = !grab.active
+    menu.showMenu()
   }
 
-  HyprlandFocusGrab {
-    id: grab
-    windows: [ menu ]
-
-    onCleared: () => {
-      menu.visible = false;
-      grab.active = false;
-    }
-  }
-
-  PanelWindow {
+  BarMenu {
     id: menu
 
-    anchors {
-      top: true
-      left: true
-    }
+    windowOffset: root.baseMenuWindowOffset + root.x
 
-    margins {
-      left: root.menuWindowOffset + root.x - Style.baseMargin / 2
-    }
+    content: WrapperRectangle {
+      color: Style.palette.surface
+      radius: Style.baseInnerRadius
 
-    aboveWindows: true
-    visible: false
-
-    color: "transparent"
-
-    implicitWidth: rect.implicitWidth
-    implicitHeight: rect.implicitHeight
-
-    WrapperRectangle {
-      id: rect
-
-      color: Style.palette.base
-
-      leftMargin: Style.baseMargin / 2
-      rightMargin: Style.baseMargin / 2
-      bottomMargin: Style.baseMargin / 2
-
-      bottomRightRadius: Style.baseOuterRadius
-      bottomLeftRadius: Style.baseOuterRadius
+      implicitWidth: 300
+      implicitHeight: 500
 
       ColumnLayout {
+        anchors.fill: parent
         spacing: Style.baseSpacing
 
-        BarTextButton {
-          text: "󰐥"
-          textColor: Style.palette.base
-          bgColor: Style.palette.love
-        }
+        Repeater {
+          model: server.trackedNotifications
 
-        BarTextButton {
-          text: "󰜉"
-          textColor: Style.palette.base
-          bgColor: Style.palette.gold
-        }
+          // TODO: Properly build notification list
+          Item {
+            id: notification
 
-        BarTextButton {
-          text: "󰤄"
-          textColor: Style.palette.base
-          bgColor: Style.palette.foam
+            required property Notification modelData
+
+            Text {
+              text: "Hey"
+            }
+          }
         }
       }
+    }
+  }
+
+  NotificationServer {
+    id: server
+    onNotification: notification => {
+      notification.tracked = true
     }
   }
 }

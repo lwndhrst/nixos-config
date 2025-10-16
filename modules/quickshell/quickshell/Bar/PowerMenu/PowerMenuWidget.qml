@@ -1,7 +1,4 @@
-import Quickshell
-import Quickshell.Hyprland
 import Quickshell.Io
-import Quickshell.Widgets
 
 import QtQuick
 import QtQuick.Layouts
@@ -12,105 +9,65 @@ import qs.Style
 BarTextButton {
   id: root
 
-  property int menuWindowOffset: 0
+  property int baseMenuWindowOffset: 0
 
   textColor: Style.palette.love
   text: "󰐥"
 
   onClicked: () => {
-    menu.visible = !menu.visible
-    grab.active = !grab.active
+    menu.showMenu()
   }
 
-  HyprlandFocusGrab {
-    id: grab
-    windows: [ menu ]
-
-    onCleared: () => {
-      menu.visible = false;
-      grab.active = false;
-    }
-  }
-
-  PanelWindow {
+  BarMenu {
     id: menu
 
-    anchors {
-      top: true
-      left: true
-    }
+    windowOffset: root.baseMenuWindowOffset + root.x
 
-    margins {
-      // left: Style.baseMargin + Style.baseSpacing + root.x
-      left: root.menuWindowOffset + root.x - Style.baseMargin / 2
-    }
+    content: ColumnLayout {
+      spacing: Style.baseSpacing
 
-    aboveWindows: true
-    visible: false
+      BarTextButton {
+        text: "󰐥"
+        textColor: Style.palette.base
+        bgColor: Style.palette.love
 
-    color: "transparent"
-
-    implicitWidth: rect.implicitWidth
-    implicitHeight: rect.implicitHeight
-
-    WrapperRectangle {
-      id: rect
-
-      color: Style.palette.base
-
-      leftMargin: Style.baseMargin / 2
-      rightMargin: Style.baseMargin / 2
-      bottomMargin: Style.baseMargin / 2
-
-      bottomRightRadius: Style.baseOuterRadius
-      bottomLeftRadius: Style.baseOuterRadius
-
-      ColumnLayout {
-        spacing: Style.baseSpacing
-
-        BarTextButton {
-          text: "󰐥"
-          textColor: Style.palette.base
-          bgColor: Style.palette.love
-
-          onClicked: event => {
-            shutdown.startDetached();
-          }
-
-          Process {
-            id: shutdown
-            command: [ "systemctl", "poweroff" ]
-          }
+        onClicked: event => {
+          shutdown.startDetached();
         }
 
-        BarTextButton {
-          text: "󰜉"
-          textColor: Style.palette.base
-          bgColor: Style.palette.gold
+        Process {
+          id: shutdown
+          command: [ "systemctl", "poweroff" ]
+        }
+      }
 
-          onClicked: event => {
-            reboot.startDetached();
-          }
+      BarTextButton {
+        text: "󰜉"
+        textColor: Style.palette.base
+        bgColor: Style.palette.gold
 
-          Process {
-            id: reboot
-            command: [ "systemctl", "reboot" ]
-          }
+        onClicked: event => {
+          reboot.startDetached();
         }
 
-        BarTextButton {
-          text: "󰤄"
-          textColor: Style.palette.base
-          bgColor: Style.palette.foam
+        Process {
+          id: reboot
+          command: [ "systemctl", "reboot" ]
+        }
+      }
 
-          onClicked: event => {
-            suspend.startDetached();
-          }
+      BarTextButton {
+        text: "󰤄"
+        textColor: Style.palette.base
+        bgColor: Style.palette.foam
 
-          Process {
-            id: suspend
-            command: [ "systemctl", "suspend" ]
-          }
+        onClicked: event => {
+          suspend.startDetached();
+        }
+
+        Process {
+          id: suspend
+          command: [ "systemctl", "suspend" ]
         }
       }
     }
