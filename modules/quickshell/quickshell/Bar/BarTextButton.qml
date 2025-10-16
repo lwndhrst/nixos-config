@@ -1,11 +1,14 @@
 import Quickshell.Widgets
 
 import QtQuick
+import QtQuick.Layouts
 
 import qs.Style
 
 WrapperMouseArea {
   id: root
+
+  Layout.fillHeight: true
 
   required property string text
 
@@ -18,6 +21,8 @@ WrapperMouseArea {
 
   BarWidget {
     color: root.bgColor
+
+    anchors.fill: parent
 
     topMargin: 0
     bottomMargin: 0

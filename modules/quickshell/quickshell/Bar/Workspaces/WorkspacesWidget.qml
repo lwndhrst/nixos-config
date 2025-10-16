@@ -39,7 +39,7 @@ BarWidget {
 
           required property HyprlandWorkspace modelData;
 
-          color: Hyprland.focusedWorkspace.id == workspace.modelData.id
+          color: Hyprland.focusedWorkspace?.id == workspace.modelData.id
             ? Style.palette.text
             : Style.palette.highlightHigh
 
