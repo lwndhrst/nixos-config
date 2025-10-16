@@ -12,9 +12,13 @@ WrapperMouseArea {
   property color textColor: Style.palette.text
   property int textPixelSize: 18
 
+  property color bgColor: Style.palette.surface
+
   cursorShape: Qt.OpenHandCursor
 
   BarWidget {
+    color: root.bgColor
+
     topMargin: 0
     bottomMargin: 0
 

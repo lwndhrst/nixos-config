@@ -14,6 +14,8 @@ BarWidget {
     leftMargin: 8
     rightMargin: 8
 
+    implicitWidth: row.implicitWidth
+
     onWheel: event => {
       event.accepted = true;
 
@@ -26,8 +28,6 @@ BarWidget {
 
     RowLayout {
       id: row
-
-      spacing: 2
 
       Repeater {
         model: Hyprland.workspaces
