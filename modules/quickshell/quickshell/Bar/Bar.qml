@@ -50,7 +50,7 @@ Scope {
             spacing: Style.baseSpacing
 
             PowerMenuWidget {}
-            WorkspacesWidget {}
+            WorkspaceWidget {}
           }
         }
 
@@ -69,7 +69,7 @@ Scope {
             BluetoothWidget {}
             SystemTrayWidget {}
             ClockWidget {}
-            NotificationsWidget {}
+            NotificationWidget {}
           }
         }
       }
