@@ -12,8 +12,6 @@ WrapperMouseArea {
 
   required property Notification modelData
 
-  property int maxHeight: 200
-
   hoverEnabled: true
 
   onEntered: () => {
@@ -26,7 +24,7 @@ WrapperMouseArea {
 
   Rectangle {
     implicitWidth: notification.implicitWidth
-    implicitHeight: notification.implicitHeight < root.maxHeight ? notification.implicitHeight : root.maxHeight
+    implicitHeight: notification.implicitHeight
 
     color: Style.palette.surface
     radius: Style.baseInnerRadius
