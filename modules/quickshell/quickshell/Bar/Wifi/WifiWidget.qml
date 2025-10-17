@@ -9,30 +9,30 @@ BarTextButton {
   id: root
 
   textColor: Style.palette.gold
-  text: "󰤥"
+  text: "󰤫";
 
-  function updateText(linkQualityPercent) {
-    if (linkQualityPercent < 0.01) {
+  function updateText(signal) {
+    if (signal == 0) {
       root.text = "󰤮";
       return;
     }
 
-    if (linkQualityPercent < 0.2) {
+    if (signal < 20) {
       root.text = "󰤯";
       return;
     }
 
-    if (linkQualityPercent < 0.4) {
+    if (signal < 40) {
       root.text = "󰤟";
       return;
     }
 
-    if (linkQualityPercent < 0.6) {
+    if (signal < 60) {
       root.text = "󰤢";
       return;
     }
 
-    if (linkQualityPercent < 0.8) {
+    if (signal < 80) {
       root.text = "󰤥";
       return;
     }
@@ -49,26 +49,32 @@ BarTextButton {
     repeat: true
 
     onTriggered: () => {
-      process.exec({});
+      getWifiInfoProcess.exec({});
     }
   }
 
   Process {
-    id: process
+    id: getWifiInfoProcess
 
-    command: [ "iwconfig" ]
+    command: [ "nmcli", "-g", "ACTIVE,SIGNAL", "d", "wifi" ]
 
     stdout: StdioCollector {
       onStreamFinished: () => {
-        var text = this.text;
+        const networks = this.text.split("\n");
 
-        text = text.substring(text.indexOf("Link Quality"));
-        text = text.substring(text.indexOf("=") + 1);
-        text = text.split(" ")[0];
-        text = text.split("/");
+        for (const network of networks) {
+          const networkInfos = network.split(":");
+          const active = networkInfos[0];
+          const signal = networkInfos[1];
 
-        // Implicitly cast to float because JS magic?
-        root.updateText(text[0] / text[1]);
+          if (active == "yes") {
+            root.updateText(signal);
+            return;
+          }
+        }
+
+        // No active network
+        root.updateText(0);
       }
     }
   }
