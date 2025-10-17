@@ -60,12 +60,13 @@ BarTextButton {
 
     stdout: StdioCollector {
       onStreamFinished: () => {
-        const networks = this.text.split("\n");
+        const networkInfos = this.text.split("\n");
 
-        for (const network of networks) {
-          const networkInfos = network.split(":");
-          const active = networkInfos[0];
-          const signal = networkInfos[1];
+        for (const info of networkInfos) {
+          const properties = info.split(":");
+
+          const active = properties[0];
+          const signal = properties[1];
 
           if (active == "yes") {
             root.updateText(signal);
@@ -73,7 +74,7 @@ BarTextButton {
           }
         }
 
-        // No active network
+        // No active wifi connection
         root.updateText(0);
       }
     }
