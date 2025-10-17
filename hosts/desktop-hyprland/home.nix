@@ -62,6 +62,7 @@ in {
       ripgrep
       unzip
       wget
+      wirelesstools
       zip
 
       # dev
