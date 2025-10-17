@@ -24,7 +24,7 @@ WrapperMouseArea {
     dismissButton.visible = false
   }
 
-  ClippingRectangle {
+  Rectangle {
     implicitWidth: notification.implicitWidth
     implicitHeight: notification.implicitHeight < root.maxHeight ? notification.implicitHeight : root.maxHeight
 
