@@ -41,7 +41,7 @@ BarWidget {
 
           color: Hyprland.focusedWorkspace?.id == workspace.modelData.id
             ? Style.palette.text
-            : Style.palette.highlightHigh
+            : Style.palette.muted
 
           width: 10
           height: 10

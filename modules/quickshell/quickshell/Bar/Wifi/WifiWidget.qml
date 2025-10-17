@@ -4,6 +4,6 @@ import qs.Bar
 import qs.Style
 
 BarTextButton {
-  textColor: Style.palette.iris
+  textColor: Style.palette.gold
   text: "󰤥"
 }

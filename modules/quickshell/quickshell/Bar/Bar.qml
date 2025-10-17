@@ -49,7 +49,7 @@ Scope {
           RowLayout {
             spacing: Style.baseSpacing
 
-            PowerMenuWidget { baseMenuWindowOffset: left.x }
+            PowerMenuWidget {}
             WorkspacesWidget {}
           }
         }
@@ -69,7 +69,7 @@ Scope {
             BluetoothWidget {}
             SystemTrayWidget {}
             ClockWidget {}
-            NotificationsWidget { baseMenuWindowOffset: right.x }
+            NotificationsWidget {}
           }
         }
       }

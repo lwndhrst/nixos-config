@@ -11,11 +11,11 @@ BarWidget {
     font: Style.barFont
     verticalAlignment: Text.AlignVCenter
 
-    text: Qt.formatDateTime(clock.date, "ddd MMM d | hh:mm:ss")
+    text: Qt.formatDateTime(clock.date, "ddd MMM d | hh:mm")
 
     SystemClock {
       id: clock
-      precision: SystemClock.Seconds
+      precision: SystemClock.Minutes
     }
   }
 }

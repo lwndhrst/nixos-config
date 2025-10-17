@@ -10,9 +10,11 @@ import qs.Style
 BarTextButton {
   id: root
 
-  property int baseMenuWindowOffset: 0
+  property int baseMenuWindowOffset: root.parent?.parent != null
+    ? root.parent.parent.x
+    : 0
 
-  textColor: Style.palette.text
+  textColor: Style.palette.subtle
   text: "󰂚"
 
   onClicked: () => {

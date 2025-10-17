@@ -12,6 +12,7 @@ PanelWindow {
   required property Item content;
 
   property int windowOffset: 0
+  property bool enableFocusGrab: true
 
   anchors {
     top: true
@@ -35,9 +36,9 @@ PanelWindow {
 
     color: Style.palette.base
 
-    leftMargin: Style.baseMargin / 2
-    rightMargin: Style.baseMargin / 2
-    bottomMargin: Style.baseMargin / 2
+    leftMargin: Style.baseSpacing
+    rightMargin: Style.baseSpacing
+    bottomMargin: Style.baseSpacing
 
     bottomRightRadius: Style.baseOuterRadius
     bottomLeftRadius: Style.baseOuterRadius
@@ -56,10 +57,15 @@ PanelWindow {
   }
 
   function showMenu() {
-    menu.visible = !menu.visible;
-    grab.active = !grab.active;
+    menu.visible = true;
+    grab.active = menu.enableFocusGrab;
 
     // Clamp window offset/size to screen
     menu.windowOffset = Math.min(menu.screen.width - menu.implicitWidth - Style.baseMargin, menu.windowOffset);
+  }
+
+  function hideMenu() {
+    menu.visible = false;
+    grab.active = false;
   }
 }
