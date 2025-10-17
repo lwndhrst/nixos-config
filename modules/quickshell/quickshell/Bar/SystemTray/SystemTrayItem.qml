@@ -2,51 +2,55 @@ import Quickshell.Services.SystemTray
 import Quickshell.Widgets
 
 import QtQuick
+import QtQuick.Controls
 
 import qs.Style
 
-WrapperRectangle {
-  id: item
+WrapperMouseArea {
+  id: root
 
   required property SystemTrayItem modelData
 
-  color: "transparent"
+  implicitWidth: button.implicitWidth
+  implicitHeight: button.implicitHeight
 
-  implicitWidth: mouseArea.implicitWidth
-  implicitHeight: mouseArea.implicitHeight
+  cursorShape: Qt.PointingHandCursor
 
-  WrapperMouseArea {
-    id: mouseArea
+  acceptedButtons: Qt.LeftButton | Qt.MiddleButton | Qt.RightButton
 
-    anchors.fill: parent
+  onClicked: event => {
+    event.accepted = true;
 
-    acceptedButtons: Qt.LeftButton | Qt.MiddleButton | Qt.RightButton
-    cursorShape: Qt.OpenHandCursor
-
-    onClicked: event => {
-      event.accepted = true;
-
-      if (event.button == Qt.LeftButton) {
-        item.modelData.activate();
-      }
-
-      if (event.button == Qt.MiddleButton) {
-        item.modelData.secondaryActivate();
-      }
+    if (event.button == Qt.LeftButton) {
+      root.modelData.activate();
+      return;
     }
 
-    onPressed: event => {
-      event.accepted = true;
-
-      if (event.button == Qt.RightButton && item.modelData.hasMenu) {
-        // TODO: Show system tray item menu
-      }
+    if (event.button == Qt.MiddleButton) {
+      root.modelData.secondaryActivate();
+      return;
     }
 
-    IconImage {
-      source: item.modelData.icon
-      implicitWidth: Style.barIconSize.width
-      implicitHeight: Style.barIconSize.height
+    if (event.button == Qt.RightButton && root.modelData.hasMenu) {
+      // TODO: Show system tray item menu
+      return;
     }
+  }
+
+  // Hijacking button icon property for recoloring icons
+  Button {
+    id: button
+
+    anchors.centerIn: parent
+
+    background: Item {}
+    enabled: false
+
+    padding: 0
+
+    icon.source: root.modelData.icon
+    icon.width: Style.barIconSize.width
+    icon.height: Style.barIconSize.height
+    icon.color: Style.palette.text
   }
 }
