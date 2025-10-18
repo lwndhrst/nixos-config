@@ -12,6 +12,7 @@ WrapperMouseArea {
 
   required property string text
 
+  property string fontFamily: Style.barFont.family
   property color textColor: Style.palette.text
   property int textPixelSize: 18
 
@@ -29,6 +30,7 @@ WrapperMouseArea {
 
     Text {
       color: root.textColor
+      font.family: root.fontFamily
       font.pixelSize: root.textPixelSize
       verticalAlignment: Text.AlignVCenter
       horizontalAlignment: Text.AlignHCenter

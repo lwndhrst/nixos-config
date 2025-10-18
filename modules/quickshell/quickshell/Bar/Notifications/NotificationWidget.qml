@@ -34,6 +34,8 @@ BarTextButton {
     windowOffset: root.baseMenuWindowOffset + root.x
 
     content: ClippingRectangle {
+      id: menuContent
+
       color: Style.palette.base
       radius: Style.baseInnerRadius
 
@@ -43,14 +45,59 @@ BarTextButton {
       ColumnLayout {
         spacing: Style.baseSpacing
 
+        Rectangle {
+          id: menuHeader
+
+          color: "transparent"
+
+          implicitWidth: menuContent.implicitWidth
+          implicitHeight: menuTitle.implicitHeight
+
+          WrapperRectangle {
+            id: menuTitle
+
+            color: Style.palette.surface
+            radius: Style.baseInnerRadius
+            margin: Style.baseMargin
+
+            implicitWidth: menuContent.implicitWidth - dismissAllButton.implicitWidth - Style.baseSpacing
+
+            Text {
+              font: Style.barFont
+              color: Style.palette.text
+
+              text: "Notifications"
+            }
+          }
+
+          BarTextButton {
+            id: dismissAllButton
+
+            anchors.left: menuTitle.right
+            anchors.leftMargin: Style.baseSpacing
+
+            implicitHeight: menuTitle.implicitHeight
+
+            textPixelSize: Style.barFont.pixelSize
+            textColor: Style.palette.love
+            bgColor: Style.palette.surface
+
+            text: "Dismiss all"
+
+            onClicked: NotificationManager.dismissAll()
+          }
+        }
+
         Repeater {
           model: NotificationManager.notifications
+
+          implicitWidth: menuContent.implicitWidth
 
           NotificationListItem {
             Layout.alignment: Qt.AlignTop
             Layout.fillWidth: true
 
-            implicitWidth: 400
+            implicitWidth: parent.implicitWidth
           }
         }
       }

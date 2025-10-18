@@ -65,13 +65,14 @@ WrapperMouseArea {
 
       visible: false
 
-      bgColor: Style.palette.love
-      textColor: Style.palette.base
+      bgColor: "transparent"
+      textColor: Style.palette.love
       text: "󰩹"
 
       anchors {
         top: notification.top
         right: notification.right
+        topMargin: 2
       }
 
       onClicked: () => {

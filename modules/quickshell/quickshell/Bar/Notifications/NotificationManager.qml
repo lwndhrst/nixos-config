@@ -10,6 +10,12 @@ Singleton {
 
   property alias notifications: server.trackedNotifications
 
+  function dismissAll() {
+    while (root.notifications.values.length > 0) {
+      root.notifications.values[0].dismiss();
+    }
+  }
+
   NotificationServer {
     id: server
 
