@@ -20,11 +20,10 @@ Singleton {
     id: server
 
     // persistenceSupported: true
-    // bodySupported: true
     // bodyMarkupSupported: true
     // bodyImagesSupported: true
     // bodyHyperlinksSupported: true
-    // actionsSupported: true
+    actionsSupported: true // apparently need this for thunderbird notifications to show up
     // actionIconsSupported: true
     // imageSupported: true
 
