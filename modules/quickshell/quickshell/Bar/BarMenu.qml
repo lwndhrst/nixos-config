@@ -7,7 +7,7 @@ import QtQuick
 import qs.Style
 
 PanelWindow {
-  id: menu
+  id: toplevel
 
   required property Item content;
 
@@ -15,56 +15,71 @@ PanelWindow {
   property bool enableFocusGrab: true
 
   anchors {
-    top: true
     left: true
+    top: true
+    right: true
   }
 
-  margins {
-    left: menu.windowOffset - Style.baseMargin / 2
-  }
+  implicitHeight: 0
 
   aboveWindows: true
   visible: false
 
   color: "transparent"
 
-  implicitWidth: rect.implicitWidth
-  implicitHeight: rect.implicitHeight
+  PopupWindow {
+    id: menu
 
-  WrapperRectangle {
-    id: rect
+    color: "transparent"
 
-    color: Style.palette.base
+    anchor.window: toplevel
+    anchor.rect.x: toplevel.windowOffset - Style.baseMargin / 2
+    anchor.rect.y: 0
 
-    leftMargin: Style.baseSpacing
-    rightMargin: Style.baseSpacing
-    bottomMargin: Style.baseSpacing
+    implicitWidth: rect.implicitWidth
+    implicitHeight: rect.implicitHeight
 
-    bottomRightRadius: Style.baseOuterRadius
-    bottomLeftRadius: Style.baseOuterRadius
+    visible: false
 
-    child: menu.content
-  }
+    WrapperRectangle {
+      id: rect
 
-  HyprlandFocusGrab {
-    id: grab
-    windows: [ menu ]
+      color: Style.palette.base
 
-    onCleared: () => {
-      menu.visible = false;
-      grab.active = false;
+      leftMargin: Style.baseSpacing
+      rightMargin: Style.baseSpacing
+      bottomMargin: Style.baseSpacing
+
+      bottomRightRadius: Style.baseOuterRadius
+      bottomLeftRadius: Style.baseOuterRadius
+
+      child: toplevel.content
+    }
+
+    HyprlandFocusGrab {
+      id: grab
+      windows: [ menu ]
+
+      onCleared: () => {
+        menu.visible = false;
+        grab.active = false;
+      }
     }
   }
 
   function showMenu() {
-    menu.visible = true;
-    grab.active = menu.enableFocusGrab;
+    // Clamp window position to screen (respecting base margins)
+    const maxOffset = menu.screen.width - menu.implicitWidth - Style.baseMargin - Style.baseSpacing;
+    const windowOffset = toplevel.windowOffset - Style.baseMargin / 2;
+    menu.anchor.rect.x = Math.min(maxOffset, windowOffset);
 
-    // Clamp window offset/size to screen
-    menu.windowOffset = Math.min(menu.screen.width - menu.implicitWidth - Style.baseMargin, menu.windowOffset);
+    toplevel.visible = true;
+    menu.visible = true;
+    grab.active = toplevel.enableFocusGrab;
   }
 
   function hideMenu() {
+    toplevel.visible = false;
     menu.visible = false;
     grab.active = false;
   }
