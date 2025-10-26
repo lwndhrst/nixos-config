@@ -1,16 +1,18 @@
+import Quickshell
 import Quickshell.Services.SystemTray
 import Quickshell.Widgets
 
 import QtQuick
 import QtQuick.Controls
 
-import qs.Bar
 import qs.Style
 
 WrapperMouseArea {
   id: root
 
   required property SystemTrayItem modelData
+
+  required property PanelWindow bar
 
   property int baseMenuWindowOffset: 0
 
@@ -35,7 +37,7 @@ WrapperMouseArea {
     }
 
     if (event.button == Qt.RightButton && root.modelData.hasMenu) {
-      root.modelData.display(menu, root.baseMenuWindowOffset + root.x, root.implicitHeight + Style.baseMargin * 2);
+      root.modelData.display(bar, root.baseMenuWindowOffset + root.x, bar.implicitHeight);
       return;
     }
   }
@@ -55,11 +57,5 @@ WrapperMouseArea {
     icon.width: Style.barIconSize.width
     icon.height: Style.barIconSize.height
     icon.color: Style.palette.text
-  }
-
-  BarMenu {
-    id: menu
-
-    content: Item {}
   }
 }

@@ -49,7 +49,7 @@ Scope {
           RowLayout {
             spacing: Style.baseSpacing
 
-            PowerMenuWidget {}
+            PowerMenuWidget { bar: bar }
             WorkspaceWidget {}
           }
         }
@@ -64,12 +64,12 @@ Scope {
           RowLayout {
             spacing: Style.baseSpacing
 
-            AudioWidget {}
+            AudioWidget { bar: bar }
             WifiWidget {}
             BluetoothWidget {}
-            SystemTrayWidget {}
+            SystemTrayWidget { bar: bar }
             ClockWidget {}
-            NotificationWidget {}
+            NotificationWidget { bar: bar }
           }
         }
       }

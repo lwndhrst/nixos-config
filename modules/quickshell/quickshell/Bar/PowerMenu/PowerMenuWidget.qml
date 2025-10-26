@@ -1,3 +1,4 @@
+import Quickshell
 import Quickshell.Io
 
 import QtQuick
@@ -8,6 +9,8 @@ import qs.Style
 
 BarTextButton {
   id: root
+
+  required property PanelWindow bar
 
   property int baseMenuWindowOffset: root.parent?.parent != null
     ? root.parent.parent.x
@@ -23,9 +26,12 @@ BarTextButton {
   BarMenu {
     id: menu
 
-    windowOffset: root.baseMenuWindowOffset + root.x
+    anchor.window: root.bar
+    anchor.rect.y: root.bar.implicitHeight
 
-    content: ColumnLayout {
+    horizontalOffset: root.baseMenuWindowOffset + root.x
+
+    menu: ColumnLayout {
       spacing: Style.baseSpacing
 
       BarTextButton {

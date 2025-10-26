@@ -1,3 +1,4 @@
+import Quickshell
 import Quickshell.Services.Pipewire
 
 import QtQuick
@@ -8,6 +9,8 @@ import qs.Style
 
 RowLayout {
   id: root
+
+  required property PanelWindow bar
 
   property int baseMenuWindowOffset: root.parent?.parent != null
     ? root.parent.parent.x
@@ -64,10 +67,13 @@ RowLayout {
     BarMenu {
       id: inputMenu
 
-      windowOffset: root.baseMenuWindowOffset + inputButton.x
+      anchor.window: root.bar
+      anchor.rect.y: root.bar.implicitHeight
+
+      horizontalOffset: root.baseMenuWindowOffset + inputButton.x
       enableFocusGrab: false
 
-      content: Rectangle {
+      menu: Rectangle {
         implicitWidth: inputButton.implicitWidth
         implicitHeight: 100
 
@@ -145,10 +151,13 @@ RowLayout {
     BarMenu {
       id: outputMenu
 
-      windowOffset: root.baseMenuWindowOffset + outputButton.x
+      anchor.window: root.bar
+      anchor.rect.y: root.bar.implicitHeight
+
+      horizontalOffset: root.baseMenuWindowOffset + outputButton.x
       enableFocusGrab: false
 
-      content: Rectangle {
+      menu: Rectangle {
         implicitWidth: outputButton.implicitWidth
         implicitHeight: 100
 

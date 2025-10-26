@@ -1,5 +1,6 @@
 pragma ComponentBehavior: Bound
 
+import Quickshell
 import Quickshell.Services.SystemTray
 
 import QtQuick
@@ -10,6 +11,8 @@ import qs.Bar.SystemTray
 
 BarWidget {
   id: root
+
+  required property PanelWindow bar
 
   property int baseMenuWindowOffset: root.parent?.parent != null
     ? root.parent.parent.x
@@ -26,6 +29,7 @@ BarWidget {
       model: SystemTray.items
 
       SystemTrayItem {
+        bar: root.bar
         baseMenuWindowOffset: root.baseMenuWindowOffset
       }
     }
