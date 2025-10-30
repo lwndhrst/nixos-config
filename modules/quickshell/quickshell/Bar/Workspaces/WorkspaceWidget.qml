@@ -32,30 +32,28 @@ BarWidget {
       Repeater {
         model: Hyprland.workspaces
 
-        WrapperRectangle {
+        WrapperMouseArea {
           id: workspace
 
           Layout.alignment: Qt.AlignCenter
 
           required property HyprlandWorkspace modelData;
 
-          color: Hyprland.focusedWorkspace?.id == workspace.modelData.id
-            ? Style.palette.text
-            : Style.palette.muted
+          acceptedButtons: Qt.LeftButton
 
-          width: 10
-          height: 10
-          radius: 5
+          onClicked: event => {
+            event.accepted = true;
+            workspace.modelData.activate();
+          }
 
-          WrapperMouseArea {
-            anchors.fill: parent
+          WrapperRectangle {
+            color: Hyprland.focusedWorkspace?.id == workspace.modelData.id
+              ? Style.palette.text
+              : Style.palette.muted
 
-            acceptedButtons: Qt.LeftButton
-
-            onClicked: event => {
-              event.accepted = true;
-              workspace.modelData.activate();
-            }
+            implicitWidth: 10
+            implicitHeight: 10
+            radius: 5
           }
         }
       }
