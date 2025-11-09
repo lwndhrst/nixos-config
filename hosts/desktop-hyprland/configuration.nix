@@ -115,7 +115,7 @@ in {
         waylandFrontend = true;
         addons = with pkgs; [
           fcitx5-gtk
-          fcitx5-chinese-addons
+          qt6Packages.fcitx5-chinese-addons
 
           # Pinyin input overlay theme
           custom.fcitx5-rose-pine-edit
