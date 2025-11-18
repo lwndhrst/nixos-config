@@ -51,7 +51,7 @@ in {
       vlc
       # wineWowPackages.waylandFull # too cooked for now...
       wineWowPackages.stableFull
-      webcord
+      # webcord
 
       # cli
       fd
