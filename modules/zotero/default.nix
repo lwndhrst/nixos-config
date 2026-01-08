@@ -2,14 +2,16 @@
 
 {
   home.packages = with pkgs; [
-    (zotero.overrideAttrs (p: rec {
-      # override zotero desktop file to use default light theme
-      desktopItem = p.desktopItem.override (d: {
-        exec = "env GTK_THEME=Default ${d.exec}";
-      });
+    zotero
 
-      # update install phase to use the new desktop file
-      installPhase = builtins.replaceStrings [ "${p.desktopItem}" ] [ "${desktopItem}" ] p.installPhase;
-    }))
+    # (zotero.overrideAttrs (p: rec {
+    #   # Override zotero desktop file to use default light theme
+    #   desktopItem = p.desktopItem.override (d: {
+    #     exec = "env GTK_THEME=Default ${d.exec}";
+    #   });
+
+    #   # Update install phase to use the new desktop file
+    #   installPhase = builtins.replaceStrings [ "${p.desktopItem}" ] [ "${desktopItem}" ] p.installPhase;
+    # }))
   ];
 }
