@@ -46,6 +46,11 @@ in {
 
       # Disable NetworkManager's internal DNS resolution so DNS can be configured manually
       dns = "none";
+
+      # Required by eduVPN
+      plugins = with pkgs; [
+        networkmanager-openvpn
+      ];
     };
 
     # DNS
@@ -68,6 +73,9 @@ in {
   };
 
   services = {
+    # Secret service
+    gnome.gnome-keyring.enable = true;
+
     # Printer stuff
     printing.enable = true;
 

@@ -26,6 +26,8 @@ in {
     packages = with pkgs; [
       # system
       kdePackages.dolphin
+      kdePackages.kio
+      kdePackages.kio-extras
       kdePackages.qtsvg
       kdePackages.qtwayland
       kdePackages.qt6ct
@@ -69,6 +71,9 @@ in {
       lua-language-server
       nil
       renderdoc
+
+      # uni
+      eduvpn-client
 
       # scripts
       custom.scripts.override-rose-pine-colors
