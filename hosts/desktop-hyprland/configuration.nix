@@ -155,6 +155,7 @@ in {
     gamescope.enable = true;
     gamemode.enable = true;
     steam.enable = true;
+    steam.protontricks.enable = true;
     zsh.enable = true;
   };
 
