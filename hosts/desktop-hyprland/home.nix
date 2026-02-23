@@ -51,8 +51,8 @@ in {
       ppsspp-sdl-wayland
       thunderbird
       vlc
-      # wineWowPackages.waylandFull # too cooked for now...
-      wineWowPackages.stableFull
+      wineWow64Packages.waylandFull
+      # wineWow64Packages.stableFull
       # webcord
 
       # cli
