@@ -162,7 +162,7 @@ in {
   users.users.${user} = {
     isNormalUser = true;
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "libvirtd" "scanner" "lp" "networkmanager" ];
+    extraGroups = [ "wheel" "libvirtd" "scanner" "lp" "networkmanager" "gamemode" ];
   };
 
   # Set system-wide variables and packages.
