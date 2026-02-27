@@ -25,7 +25,7 @@
       completion-fg           = "#ebbcba";
       completion-highlight-bg = "#ebbcba";
       completion-highlight-fg = "#102028";
-      recolor-lightcolor      = "#040e14";
+      recolor-lightcolor      = "#0a161d";
       recolor-darkcolor       = "#c8d4dc";
     };
   };
