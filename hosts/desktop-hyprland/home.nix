@@ -37,8 +37,8 @@ in {
       # apps
       anki-bin
       ausweisapp
+      azahar
       blender
-      custom.azahar
       calibre
       firefox
       fontforge-gtk
@@ -50,9 +50,11 @@ in {
       portfolio
       ppsspp-sdl-wayland
       thunderbird
+      tor-browser
       vlc
-      wineWow64Packages.waylandFull
-      # wineWow64Packages.stableFull
+      winetricks
+      wineWow64Packages.stableFull
+      # wineWow64Packages.waylandFull
       # webcord
 
       # cli
