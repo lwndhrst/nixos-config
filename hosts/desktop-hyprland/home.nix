@@ -42,6 +42,7 @@ in {
       calibre
       firefox
       fontforge-gtk
+      freerdp
       gimp3
       librewolf
       lutris
