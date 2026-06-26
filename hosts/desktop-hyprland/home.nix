@@ -44,7 +44,7 @@ in {
       fontforge-gtk
       freerdp
       gimp3
-      librewolf
+      # librewolf
       lutris
       # stable.meshlab
       obs-studio
@@ -113,6 +113,8 @@ in {
       package = pkgs.papirus-icon-theme;
       name = "Papirus-Dark";
     };
+
+    gtk4.theme = null;
   };
 
   qt = {

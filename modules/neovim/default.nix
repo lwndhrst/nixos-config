@@ -5,6 +5,12 @@
     enable = true;
     defaultEditor = true;
 
+    # Using imperative lua config
+    sideloadInitLua = true;
+
+    withRuby = false;
+    withPython3 = false;
+
     # List of available plugins in the overlay (pkgs.vimExtraPlugins):
     # https://github.com/NixNeovim/NixNeovimPlugins/blob/main/plugins.md
     #
