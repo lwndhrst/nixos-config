@@ -19,11 +19,11 @@ BarWidget {
     onWheel: event => {
       event.accepted = true;
 
-      var cmd = event.angleDelta.y > 0
-        ? "workspace e+1"
-        : "workspace e-1";
+      var workspace = event.angleDelta.y > 0
+        ? '"e+1"'
+        : '"e-1"';
 
-      Hyprland.dispatch(cmd)
+      Hyprland.dispatch("hl.dsp.focus({ workspace = " + workspace + " })");
     }
 
     RowLayout {
