@@ -157,6 +157,7 @@ in {
     steam.enable = true;
     steam.protontricks.enable = true;
     zsh.enable = true;
+    fuse.enable = true;
   };
 
   users.users.${user} = {
