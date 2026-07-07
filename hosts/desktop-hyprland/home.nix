@@ -44,6 +44,7 @@ in {
       fontforge-gtk
       freerdp
       gimp3
+      libreoffice
       # librewolf
       lutris
       # stable.meshlab
