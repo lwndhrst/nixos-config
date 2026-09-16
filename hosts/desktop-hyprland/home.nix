@@ -47,6 +47,7 @@ in {
       libreoffice
       # librewolf
       lutris
+      mangohud
       # stable.meshlab
       obs-studio
       portfolio

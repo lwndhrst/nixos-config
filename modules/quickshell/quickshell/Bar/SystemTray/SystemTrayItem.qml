@@ -16,8 +16,8 @@ WrapperMouseArea {
 
   property int baseMenuWindowOffset: 0
 
-  implicitWidth: button.implicitWidth
-  implicitHeight: button.implicitHeight
+  implicitWidth: item.implicitWidth
+  implicitHeight: item.implicitHeight
 
   cursorShape: Qt.PointingHandCursor
 
@@ -42,9 +42,18 @@ WrapperMouseArea {
     }
   }
 
+  IconImage {
+    id: item
+
+    mipmap: true
+    source: root.modelData.icon
+    implicitSize: 12
+  }
+
+  /*
   // Hijacking button icon property for recoloring icons
   Button {
-    id: button
+    id: item
 
     anchors.centerIn: parent
 
@@ -56,6 +65,7 @@ WrapperMouseArea {
     icon.source: root.modelData.icon
     icon.width: Style.barIconSize.width
     icon.height: Style.barIconSize.height
-    icon.color: Style.palette.text
+    // icon.color: Style.palette.text
   }
+  */
 }
