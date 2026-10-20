@@ -39,7 +39,7 @@ in {
       ausweisapp
       azahar
       blender
-      calibre
+      # calibre
       firefox
       fontforge-gtk
       freerdp
@@ -72,7 +72,7 @@ in {
       zip
 
       # dev
-      godot
+      # godot
       lua-language-server
       nil
       renderdoc
