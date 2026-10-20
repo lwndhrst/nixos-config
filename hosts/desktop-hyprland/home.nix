@@ -15,7 +15,7 @@ in {
     tofi
     wezterm
     zathura
-    zotero
+    # zotero
     zsh
   ];
 
