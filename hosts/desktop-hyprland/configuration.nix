@@ -151,7 +151,11 @@ in {
   };
 
   programs = {
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+
     gamescope.enable = true;
     gamemode.enable = true;
     steam.enable = true;

@@ -58,7 +58,7 @@ in {
       winetricks
       wineWow64Packages.stableFull
       # wineWow64Packages.waylandFull
-      # webcord
+      webcord
 
       # cli
       fd
