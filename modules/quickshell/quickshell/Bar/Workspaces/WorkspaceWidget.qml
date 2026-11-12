@@ -20,8 +20,8 @@ BarWidget {
       event.accepted = true;
 
       var workspace = event.angleDelta.y > 0
-        ? '"e+1"'
-        : '"e-1"';
+        ? '"e-1"'
+        : '"e+1"';
 
       Hyprland.dispatch("hl.dsp.focus({ workspace = " + workspace + " })");
     }
