@@ -98,7 +98,9 @@ in {
         support32Bit = true;
       };
       pulse.enable = true;
-      jack.enable = true;
+
+      # Deprecated, use pw-jack instead
+      # jack.enable = true;
     };
 
     # For connecting USB devices
