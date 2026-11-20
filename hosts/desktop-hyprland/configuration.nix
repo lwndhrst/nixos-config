@@ -45,7 +45,7 @@ in {
       wifi.powersave = false;
 
       # Disable NetworkManager's internal DNS resolution so DNS can be configured manually
-      dns = "none";
+      # dns = "none";
 
       # Required by eduVPN
       plugins = with pkgs; [
@@ -54,14 +54,14 @@ in {
     };
 
     # DNS
-    useDHCP = false;
-    dhcpcd.enable = false;
-    nameservers = [
-      "1.1.1.1" "2606:4700:4700::1111" # Cloudflare (primary)
-      "1.0.0.1" "2606:4700:4700::1001" # Cloudflare (secondary)
-      "8.8.8.8" "2001:4860:4860::8888" # Google Public DNS (primary)
-      "8.8.4.4" "2001:4860:4860::8844" # Google Public DNS (secondary)
-    ];
+    # useDHCP = false;
+    # dhcpcd.enable = false;
+    # nameservers = [
+    #   "1.1.1.1" "2606:4700:4700::1111" # Cloudflare (primary)
+    #   "1.0.0.1" "2606:4700:4700::1001" # Cloudflare (secondary)
+    #   "8.8.8.8" "2001:4860:4860::8888" # Google Public DNS (primary)
+    #   "8.8.4.4" "2001:4860:4860::8844" # Google Public DNS (secondary)
+    # ];
 
     firewall = {
       enable = false;

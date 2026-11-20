@@ -52,6 +52,7 @@ in {
       obs-studio
       portfolio
       ppsspp-sdl-wayland
+      teamspeak6-client
       thunderbird
       tor-browser
       vlc
